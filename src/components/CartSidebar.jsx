@@ -107,10 +107,6 @@ const CartSidebar = () => {
                   <span>Total Item</span>
                   <span className="font-semibold text-slate-800">{totalItem} Produk</span>
                 </div>
-                <div className="flex justify-between text-slate-500">
-                  <span>Perkiraan Ongkir</span>
-                  <span className="font-semibold text-emerald-600">GRATIS</span>
-                </div>
                 <div className="pt-2.5 border-t border-slate-200/80 flex justify-between items-center text-base sm:text-lg">
                   <span className="font-bold text-slate-900 shrink-0">Total Harga</span>
                   <span className="text-xl sm:text-2xl font-extrabold text-orange-600 truncate ml-2 text-right">
