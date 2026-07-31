@@ -32,9 +32,9 @@ const Footer = ({ onSelectCategory }) => {
       {/* Feature Highlights Banner */}
       <div className="border-b border-slate-800/60 bg-slate-900/40 backdrop-blur-xs">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 sm:gap-8 max-w-xs sm:max-w-5xl mx-auto">
 
-            <div className="flex items-center justify-center space-x-3 group">
+            <div className="flex items-center justify-start sm:justify-center space-x-3.5 group">
               <div className="w-10 h-10 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center text-xl group-hover:scale-110 group-hover:bg-amber-500 group-hover:text-white transition-all duration-300 shrink-0">
                 <FiShield />
               </div>
@@ -44,7 +44,7 @@ const Footer = ({ onSelectCategory }) => {
               </div>
             </div>
 
-            <div className="flex items-center justify-center space-x-3 group">
+            <div className="flex items-center justify-start sm:justify-center space-x-3.5 group">
               <div className="w-10 h-10 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-xl group-hover:scale-110 group-hover:bg-emerald-500 group-hover:text-white transition-all duration-300 shrink-0">
                 <FiMessageSquare />
               </div>
@@ -54,7 +54,7 @@ const Footer = ({ onSelectCategory }) => {
               </div>
             </div>
 
-            <div className="flex items-center justify-center space-x-3 group">
+            <div className="flex items-center justify-start sm:justify-center space-x-3.5 group">
               <div className="w-10 h-10 rounded-xl bg-rose-500/10 text-rose-400 flex items-center justify-center text-xl group-hover:scale-110 group-hover:bg-rose-500 group-hover:text-white transition-all duration-300 shrink-0">
                 <FiCheckCircle />
               </div>
