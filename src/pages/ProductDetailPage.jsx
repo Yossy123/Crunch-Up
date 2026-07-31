@@ -8,7 +8,6 @@ import { useCart } from '../context/CartContext';
 import { formatRupiah } from '../utils/format';
 import { 
   FiArrowLeft, 
-  FiStar, 
   FiShoppingBag, 
   FiMessageSquare, 
   FiPlus, 
@@ -125,16 +124,18 @@ const ProductDetailPage = () => {
                 <img
                   src={product.image}
                   alt={product.name}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  loading="eager"
+                  decoding="async"
+                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                 />
 
                 {/* Badges Overlay */}
                 <div className="absolute top-4 left-4 z-10 flex flex-wrap gap-2">
-                  <span className="px-3 py-1 bg-slate-900/85 text-white text-xs font-bold rounded-full backdrop-blur-md shadow-sm border border-white/10">
+                  <span className="px-3 py-1 bg-slate-900 text-white text-xs font-bold rounded-full shadow-sm border border-white/10">
                     {product.category}
                   </span>
                   {product.flavor && (
-                    <span className="px-3 py-1 bg-orange-500/90 text-white text-xs font-extrabold rounded-full backdrop-blur-md shadow-sm border border-white/10">
+                    <span className="px-3 py-1 bg-orange-500 text-white text-xs font-extrabold rounded-full shadow-sm border border-white/10">
                       {product.flavor}
                     </span>
                   )}
@@ -143,7 +144,7 @@ const ProductDetailPage = () => {
                 {/* Share Button */}
                 <button
                   onClick={handleShare}
-                  className="absolute top-4 right-4 z-10 w-9 h-9 rounded-full bg-white/90 hover:bg-white text-slate-700 flex items-center justify-center shadow-md backdrop-blur-md transition-all active:scale-95 cursor-pointer"
+                  className="absolute top-4 right-4 z-10 w-9 h-9 rounded-full bg-white text-slate-700 flex items-center justify-center shadow-md transition-all active:scale-95 cursor-pointer"
                   title="Bagikan Produk"
                 >
                   {copied ? <FiCheck className="text-emerald-600" /> : <FiShare2 className="text-base" />}
@@ -153,16 +154,6 @@ const ProductDetailPage = () => {
               {/* Product Information Column */}
               <div className="flex flex-col justify-between h-full space-y-6">
                 <div>
-                  {/* Rating & Sold count */}
-                  <div className="flex items-center space-x-2 text-xs sm:text-sm text-slate-500 mb-3">
-                    <div className="flex items-center space-x-1 px-2.5 py-1 bg-amber-50 rounded-lg border border-amber-100">
-                      <FiStar className="text-amber-500 fill-amber-400 text-sm" />
-                      <span className="font-extrabold text-slate-800">{product.rating}</span>
-                    </div>
-                    <span>•</span>
-                    <span className="font-medium text-slate-600">{product.soldCount} Produk Terjual</span>
-                  </div>
-
                   {/* Product Title */}
                   <h1 className="text-xl sm:text-3xl font-extrabold text-slate-900 leading-snug mb-4">
                     {product.name}
@@ -176,21 +167,10 @@ const ProductDetailPage = () => {
                     <span className="text-xs text-slate-400 font-medium">/ porsi</span>
                   </div>
 
-                  {/* Description */}
-                  <div className="mb-6">
-                    <h3 className="text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">Deskripsi Produk</h3>
-                    <p className="text-sm text-slate-600 leading-relaxed bg-white">
-                      {product.description}
-                    </p>
-                  </div>
-
                   {/* Quantity Selector */}
                   <div className="mb-6">
-                    <div className="flex items-center justify-between mb-2">
+                    <div className="mb-2">
                       <h3 className="text-xs font-bold uppercase tracking-wider text-slate-400">Jumlah Pembelian</h3>
-                      <span className="text-xs font-bold text-slate-500">
-                        Stok: <span className={product.stock > 0 ? "text-slate-800" : "text-rose-600"}>{product.stock ?? 0}</span>
-                      </span>
                     </div>
                     <div className="flex items-center space-x-4">
                       <div className="inline-flex items-center border border-slate-200 rounded-xl bg-slate-50 p-1">

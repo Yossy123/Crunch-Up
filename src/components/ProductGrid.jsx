@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import ProductCard from './ProductCard';
 import { FiInbox, FiRefreshCw } from 'react-icons/fi';
 
@@ -11,40 +11,43 @@ const ProductGrid = ({
   onQuickView, 
   resetFilters 
 }) => {
-  // Filter Logic
-  let filteredProducts = products.filter(product => {
-    const matchesCategory = 
-      !selectedCategory ||
-      selectedCategory === 'Semua Kategori' ||
-      selectedCategory === 'Semua' || 
-      product.category === selectedCategory;
+  // Filter & Sort Logic (Memoized)
+  const filteredProducts = useMemo(() => {
+    let result = products.filter(product => {
+      const matchesCategory = 
+        !selectedCategory ||
+        selectedCategory === 'Semua Kategori' ||
+        selectedCategory === 'Semua' || 
+        product.category === selectedCategory;
 
-    const matchesFlavor = 
-      !selectedFlavor ||
-      selectedFlavor === 'Semua Rasa' ||
-      selectedFlavor === 'Semua' ||
-      product.flavor === selectedFlavor;
+      const matchesFlavor = 
+        !selectedFlavor ||
+        selectedFlavor === 'Semua Rasa' ||
+        selectedFlavor === 'Semua' ||
+        product.flavor === selectedFlavor;
 
-    const matchesSearch = 
-      !searchQuery ||
-      product.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      product.category.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      (product.flavor && product.flavor.toLowerCase().includes(searchQuery.toLowerCase())) ||
-      product.description.toLowerCase().includes(searchQuery.toLowerCase());
+      const matchesSearch = 
+        !searchQuery ||
+        product.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        product.category.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        (product.flavor && product.flavor.toLowerCase().includes(searchQuery.toLowerCase())) ||
+        (product.description && product.description.toLowerCase().includes(searchQuery.toLowerCase()));
 
-    return matchesCategory && matchesFlavor && matchesSearch;
-  });
+      return matchesCategory && matchesFlavor && matchesSearch;
+    });
 
-  // Sort Logic
-  if (sortBy === 'price-asc') {
-    filteredProducts = [...filteredProducts].sort((a, b) => a.price - b.price);
-  } else if (sortBy === 'price-desc') {
-    filteredProducts = [...filteredProducts].sort((a, b) => b.price - a.price);
-  } else if (sortBy === 'rating') {
-    filteredProducts = [...filteredProducts].sort((a, b) => b.rating - a.rating);
-  } else if (sortBy === 'popular') {
-    filteredProducts = [...filteredProducts].sort((a, b) => b.soldCount - a.soldCount);
-  }
+    if (sortBy === 'price-asc') {
+      result = [...result].sort((a, b) => a.price - b.price);
+    } else if (sortBy === 'price-desc') {
+      result = [...result].sort((a, b) => b.price - a.price);
+    } else if (sortBy === 'rating') {
+      result = [...result].sort((a, b) => b.rating - a.rating);
+    } else if (sortBy === 'popular') {
+      result = [...result].sort((a, b) => b.soldCount - a.soldCount);
+    }
+
+    return result;
+  }, [products, searchQuery, selectedCategory, selectedFlavor, sortBy]);
 
   const isFilteredActive = 
     (selectedCategory && selectedCategory !== 'Semua Kategori' && selectedCategory !== 'Semua') ||

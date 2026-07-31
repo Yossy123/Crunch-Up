@@ -72,7 +72,7 @@ const Home = () => {
         <div className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-30 animate-in fade-in slide-in-from-bottom-4 duration-300">
           <button
             onClick={() => setIsCartOpen(true)}
-            className="flex items-center space-x-3 px-4 py-3 sm:px-5 sm:py-3.5 bg-slate-900/95 hover:bg-slate-900 text-white rounded-full shadow-2xl hover:shadow-orange-500/25 border border-slate-700/80 backdrop-blur-md cursor-pointer transition-all duration-200 active:scale-95 group"
+            className="flex items-center space-x-3 px-4 py-3 sm:px-5 sm:py-3.5 bg-slate-900 hover:bg-slate-950 text-white rounded-full shadow-2xl hover:shadow-orange-500/25 border border-slate-700/80 cursor-pointer transition-all duration-200 active:scale-95 group"
             aria-label="Buka Keranjang Belanja"
           >
             <div className="relative shrink-0">

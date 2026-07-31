@@ -89,7 +89,7 @@ const Banner = () => {
                 
                 {/* Text Content */}
                 <div className="flex-1 text-white z-10 max-w-xl text-center md:text-left flex flex-col items-center md:items-start justify-center">
-                  <div className="inline-flex items-center space-x-1.5 px-3 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/15 text-xs sm:text-sm font-semibold tracking-wide text-amber-300 mb-2 sm:mb-3">
+                  <div className="inline-flex items-center space-x-1.5 px-3 py-1 rounded-full bg-white/15 border border-white/20 text-xs sm:text-sm font-semibold tracking-wide text-amber-300 mb-2 sm:mb-3">
                     <BadgeIcon className="text-sm shrink-0" />
                     <span>{slide.badge}</span>
                   </div>
@@ -114,7 +114,9 @@ const Banner = () => {
                   <img
                     src={slide.image}
                     alt={slide.title}
-                    className="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-110"
+                    loading={index === 0 ? "eager" : "lazy"}
+                    decoding="async"
+                    className="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-linear-to-t from-slate-950/60 to-transparent" />
                 </div>
@@ -127,14 +129,14 @@ const Banner = () => {
         {/* Carousel Navigation Arrows */}
         <button
           onClick={prevSlide}
-          className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 z-20 w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-slate-900/40 hover:bg-slate-900/80 text-white backdrop-blur-md flex items-center justify-center transition-all border border-white/10 opacity-80 hover:opacity-100 cursor-pointer"
+          className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 z-20 w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-slate-900/60 hover:bg-slate-900/90 text-white flex items-center justify-center transition-all border border-white/10 opacity-80 hover:opacity-100 cursor-pointer"
           aria-label="Previous Slide"
         >
           <FiChevronLeft className="text-lg sm:text-xl" />
         </button>
         <button
           onClick={nextSlide}
-          className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 z-20 w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-slate-900/40 hover:bg-slate-900/80 text-white backdrop-blur-md flex items-center justify-center transition-all border border-white/10 opacity-80 hover:opacity-100 cursor-pointer"
+          className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 z-20 w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-slate-900/60 hover:bg-slate-900/90 text-white flex items-center justify-center transition-all border border-white/10 opacity-80 hover:opacity-100 cursor-pointer"
           aria-label="Next Slide"
         >
           <FiChevronRight className="text-xl sm:text-2xl" />

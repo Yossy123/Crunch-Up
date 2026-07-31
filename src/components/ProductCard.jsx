@@ -2,7 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
 import { formatRupiah } from '../utils/format';
-import { FiStar, FiShoppingBag, FiEye } from 'react-icons/fi';
+import { FiShoppingBag, FiEye } from 'react-icons/fi';
 
 const ProductCard = ({ product, onQuickView }) => {
   const { addItem } = useCart();
@@ -18,30 +18,31 @@ const ProductCard = ({ product, onQuickView }) => {
 
 
   return (
-    <div className="group bg-white rounded-2xl border border-slate-200/80 shadow-xs hover:shadow-xl hover:border-orange-200 transition-all duration-300 flex flex-col overflow-hidden relative">
+    <div className="group bg-white rounded-2xl border border-slate-200/80 shadow-xs hover:shadow-xl hover:border-orange-200 transition-shadow transition-border duration-200 flex flex-col overflow-hidden relative">
       
       {/* Image & Badges */}
       <div className="relative aspect-square overflow-hidden bg-slate-100 cursor-pointer" onClick={handleProductClick}>
         <img
           src={product.image}
           alt={product.name}
-          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-108"
+          loading="lazy"
+          decoding="async"
+          className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
         />
         
         {/* Dark Gradient Overlays for High Badge Legibility */}
-        <div className="absolute inset-x-0 top-0 h-14 bg-linear-to-b from-slate-950/60 to-transparent pointer-events-none z-10" />
-        <div className="absolute inset-x-0 bottom-0 h-14 bg-linear-to-t from-slate-950/50 to-transparent pointer-events-none z-10" />
+        <div className="absolute inset-x-0 top-0 h-12 bg-linear-to-b from-slate-950/50 to-transparent pointer-events-none z-10" />
 
         {/* Badges Container (Flex Horizontal Wrap, Top-Left) */}
         <div className="absolute top-2 left-2 right-2 z-20 flex flex-wrap gap-1 items-start pointer-events-none">
           {/* Category Badge */}
-          <span className="px-2 py-0.5 bg-slate-900/85 text-white text-[10px] font-bold rounded-md backdrop-blur-md truncate max-w-[90%] border border-white/10 shadow-xs">
+          <span className="px-2 py-0.5 bg-slate-900/90 text-white text-[10px] font-bold rounded-md truncate max-w-[90%] border border-white/10 shadow-xs">
             {product.category}
           </span>
 
           {/* Flavor Badge */}
           {product.flavor && (
-            <span className="px-2 py-0.5 bg-orange-500/90 text-white text-[10px] font-extrabold rounded-md backdrop-blur-md truncate max-w-[90%] border border-white/10 shadow-xs">
+            <span className="px-2 py-0.5 bg-orange-500/95 text-white text-[10px] font-extrabold rounded-md truncate max-w-[90%] border border-white/10 shadow-xs">
               {product.flavor}
             </span>
           )}
@@ -54,7 +55,7 @@ const ProductCard = ({ product, onQuickView }) => {
               e.stopPropagation();
               handleProductClick();
             }}
-            className="p-2.5 rounded-full bg-white/90 text-slate-800 hover:bg-white hover:scale-110 shadow-md transition-transform cursor-pointer"
+            className="p-2.5 rounded-full bg-white text-slate-800 hover:scale-110 shadow-md transition-transform cursor-pointer"
             title="Lihat Detail"
           >
             <FiEye className="text-lg" />
@@ -65,13 +66,6 @@ const ProductCard = ({ product, onQuickView }) => {
       {/* Card Content */}
       <div className="p-3 sm:p-4 flex-1 flex flex-col justify-between">
         <div>
-          {/* Rating & Sold count */}
-          <div className="flex items-center space-x-1.5 text-xs text-slate-500 mb-1.5">
-            <FiStar className="text-amber-400 fill-amber-400 text-sm shrink-0" />
-            <span className="font-bold text-slate-800">{product.rating}</span>
-            <span>•</span>
-            <span className="truncate">{product.soldCount} terjual</span>
-          </div>
 
           {/* Title */}
           <h3 
