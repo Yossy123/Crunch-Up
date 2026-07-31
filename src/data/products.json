@@ -7,7 +7,7 @@
     "price": 15000,
     "rating": 4.9,
     "soldCount": 1450,
-    "image": "/images/snack - Keripik Bawang.jpg",
+    "image": "https://i.ibb.co.com/NdRL2Xq3/snack-Keripik-Bawang.jpg",
     "description": "Keripik bawang olahan tradisional yang gurih, renyah, dan harum bumbu rempah pilihan.",
     "stock": 85
   },
@@ -19,7 +19,7 @@
     "price": 14000,
     "rating": 4.8,
     "soldCount": 1120,
-    "image": "/images/snack - Keripik Getuk.jpg",
+    "image": "https://i.ibb.co.com/60Rhccp2/snack-Keripik-Getuk.jpg",
     "description": "Keripik getuk olahan singkong khas yang dipotong garing dengan cita rasa asin gurih nagih.",
     "stock": 70
   },
@@ -31,7 +31,7 @@
     "price": 18000,
     "rating": 4.9,
     "soldCount": 2300,
-    "image": "/images/snack - Keripik Kentang.jpg",
+    "image": "https://i.ibb.co.com/M5C9GDV9/snack-Keripik-Kentang.jpg",
     "description": "Keripik kentang asli irisan tipis renyah dengan taburan garam laut alami.",
     "stock": 90
   },
@@ -43,7 +43,7 @@
     "price": 16000,
     "rating": 4.7,
     "soldCount": 980,
-    "image": "/images/snack - Keripik Stik Keju.jpg",
+    "image": "https://i.ibb.co.com/8gSDBbKf/snack-Keripik-TES-keju.jpg",
     "description": "Stik keripik renyah bersalut bumbu keju gurih melimpah yang pas untuk cemilan santai.",
     "stock": 60
   },
@@ -55,7 +55,7 @@
     "price": 15000,
     "rating": 4.8,
     "soldCount": 1250,
-    "image": "/images/snack - Keripik Tahu.jpg",
+    "image": "https://i.ibb.co.com/7dMspG60/snack-Keripik-Tahu.jpg",
     "description": "Olahan tahu pilihan dipotong tipis dan digoreng crispy hingga garing gurih.",
     "stock": 75
   },
@@ -67,7 +67,7 @@
     "price": 20000,
     "rating": 4.9,
     "soldCount": 1890,
-    "image": "/images/snack - Keripik Tempe.jpg",
+    "image": "https://i.ibb.co.com/0RhQfLL6/snack-Keripik-Tempe.jpg",
     "description": "Keripik tempe olahan tepung sagu renyah beraroma ketumbar dan gurih alami.",
     "stock": 100
   },
@@ -79,7 +79,7 @@
     "price": 14000,
     "rating": 4.7,
     "soldCount": 870,
-    "image": "/images/snack - Kerupuk Bantal Ebi.jpg",
+    "image": "https://i.ibb.co.com/k2KG5TP5/snack-Kerupuk-Bantal-Ebi.jpg",
     "description": "Kerupuk bantal mekar garing dengan sensasi rasa ebi udang kering yang gurih dan lezat.",
     "stock": 50
   },
@@ -91,7 +91,7 @@
     "price": 13000,
     "rating": 4.8,
     "soldCount": 1050,
-    "image": "/images/snack - Kerupuk Opak.jpg",
+    "image": "https://i.ibb.co.com/dJ5QbTGk/snack-Kerupuk-Opak.jpg",
     "description": "Opak singkong tradisional berbentuk lingkar garing renyah dipadukan bumbu gurih nikmat.",
     "stock": 65
   },
@@ -103,7 +103,7 @@
     "price": 15000,
     "rating": 4.9,
     "soldCount": 2750,
-    "image": "/images/snack - Kerupuk Seblak.jpg",
+    "image": "https://i.ibb.co.com/MxGWNXRw/snack-Kerupuk-Seblak.jpg",
     "description": "Kerupuk seblak bantat bumbu cabai kencur super pedas dengan aroma daun jeruk segar.",
     "stock": 120
   },
@@ -115,7 +115,7 @@
     "price": 25000,
     "rating": 4.8,
     "soldCount": 1640,
-    "image": "/images/snack - Kue Kering.jpg",
+    "image": "https://i.ibb.co.com/Q1wQwqv/snack-Kue-Kering.jpg",
     "description": "Cookies mentega manis wangi dengan tekstur renyah lembut di mulut cocok untuk teman teh/kopi.",
     "stock": 80
   },
@@ -127,7 +127,7 @@
     "price": 18000,
     "rating": 4.8,
     "soldCount": 1920,
-    "image": "/images/snack - Pisang Asin.jpg",
+    "image": "https://i.ibb.co.com/SDwvPzHS/snack-Pisang-Asin.jpg",
     "description": "Keripik pisang kepok iris tipis dipadukan rasa asin gurih alami tanpa pengawet.",
     "stock": 95
   },
@@ -139,7 +139,7 @@
     "price": 18000,
     "rating": 4.9,
     "soldCount": 2100,
-    "image": "/images/snack - Pisang Manis.jpg",
+    "image": "https://i.ibb.co.com/q4mY4FK/snack-Pisang-Manis.jpg",
     "description": "Keripik pisang manis bersalut gula karamel renyah manis legit.",
     "stock": 90
   },
@@ -151,7 +151,7 @@
     "price": 20000,
     "rating": 4.7,
     "soldCount": 1340,
-    "image": "/images/snack - Roti Bagelen.jpg",
+    "image": "https://i.ibb.co.com/8nSRFfmY/snack-Roti-Bagelen.jpg",
     "description": "Roti panggang kering dengan olesan mentega dan taburan gula manis renyah pulen.",
     "stock": 60
   },
@@ -163,7 +163,7 @@
     "price": 17000,
     "rating": 4.8,
     "soldCount": 1580,
-    "image": "/images/snack - Samosa.jpg",
+    "image": "https://i.ibb.co.com/kg330x7m/snack-Samosa.jpg",
     "description": "Cemilan samosa mini segitiga kulit renyah isi abon gurih kaya rempah.",
     "stock": 70
   },
@@ -175,7 +175,7 @@
     "price": 22000,
     "rating": 4.9,
     "soldCount": 3100,
-    "image": "/images/snack - Soes Kering.jpg",
+    "image": "https://i.ibb.co.com/Cpzsdg31/snack-Soes-Kering.jpg",
     "description": "Kue sus mini renyah berisikan lumeran pasta cokelat manis melimpah di dalamnya.",
     "stock": 110
   },
@@ -187,7 +187,7 @@
     "price": 15000,
     "rating": 4.8,
     "soldCount": 2400,
-    "image": "/images/snack - Stick Balado.jpg",
+    "image": "https://i.ibb.co.com/jP6tZvNb/snack-Stick-Balado.jpg",
     "description": "Stik renyah disiram bumbu tabur balado pedas manis gurih membakar lidah.",
     "stock": 105
   },
@@ -199,7 +199,7 @@
     "price": 19000,
     "rating": 4.8,
     "soldCount": 1760,
-    "image": "/images/snack - Sumpin.jpg",
+    "image": "https://i.ibb.co.com/Kp4yS3Cr/snack-Sumpin.jpg",
     "description": "Sumpia mini gulung garing isi isian abon udang rebon gurih manis khas Nusantara.",
     "stock": 85
   },
@@ -211,7 +211,7 @@
     "price": 18000,
     "rating": 4.9,
     "soldCount": 1950,
-    "image": "/images/snack - Tempe Tepung.jpg",
+    "image": "https://i.ibb.co.com/BH1YsS8L/snack-Tempe-Tepung.jpg",
     "description": "Tempe tepung goreng garing bumbu gurih ketumbar khas cemilan keluarga.",
     "stock": 90
   },
@@ -223,7 +223,7 @@
     "price": 16000,
     "rating": 4.7,
     "soldCount": 1390,
-    "image": "/images/snack - Tortilla.jpg",
+    "image": "https://i.ibb.co.com/Rkmb5jzG/snack-Tortilla.jpg",
     "description": "Keripik jagung tortilla bentuk segitiga renyah berbalut bumbu panggang sapi BBQ.",
     "stock": 65
   },
@@ -235,7 +235,7 @@
     "price": 22000,
     "rating": 4.9,
     "soldCount": 2600,
-    "image": "/images/snack - Wafer Roll.jpg",
+    "image": "https://i.ibb.co.com/1tfCqGcZ/snack-Wafer-Roll.jpg",
     "description": "Wafer roll garing berlapis-lapis isi kelezatan krim cokelat tebal nikmat.",
     "stock": 100
   }

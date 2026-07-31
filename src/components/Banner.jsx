@@ -11,7 +11,7 @@ const banners = [
     cta: 'Belanja Sekarang',
     bgColor: 'from-orange-950 via-amber-950 to-slate-900',
     accentColor: 'from-amber-400 to-orange-500',
-    image: '/images/snack - Kerupuk Seblak.jpg'
+    image: 'https://i.ibb.co.com/MxGWNXRw/snack-Kerupuk-Seblak.jpg'
   },
   {
     id: 2,
@@ -22,7 +22,7 @@ const banners = [
     cta: 'Lihat Katalog',
     bgColor: 'from-slate-950 via-slate-900 to-orange-950',
     accentColor: 'from-orange-400 to-amber-500',
-    image: '/images/snack - Keripik Tempe.jpg'
+    image: 'https://i.ibb.co.com/0RhQfLL6/snack-Keripik-Tempe.jpg'
   },
   {
     id: 3,
@@ -33,7 +33,7 @@ const banners = [
     cta: 'Pesan Sekarang',
     bgColor: 'from-slate-900 via-emerald-950 to-slate-900',
     accentColor: 'from-emerald-400 to-teal-500',
-    image: '/images/snack - Soes Kering.jpg'
+    image: 'https://i.ibb.co.com/Cpzsdg31/snack-Soes-Kering.jpg'
   }
 ];
 
