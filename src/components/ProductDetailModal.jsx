@@ -1,6 +1,6 @@
 import React from 'react';
 import { useCart } from '../context/CartContext';
-import { FiX, FiStar, FiShoppingBag, FiCheck, FiShield } from 'react-icons/fi';
+import { FiX, FiStar, FiShoppingBag, FiCheck } from 'react-icons/fi';
 
 const ProductDetailModal = ({ product, onClose }) => {
   const { addItem } = useCart();
@@ -62,10 +62,6 @@ const ProductDetailModal = ({ product, onClose }) => {
                 {product.description}
               </p>
 
-              <div className="flex items-center space-x-2 text-xs text-emerald-600 font-medium mb-6 bg-emerald-50 p-3 rounded-xl border border-emerald-100">
-                <FiShield className="text-base shrink-0" />
-                <span>Garansi Resmi Store & Stok Ready ({product.stock} unit)</span>
-              </div>
             </div>
 
             <div className="flex space-x-3">
