@@ -11,18 +11,18 @@ const banners = [
     cta: 'Belanja Sekarang',
     bgColor: 'from-orange-950 via-amber-950 to-slate-900',
     accentColor: 'from-amber-400 to-orange-500',
-    image: 'https://images.unsplash.com/photo-1599490659213-e2b9527bd087?auto=format&fit=crop&w=1000&q=80'
+    image: '/images/snack - Kerupuk Seblak.jpg'
   },
   {
     id: 2,
     badge: 'NEW ARRIVAL',
     badgeIcon: FiTag,
-    title: 'Koleksi Basreng & Keripik Viral',
-    subtitle: 'Cemilan gurih pedas renyah daun jeruk paling favorit tahun 2026.',
+    title: 'Koleksi Gurih & Keripik Renyah',
+    subtitle: 'Cemilan gurih pedas renyah beraroma khas paling favorit tahun ini.',
     cta: 'Lihat Katalog',
     bgColor: 'from-slate-950 via-slate-900 to-orange-950',
     accentColor: 'from-orange-400 to-amber-500',
-    image: 'https://images.unsplash.com/photo-1566478989037-eec170784d0b?auto=format&fit=crop&w=1000&q=80'
+    image: '/images/snack - Keripik Tempe.jpg'
   },
   {
     id: 3,
@@ -33,7 +33,7 @@ const banners = [
     cta: 'Pesan Sekarang',
     bgColor: 'from-slate-900 via-emerald-950 to-slate-900',
     accentColor: 'from-emerald-400 to-teal-500',
-    image: 'https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=1000&q=80'
+    image: '/images/snack - Soes Kering.jpg'
   }
 ];
 
