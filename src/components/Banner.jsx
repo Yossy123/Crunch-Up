@@ -64,20 +64,20 @@ const Banner = () => {
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      <div className="relative overflow-hidden rounded-3xl shadow-xl min-h-[340px] sm:min-h-[320px] md:min-h-[360px] flex items-center">
+      <div className="relative overflow-hidden rounded-3xl shadow-xl min-h-[420px] xs:min-h-[400px] sm:min-h-[360px] md:min-h-90 flex items-center">
         {banners.map((slide, index) => {
           const BadgeIcon = slide.badgeIcon;
           return (
             <div
               key={slide.id}
-              className={`absolute inset-0 transition-opacity duration-700 ease-in-out bg-gradient-to-r ${slide.bgColor} ${
+              className={`absolute inset-0 transition-opacity duration-700 ease-in-out bg-linear-to-r ${slide.bgColor} ${
                 index === currentSlide ? 'opacity-100 z-10 pointer-events-auto' : 'opacity-0 z-0 pointer-events-none'
               }`}
             >
               {/* Background Glow */}
               <div className="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full blur-3xl pointer-events-none" />
               
-              <div className="relative h-full max-w-7xl mx-auto px-5 sm:px-12 pt-6 sm:pt-8 pb-14 sm:pb-12 flex flex-col md:flex-row items-center justify-between gap-3 md:gap-6">
+              <div className="relative h-full max-w-7xl mx-auto px-4 sm:px-12 pt-5 sm:pt-8 pb-12 sm:pb-12 flex flex-col md:flex-row items-center justify-between gap-3 md:gap-6">
                 
                 {/* Text Content */}
                 <div className="flex-1 text-white z-10 max-w-xl text-center md:text-left flex flex-col items-center md:items-start justify-center">
@@ -85,27 +85,27 @@ const Banner = () => {
                     <BadgeIcon className="text-sm shrink-0" />
                     <span>{slide.badge}</span>
                   </div>
-                  <h2 className="text-xl sm:text-3xl lg:text-4xl font-black tracking-tight leading-snug sm:leading-tight mb-2 sm:mb-3">
+                  <h2 className="text-xl sm:text-3xl lg:text-4xl font-black tracking-tight leading-snug sm:leading-tight mb-1.5 sm:mb-3">
                     {slide.title}
                   </h2>
-                  <p className="text-slate-300 text-xs sm:text-sm leading-relaxed mb-3 sm:mb-4 line-clamp-2 max-w-md">
+                  <p className="text-slate-300 text-xs sm:text-sm leading-relaxed mb-2.5 sm:mb-4 line-clamp-2 max-w-md">
                     {slide.subtitle}
                   </p>
-                  <div className="mb-4 sm:mb-1">
-                    <button className={`inline-flex items-center px-5 py-2.5 sm:px-6 sm:py-3 rounded-xl font-bold text-xs sm:text-sm text-slate-950 bg-gradient-to-r ${slide.accentColor} hover:brightness-110 shadow-lg transition-transform transform active:scale-95 cursor-pointer`}>
+                  <div className="mb-3 sm:mb-1">
+                    <button className={`inline-flex items-center px-5 py-2 sm:px-6 sm:py-3 rounded-xl font-bold text-xs sm:text-sm text-slate-950 bg-linear-to-r ${slide.accentColor} hover:brightness-110 shadow-lg transition-transform transform active:scale-95 cursor-pointer`}>
                       {slide.cta}
                     </button>
                   </div>
                 </div>
 
-                {/* Banner Image Visual */}
-                <div className="relative z-10 hidden md:block w-72 lg:w-96 h-48 lg:h-60 rounded-2xl overflow-hidden shadow-2xl border border-white/10 group shrink-0">
+                {/* Banner Image Visual (Visible on Mobile & Desktop) */}
+                <div className="relative z-10 w-full max-w-[240px] sm:max-w-xs md:w-72 lg:w-96 h-28 sm:h-36 md:h-48 lg:h-60 rounded-2xl overflow-hidden shadow-2xl border border-white/10 group shrink-0">
                   <img
                     src={slide.image}
                     alt={slide.title}
                     className="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-110"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 to-transparent" />
+                  <div className="absolute inset-0 bg-linear-to-t from-slate-950/60 to-transparent" />
                 </div>
 
               </div>

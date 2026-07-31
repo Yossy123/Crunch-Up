@@ -151,7 +151,7 @@ ${itemsList}
               placeholder="Contoh: Budi Santoso"
               value={formData.nama}
               onChange={handleInputChange}
-              className="w-full px-4 py-2.5 text-sm bg-slate-50 border border-slate-200 rounded-xl focus:bg-white focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/10 outline-none transition-all"
+              className="w-full px-4 py-2.5 text-sm bg-slate-50 border border-slate-200 rounded-xl focus:ring-4 focus:ring-emerald-500/10 outline-none transition-all"
             />
           </div>
 
@@ -168,7 +168,7 @@ ${itemsList}
               placeholder="Contoh: 081234567890"
               value={formData.noHp}
               onChange={handleInputChange}
-              className="w-full px-4 py-2.5 text-sm bg-slate-50 border border-slate-200 rounded-xl focus:bg-white focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/10 outline-none transition-all"
+              className="w-full px-4 py-2.5 text-sm bg-slate-50 border border-slate-200 rounded-xl focus:ring-4 focus:ring-emerald-500/10 outline-none transition-all"
             />
           </div>
 
@@ -185,7 +185,7 @@ ${itemsList}
               placeholder="Contoh: Jl. Merdeka No. 45, Kecamatan Gambir, Jakarta Pusat"
               value={formData.alamat}
               onChange={handleInputChange}
-              className="w-full px-4 py-2.5 text-sm bg-slate-50 border border-slate-200 rounded-xl focus:bg-white focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/10 outline-none transition-all resize-none"
+              className="w-full px-4 py-2.5 text-sm bg-slate-50 border border-slate-200 rounded-xl focus:ring-4 focus:ring-emerald-500/10 outline-none transition-all resize-none"
             />
           </div>
 
@@ -201,7 +201,7 @@ ${itemsList}
               placeholder="Contoh: Tolong bungkus extra bubble wrap / rasa pedasnya minta yang ekstra pedas ya"
               value={formData.catatan}
               onChange={handleInputChange}
-              className="w-full px-4 py-2.5 text-sm bg-slate-50 border border-slate-200 rounded-xl focus:bg-white focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/10 outline-none transition-all resize-none"
+              className="w-full px-4 py-2.5 text-sm bg-slate-50 border border-slate-200 rounded-xl focus:ring-4 focus:ring-emerald-500/10 outline-none transition-all resize-none"
             />
           </div>
 

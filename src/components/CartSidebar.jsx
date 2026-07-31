@@ -39,7 +39,7 @@ const CartSidebar = () => {
 
       {/* Main Drawer Container: Full Screen on Mobile (inset-0 w-full h-full), Sidebar on Desktop */}
       <div className="fixed inset-0 sm:inset-y-0 sm:right-0 sm:left-auto flex w-full sm:w-auto sm:max-w-full sm:pl-10 z-10">
-        <div className="w-full sm:w-[420px] h-full bg-white shadow-2xl flex flex-col justify-between transform transition-transform duration-300 ease-in-out">
+        <div className="w-full sm:w-105 h-full bg-white shadow-2xl flex flex-col justify-between transform transition-transform duration-300 ease-in-out">
           
           {/* Header */}
           <div className="px-4 sm:px-6 py-4 border-b border-slate-100 flex items-center justify-between bg-slate-50/50 shrink-0">

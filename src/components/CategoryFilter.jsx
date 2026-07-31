@@ -80,7 +80,7 @@ const CategoryFilter = ({
           
           {/* Dropdown 1: Kategori Snack */}
           <div className="relative w-full min-w-0 max-w-full">
-            <label className="block text-[11px] font-bold text-slate-500 uppercase tracking-wider mb-1 flex items-center gap-1">
+            <label className="flex items-center gap-1 text-[11px] font-bold text-slate-500 uppercase tracking-wider mb-1">
               <FiGrid className="text-orange-500" /> Kategori
             </label>
             <select
@@ -104,7 +104,7 @@ const CategoryFilter = ({
 
           {/* Dropdown 2: Varian Rasa */}
           <div className="relative w-full min-w-0 max-w-full">
-            <label className="block text-[11px] font-bold text-slate-500 uppercase tracking-wider mb-1 flex items-center gap-1">
+            <label className="flex items-center gap-1 text-[11px] font-bold text-slate-500 uppercase tracking-wider mb-1">
               <FiSmile className="text-orange-500" /> Varian Rasa
             </label>
             <select
@@ -128,7 +128,7 @@ const CategoryFilter = ({
 
           {/* Dropdown 3: Urutkan (Sort By) */}
           <div className="relative w-full min-w-0 max-w-full">
-            <label className="block text-[11px] font-bold text-slate-500 uppercase tracking-wider mb-1 flex items-center gap-1">
+            <label className="flex items-center gap-1 text-[11px] font-bold text-slate-500 uppercase tracking-wider mb-1">
               <FiSliders className="text-orange-500" /> Urutkan
             </label>
             <select

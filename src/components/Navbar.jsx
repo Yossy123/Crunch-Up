@@ -49,15 +49,15 @@ const Navbar = ({ searchQuery, setSearchQuery }) => {
             </div>
           </div>
 
-          {/* Cart Button with Explicit "Keranjang" Label */}
+          {/* Cart Button with Icon & Count Badge */}
           <div className="flex items-center shrink-0">
             <button
               onClick={() => setIsCartOpen(true)}
-              className="relative inline-flex items-center space-x-2 px-3.5 py-2.5 sm:px-4.5 sm:py-2.5 bg-linear-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white font-extrabold text-xs sm:text-sm rounded-2xl transition-all duration-200 shadow-md shadow-orange-500/25 active:scale-95 cursor-pointer group"
+              className="relative inline-flex items-center space-x-1.5 sm:space-x-2 px-3 py-2 sm:px-4 sm:py-2.5 bg-linear-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white font-extrabold text-xs sm:text-sm rounded-2xl transition-all duration-200 shadow-md shadow-orange-500/25 active:scale-95 cursor-pointer group"
               aria-label="Keranjang Belanja"
             >
               <FiShoppingBag className="text-lg sm:text-xl transition-transform group-hover:scale-110 shrink-0" />
-              <span className="font-extrabold tracking-tight">Keranjang</span>
+              <span className="hidden sm:inline font-extrabold tracking-tight">Keranjang</span>
               
               {/* Item Count Badge */}
               <span className="px-2 py-0.5 text-xs bg-white text-orange-600 font-black rounded-full shadow-2xs shrink-0">

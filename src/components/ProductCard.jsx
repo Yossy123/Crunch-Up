@@ -25,8 +25,8 @@ const ProductCard = ({ product, onQuickView }) => {
         />
         
         {/* Dark Gradient Overlays for High Badge Legibility */}
-        <div className="absolute inset-x-0 top-0 h-14 bg-gradient-to-b from-slate-950/60 to-transparent pointer-events-none z-10" />
-        <div className="absolute inset-x-0 bottom-0 h-14 bg-gradient-to-t from-slate-950/50 to-transparent pointer-events-none z-10" />
+        <div className="absolute inset-x-0 top-0 h-14 bg-linear-to-b from-slate-950/60 to-transparent pointer-events-none z-10" />
+        <div className="absolute inset-x-0 bottom-0 h-14 bg-linear-to-t from-slate-950/50 to-transparent pointer-events-none z-10" />
 
         {/* Badges Container (Flex Horizontal Wrap, Top-Left) */}
         <div className="absolute top-2 left-2 right-2 z-20 flex flex-wrap gap-1 items-start pointer-events-none">
