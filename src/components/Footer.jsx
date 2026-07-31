@@ -1,4 +1,5 @@
 import React from 'react';
+import productsData from '../data/products.json';
 import { 
   FiShoppingBag, 
   FiPhone, 
@@ -10,6 +11,9 @@ import {
   FiCheckCircle,
   FiMessageSquare
 } from 'react-icons/fi';
+
+const categories = Array.from(new Set(productsData.map(p => p.category).filter(Boolean)));
+
 
 const Footer = ({ onSelectCategory }) => {
   const scrollToTop = () => {
@@ -102,7 +106,7 @@ const Footer = ({ onSelectCategory }) => {
               <span className="absolute -bottom-1 left-0 w-8 h-0.5 bg-orange-500 rounded-full" />
             </h3>
             <ul className="space-y-2.5 text-xs sm:text-sm">
-              {['Snack Pedas', 'Keripik & Macaroni', 'Camilan Gurih'].map((cat) => (
+              {categories.map((cat) => (
                 <li key={cat}>
                   <button 
                     onClick={() => handleCategoryClick(cat)}
@@ -131,7 +135,14 @@ const Footer = ({ onSelectCategory }) => {
               </li>
               <li className="flex items-center space-x-3">
                 <FiPhone className="text-orange-400 text-base shrink-0" />
-                <span className="text-slate-400">+62 812-3456-7890</span>
+                <a 
+                  href={`https://wa.me/${import.meta.env.VITE_WA_PHONE || '6285174103353'}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-slate-400 hover:text-orange-400 transition-colors"
+                >
+                  +{import.meta.env.VITE_WA_PHONE || '6285174103353'}
+                </a>
               </li>
 
               <li className="flex items-center space-x-3">

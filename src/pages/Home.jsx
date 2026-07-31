@@ -5,9 +5,9 @@ import Navbar from '../components/Navbar';
 import Banner from '../components/Banner';
 import CategoryFilter from '../components/CategoryFilter';
 import ProductGrid from '../components/ProductGrid';
-import ProductDetailModal from '../components/ProductDetailModal';
 import Footer from '../components/Footer';
 import { useCart } from '../context/CartContext';
+import { formatRupiah } from '../utils/format';
 import { FiShoppingBag } from 'react-icons/fi';
 
 const Home = () => {
@@ -16,17 +16,8 @@ const Home = () => {
   const [selectedCategory, setSelectedCategory] = useState('Semua Kategori');
   const [selectedFlavor, setSelectedFlavor] = useState('Semua Rasa');
   const [sortBy, setSortBy] = useState('popular');
-  const [quickViewProduct, setQuickViewProduct] = useState(null);
 
   const { totalItem, totalHarga, setIsCartOpen } = useCart();
-
-  const formatRupiah = (price) => {
-    return new Intl.NumberFormat('id-ID', {
-      style: 'currency',
-      currency: 'IDR',
-      maximumFractionDigits: 0
-    }).format(price);
-  };
 
   const resetFilters = () => {
     setSearchQuery('');
@@ -42,32 +33,35 @@ const Home = () => {
         <Navbar 
           searchQuery={searchQuery} 
           setSearchQuery={setSearchQuery} 
+          onResetFilters={resetFilters}
         />
 
         {/* Promo Hero Banner */}
         <Banner />
 
-        {/* Snack Filter Section */}
-        <CategoryFilter 
-          selectedCategory={selectedCategory} 
-          setSelectedCategory={setSelectedCategory} 
-          selectedFlavor={selectedFlavor}
-          setSelectedFlavor={setSelectedFlavor}
-          sortBy={sortBy}
-          setSortBy={setSortBy}
-          resetFilters={resetFilters}
-        />
+        <div id="katalog">
+          {/* Snack Filter Section */}
+          <CategoryFilter 
+            selectedCategory={selectedCategory} 
+            setSelectedCategory={setSelectedCategory} 
+            selectedFlavor={selectedFlavor}
+            setSelectedFlavor={setSelectedFlavor}
+            sortBy={sortBy}
+            setSortBy={setSortBy}
+            resetFilters={resetFilters}
+          />
 
-        {/* Responsive Product Catalog Grid */}
-        <ProductGrid 
-          products={productsData} 
-          searchQuery={searchQuery} 
-          selectedCategory={selectedCategory} 
-          selectedFlavor={selectedFlavor}
-          sortBy={sortBy}
-          onQuickView={(product) => navigate(`/product/${product.id}`)}
-          resetFilters={resetFilters}
-        />
+          {/* Responsive Product Catalog Grid */}
+          <ProductGrid 
+            products={productsData} 
+            searchQuery={searchQuery} 
+            selectedCategory={selectedCategory} 
+            selectedFlavor={selectedFlavor}
+            sortBy={sortBy}
+            onQuickView={(product) => navigate(`/product/${product.id}`)}
+            resetFilters={resetFilters}
+          />
+        </div>
       </main>
 
       {/* Modern Footer */}
@@ -95,14 +89,6 @@ const Home = () => {
             </div>
           </button>
         </div>
-      )}
-
-      {/* Quick View Modal */}
-      {quickViewProduct && (
-        <ProductDetailModal 
-          product={quickViewProduct} 
-          onClose={() => setQuickViewProduct(null)} 
-        />
       )}
 
     </div>

@@ -4,10 +4,10 @@ import { FiChevronLeft, FiChevronRight, FiTag, FiZap, FiStar } from 'react-icons
 const banners = [
   {
     id: 1,
-    badge: 'FLASH SALE 50%',
+    badge: 'PRODUK TERLARIS',
     badgeIcon: FiZap,
-    title: 'Diskon Spesial Cemilan Favorit',
-    subtitle: 'Dapatkan penawaran promo terbaik untuk snack impianmu minggu ini!',
+    title: 'Koleksi Cemilan Pilihan Terfavorit',
+    subtitle: 'Nikmati aneka keripik dan cemilan lezat berkualitas tinggi untuk menemani harimu!',
     cta: 'Belanja Sekarang',
     bgColor: 'from-orange-950 via-amber-950 to-slate-900',
     accentColor: 'from-amber-400 to-orange-500',
@@ -40,6 +40,14 @@ const banners = [
 const Banner = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
+
+  const handleCtaClick = () => {
+    const catalogElement = document.getElementById('katalog') || document.querySelector('section');
+    if (catalogElement) {
+      catalogElement.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
 
   useEffect(() => {
     if (isHovered) return;
@@ -92,7 +100,10 @@ const Banner = () => {
                     {slide.subtitle}
                   </p>
                   <div className="mb-3 sm:mb-1">
-                    <button className={`inline-flex items-center px-5 py-2 sm:px-6 sm:py-3 rounded-xl font-bold text-xs sm:text-sm text-slate-950 bg-linear-to-r ${slide.accentColor} hover:brightness-110 shadow-lg transition-transform transform active:scale-95 cursor-pointer`}>
+                    <button 
+                      onClick={handleCtaClick}
+                      className={`inline-flex items-center px-5 py-2 sm:px-6 sm:py-3 rounded-xl font-bold text-xs sm:text-sm text-slate-950 bg-linear-to-r ${slide.accentColor} hover:brightness-110 shadow-lg transition-transform transform active:scale-95 cursor-pointer`}
+                    >
                       {slide.cta}
                     </button>
                   </div>

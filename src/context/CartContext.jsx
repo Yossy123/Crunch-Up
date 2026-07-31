@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, useEffect } from 'react';
+import React, { createContext, useContext, useState, useEffect, useRef } from 'react';
 
 const CartContext = createContext();
 
@@ -24,6 +24,7 @@ export const CartProvider = ({ children }) => {
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [isCheckoutOpen, setIsCheckoutOpen] = useState(false);
   const [toast, setToast] = useState({ show: false, message: '', type: 'success' });
+  const toastTimerRef = useRef(null);
 
   // Save cart to localStorage
   useEffect(() => {
@@ -34,25 +35,71 @@ export const CartProvider = ({ children }) => {
     }
   }, [cartItems]);
 
+  // Clean up timer on unmount
+  useEffect(() => {
+    return () => {
+      if (toastTimerRef.current) {
+        clearTimeout(toastTimerRef.current);
+      }
+    };
+  }, []);
+
   const showToastNotification = (message, type = 'success') => {
+    if (toastTimerRef.current) {
+      clearTimeout(toastTimerRef.current);
+    }
     setToast({ show: true, message, type });
-    setTimeout(() => {
+    toastTimerRef.current = setTimeout(() => {
       setToast(prev => ({ ...prev, show: false }));
     }, 3000);
   };
 
   const addItem = (product, quantity = 1) => {
+    const maxStock = product.stock ?? 999;
+
+    if (maxStock <= 0) {
+      showToastNotification(`Stok "${product.name}" telah habis!`, 'error');
+      return;
+    }
+
+    let isCapped = false;
+    let isAlreadyAtMax = false;
+
     setCartItems(prevItems => {
       const existingIndex = prevItems.findIndex(item => item.product.id === product.id);
       if (existingIndex > -1) {
+        const existingItem = prevItems[existingIndex];
+        const targetQty = existingItem.quantity + quantity;
+        const cappedQty = Math.min(maxStock, targetQty);
+
+        if (existingItem.quantity >= maxStock) {
+          isAlreadyAtMax = true;
+          return prevItems;
+        }
+
+        if (cappedQty < targetQty) {
+          isCapped = true;
+        }
+
         const updated = [...prevItems];
-        updated[existingIndex].quantity += quantity;
+        updated[existingIndex] = { ...existingItem, quantity: cappedQty };
         return updated;
       } else {
-        return [...prevItems, { product, quantity }];
+        const cappedQty = Math.min(maxStock, quantity);
+        if (cappedQty < quantity) {
+          isCapped = true;
+        }
+        return [...prevItems, { product, quantity: cappedQty }];
       }
     });
-    showToastNotification(`"${product.name}" ditambahkan ke keranjang!`);
+
+    if (isAlreadyAtMax) {
+      showToastNotification(`Stok "${product.name}" sudah mencapai batas maksimal (${maxStock})!`, 'error');
+    } else if (isCapped) {
+      showToastNotification(`Jumlah "${product.name}" disesuaikan ke batas stok (${maxStock})!`, 'info');
+    } else {
+      showToastNotification(`"${product.name}" ditambahkan ke keranjang!`, 'success');
+    }
   };
 
   const removeItem = (productId) => {
@@ -64,15 +111,32 @@ export const CartProvider = ({ children }) => {
   };
 
   const updateQty = (productId, delta) => {
+    let stockReached = false;
+    let maxStock = 999;
+    let productName = '';
+
     setCartItems(prev => {
       return prev.map(item => {
         if (item.product.id === productId) {
-          const newQty = item.quantity + delta;
-          return newQty > 0 ? { ...item, quantity: newQty } : null;
+          const itemStock = item.product.stock ?? 999;
+          const targetQty = item.quantity + delta;
+
+          if (delta > 0 && targetQty > itemStock) {
+            stockReached = true;
+            maxStock = itemStock;
+            productName = item.product.name;
+            return { ...item, quantity: itemStock };
+          }
+
+          return targetQty > 0 ? { ...item, quantity: targetQty } : null;
         }
         return item;
       }).filter(Boolean);
     });
+
+    if (stockReached) {
+      showToastNotification(`Stok "${productName}" sudah mencapai batas maksimal (${maxStock})!`, 'error');
+    }
   };
 
   const clearCart = () => {

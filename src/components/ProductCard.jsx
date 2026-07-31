@@ -1,6 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
+import { formatRupiah } from '../utils/format';
 import { FiStar, FiShoppingBag, FiEye } from 'react-icons/fi';
 
 const ProductCard = ({ product, onQuickView }) => {
@@ -15,13 +16,6 @@ const ProductCard = ({ product, onQuickView }) => {
     }
   };
 
-  const formatRupiah = (price) => {
-    return new Intl.NumberFormat('id-ID', {
-      style: 'currency',
-      currency: 'IDR',
-      maximumFractionDigits: 0
-    }).format(price);
-  };
 
   return (
     <div className="group bg-white rounded-2xl border border-slate-200/80 shadow-xs hover:shadow-xl hover:border-orange-200 transition-all duration-300 flex flex-col overflow-hidden relative">

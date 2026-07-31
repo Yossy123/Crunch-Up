@@ -1,5 +1,6 @@
 import React from 'react';
 import { useCart } from '../context/CartContext';
+import { formatRupiah } from '../utils/format';
 import CartItem from './CartItem';
 import { FiX, FiShoppingBag, FiTrash2, FiArrowRight } from 'react-icons/fi';
 
@@ -16,13 +17,6 @@ const CartSidebar = () => {
 
   if (!isCartOpen) return null;
 
-  const formatRupiah = (price) => {
-    return new Intl.NumberFormat('id-ID', {
-      style: 'currency',
-      currency: 'IDR',
-      maximumFractionDigits: 0
-    }).format(price);
-  };
 
   const handleCheckoutClick = () => {
     setIsCartOpen(false);

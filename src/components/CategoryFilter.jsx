@@ -6,25 +6,19 @@ import {
   FiSliders, 
   FiRotateCcw 
 } from 'react-icons/fi';
+import productsData from '../data/products.json';
+
 
 const categoryOptions = [
   'Semua Kategori',
-  'Keripik & Macaroni',
-  'Biskuit & Cookies',
-  'Snack Pedas',
-  'Cokelat & Permen',
-  'Kacang & Seeds'
+  ...Array.from(new Set(productsData.map(p => p.category).filter(Boolean)))
 ];
 
 const flavorOptions = [
   'Semua Rasa',
-  'Pedas Balado',
-  'Keju / Asin Gurih',
-  'Cokelat / Manis',
-  'BBQ / Savory',
-  'Matcha / Green Tea',
-  'Original'
+  ...Array.from(new Set(productsData.map(p => p.flavor).filter(Boolean)))
 ];
+
 
 const sortOptions = [
   { id: 'popular', label: 'Paling Populer' },

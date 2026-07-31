@@ -1,9 +1,16 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
 import { FiShoppingBag, FiSearch, FiX } from 'react-icons/fi';
 
-const Navbar = ({ searchQuery, setSearchQuery }) => {
+const Navbar = ({ searchQuery, setSearchQuery, onResetFilters }) => {
   const { totalItem, setIsCartOpen } = useCart();
+
+  const handleLogoClick = () => {
+    if (onResetFilters) {
+      onResetFilters();
+    }
+  };
 
   return (
     <header className="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-slate-200/80 shadow-xs transition-all">
@@ -11,8 +18,13 @@ const Navbar = ({ searchQuery, setSearchQuery }) => {
         <div className="flex items-center justify-between h-16 sm:h-20 gap-3 sm:gap-4">
           
           {/* Logo & Brand */}
-          <div className="flex items-center space-x-3 shrink-0">
-            <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-2xl bg-linear-to-tr from-orange-500 to-amber-400 flex items-center justify-center text-white shadow-md shadow-orange-500/20 transform transition-transform hover:scale-105">
+          <Link 
+            to="/" 
+            onClick={handleLogoClick}
+            className="flex items-center space-x-3 shrink-0 group cursor-pointer"
+            title="Kembali ke Beranda"
+          >
+            <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-2xl bg-linear-to-tr from-orange-500 to-amber-400 flex items-center justify-center text-white shadow-md shadow-orange-500/20 transform transition-transform group-hover:scale-105">
               <FiShoppingBag className="text-xl sm:text-2xl" />
             </div>
             <div>
@@ -23,7 +35,7 @@ const Navbar = ({ searchQuery, setSearchQuery }) => {
                 Snack Store
               </span>
             </div>
-          </div>
+          </Link>
 
           {/* Search Input Bar */}
           <div className="flex-1 max-w-lg mx-1 sm:mx-6">

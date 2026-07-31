@@ -1,18 +1,12 @@
 import React from 'react';
 import { useCart } from '../context/CartContext';
+import { formatRupiah } from '../utils/format';
 import { FiMinus, FiPlus, FiTrash2 } from 'react-icons/fi';
 
 const CartItem = ({ item }) => {
   const { updateQty, removeItem } = useCart();
   const { product, quantity } = item;
 
-  const formatRupiah = (price) => {
-    return new Intl.NumberFormat('id-ID', {
-      style: 'currency',
-      currency: 'IDR',
-      maximumFractionDigits: 0
-    }).format(price);
-  };
 
   return (
     <div className="flex items-center space-x-2.5 sm:space-x-3 p-2.5 sm:p-3 bg-slate-50 hover:bg-slate-100/70 rounded-2xl border border-slate-200/60 transition-colors">

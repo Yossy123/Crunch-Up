@@ -5,6 +5,7 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import ProductCard from '../components/ProductCard';
 import { useCart } from '../context/CartContext';
+import { formatRupiah } from '../utils/format';
 import { 
   FiArrowLeft, 
   FiStar, 
@@ -16,6 +17,7 @@ import {
   FiShare2,
   FiPackage
 } from 'react-icons/fi';
+
 
 const ProductDetailPage = () => {
   const { id } = useParams();
@@ -57,22 +59,13 @@ const ProductDetailPage = () => {
     );
   }
 
-  const formatRupiah = (price) => {
-    return new Intl.NumberFormat('id-ID', {
-      style: 'currency',
-      currency: 'IDR',
-      maximumFractionDigits: 0
-    }).format(price);
+  const handleAddToCart = () => {
+    addItem(product, quantity);
   };
 
-  const handleAddToCart = () => {
-    for (let i = 0; i < quantity; i++) {
-      addItem(product);
-    }
-  };
 
   const handleDirectWhatsApp = () => {
-    const phoneNumber = '6281234567890';
+    const phoneNumber = import.meta.env.VITE_WA_PHONE || '6285174103353';
     const text = `Halo Admin CatalogApp, saya ingin memesan:\n\n` +
       `- *${product.name}*\n` +
       `  Jumlah: ${quantity} unit\n` +
@@ -193,13 +186,18 @@ const ProductDetailPage = () => {
 
                   {/* Quantity Selector */}
                   <div className="mb-6">
-                    <h3 className="text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">Jumlah Pembelian</h3>
+                    <div className="flex items-center justify-between mb-2">
+                      <h3 className="text-xs font-bold uppercase tracking-wider text-slate-400">Jumlah Pembelian</h3>
+                      <span className="text-xs font-bold text-slate-500">
+                        Stok: <span className={product.stock > 0 ? "text-slate-800" : "text-rose-600"}>{product.stock ?? 0}</span>
+                      </span>
+                    </div>
                     <div className="flex items-center space-x-4">
                       <div className="inline-flex items-center border border-slate-200 rounded-xl bg-slate-50 p-1">
                         <button
                           onClick={() => setQuantity((prev) => Math.max(1, prev - 1))}
                           className="w-8 h-8 rounded-lg bg-white hover:bg-slate-100 text-slate-700 flex items-center justify-center transition-colors shadow-xs cursor-pointer disabled:opacity-50"
-                          disabled={quantity <= 1}
+                          disabled={quantity <= 1 || (product.stock ?? 0) <= 0}
                         >
                           <FiMinus className="text-xs" />
                         </button>
@@ -207,8 +205,9 @@ const ProductDetailPage = () => {
                           {quantity}
                         </span>
                         <button
-                          onClick={() => setQuantity((prev) => prev + 1)}
-                          className="w-8 h-8 rounded-lg bg-white hover:bg-slate-100 text-slate-700 flex items-center justify-center transition-colors shadow-xs cursor-pointer"
+                          onClick={() => setQuantity((prev) => Math.min(product.stock ?? 999, prev + 1))}
+                          className="w-8 h-8 rounded-lg bg-white hover:bg-slate-100 text-slate-700 flex items-center justify-center transition-colors shadow-xs cursor-pointer disabled:opacity-50"
+                          disabled={quantity >= (product.stock ?? 0)}
                         >
                           <FiPlus className="text-xs" />
                         </button>
@@ -226,10 +225,11 @@ const ProductDetailPage = () => {
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                     <button
                       onClick={handleAddToCart}
-                      className="py-3.5 px-5 rounded-2xl bg-linear-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white font-extrabold text-sm shadow-lg shadow-orange-500/25 transition-all transform active:scale-95 flex items-center justify-center space-x-2 cursor-pointer"
+                      disabled={(product.stock ?? 0) <= 0}
+                      className="py-3.5 px-5 rounded-2xl bg-linear-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white font-extrabold text-sm shadow-lg shadow-orange-500/25 transition-all transform active:scale-95 flex items-center justify-center space-x-2 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
                     >
                       <FiShoppingBag className="text-lg" />
-                      <span>+ Tambah Keranjang</span>
+                      <span>{(product.stock ?? 0) > 0 ? '+ Tambah Keranjang' : 'Stok Habis'}</span>
                     </button>
 
                     <button

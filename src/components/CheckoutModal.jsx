@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import { useCart } from '../context/CartContext';
+import { formatRupiah } from '../utils/format';
 import { FiX, FiUser, FiMapPin, FiPhone, FiMessageSquare, FiAlertCircle } from 'react-icons/fi';
 import { FaWhatsapp } from 'react-icons/fa6';
+
 
 const CheckoutModal = () => {
   const {
@@ -24,13 +26,6 @@ const CheckoutModal = () => {
 
   if (!isCheckoutOpen) return null;
 
-  const formatRupiah = (price) => {
-    return new Intl.NumberFormat('id-ID', {
-      style: 'currency',
-      currency: 'IDR',
-      maximumFractionDigits: 0
-    }).format(price);
-  };
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
