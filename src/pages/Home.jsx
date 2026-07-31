@@ -8,6 +8,7 @@ import ProductDetailModal from '../components/ProductDetailModal';
 import CartSidebar from '../components/CartSidebar';
 import CheckoutModal from '../components/CheckoutModal';
 import Toast from '../components/Toast';
+import Footer from '../components/Footer';
 import { useCart } from '../context/CartContext';
 import { FiShoppingBag } from 'react-icons/fi';
 
@@ -70,22 +71,8 @@ const Home = () => {
         />
       </main>
 
-      {/* Footer */}
-      <footer className="bg-slate-900 text-slate-400 border-t border-slate-800 py-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-            <div className="text-center md:text-left">
-              <h3 className="text-lg font-bold text-white mb-1">CatalogApp Store</h3>
-              <p className="text-xs text-slate-400">
-                Solusi belanja produk favoritmu cepat, aman, dan mudah langsung via WhatsApp.
-              </p>
-            </div>
-            <div className="text-xs text-slate-500 text-center md:text-right">
-              © 2026 CatalogApp. All rights reserved.
-            </div>
-          </div>
-        </div>
-      </footer>
+      {/* Modern Footer */}
+      <Footer onSelectCategory={setSelectedCategory} />
 
       {/* Floating Sticky Cart Button (Compact Pill Style) */}
       {totalItem > 0 && (
