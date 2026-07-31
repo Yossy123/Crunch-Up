@@ -102,7 +102,7 @@ const Footer = ({ onSelectCategory }) => {
               <span className="absolute -bottom-1 left-0 w-8 h-0.5 bg-orange-500 rounded-full" />
             </h3>
             <ul className="space-y-2.5 text-xs sm:text-sm">
-              {['Snack Pedas', 'Keripik & Macaroni', 'Camilan Gurih', 'Roti & Pastry', 'Minuman Segar'].map((cat) => (
+              {['Snack Pedas', 'Keripik & Macaroni', 'Camilan Gurih'].map((cat) => (
                 <li key={cat}>
                   <button 
                     onClick={() => handleCategoryClick(cat)}
