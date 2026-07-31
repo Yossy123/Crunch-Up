@@ -8,16 +8,31 @@ import ProductDetailModal from '../components/ProductDetailModal';
 import CartSidebar from '../components/CartSidebar';
 import CheckoutModal from '../components/CheckoutModal';
 import Toast from '../components/Toast';
-import { FiHeart, FiShield, FiTruck, FiHeadphones } from 'react-icons/fi';
+import { useCart } from '../context/CartContext';
+import { FiHeart, FiShield, FiTruck, FiHeadphones, FiShoppingBag } from 'react-icons/fi';
 
 const Home = () => {
   const [searchQuery, setSearchQuery] = useState('');
-  const [selectedCategory, setSelectedCategory] = useState('Semua');
+  const [selectedCategory, setSelectedCategory] = useState('Semua Kategori');
+  const [selectedFlavor, setSelectedFlavor] = useState('Semua Rasa');
+  const [sortBy, setSortBy] = useState('popular');
   const [quickViewProduct, setQuickViewProduct] = useState(null);
+
+  const { totalItem, totalPrice, setIsCartOpen } = useCart();
+
+  const formatRupiah = (price) => {
+    return new Intl.NumberFormat('id-ID', {
+      style: 'currency',
+      currency: 'IDR',
+      maximumFractionDigits: 0
+    }).format(price);
+  };
 
   const resetFilters = () => {
     setSearchQuery('');
-    setSelectedCategory('Semua');
+    setSelectedCategory('Semua Kategori');
+    setSelectedFlavor('Semua Rasa');
+    setSortBy('popular');
   };
 
   return (
@@ -32,10 +47,15 @@ const Home = () => {
         {/* Promo Hero Banner */}
         <Banner />
 
-        {/* Category Horizontal Filter Chips */}
+        {/* Snack Filter Section */}
         <CategoryFilter 
           selectedCategory={selectedCategory} 
           setSelectedCategory={setSelectedCategory} 
+          selectedFlavor={selectedFlavor}
+          setSelectedFlavor={setSelectedFlavor}
+          sortBy={sortBy}
+          setSortBy={setSortBy}
+          resetFilters={resetFilters}
         />
 
         {/* Responsive Product Catalog Grid */}
@@ -43,6 +63,8 @@ const Home = () => {
           products={productsData} 
           searchQuery={searchQuery} 
           selectedCategory={selectedCategory} 
+          selectedFlavor={selectedFlavor}
+          sortBy={sortBy}
           onQuickView={(product) => setQuickViewProduct(product)}
           resetFilters={resetFilters}
         />
@@ -109,6 +131,30 @@ const Home = () => {
           </div>
         </div>
       </footer>
+
+      {/* Floating Sticky Cart Button */}
+      <div className="fixed bottom-6 right-6 z-30">
+        <button
+          onClick={() => setIsCartOpen(true)}
+          className="flex items-center space-x-3 px-5 py-3.5 bg-slate-900 hover:bg-slate-800 text-white rounded-full shadow-2xl hover:shadow-orange-500/25 border border-slate-700/80 cursor-pointer transition-all duration-200 active:scale-95 group"
+          aria-label="Buka Keranjang Belanja"
+        >
+          <div className="relative">
+            <FiShoppingBag className="text-xl text-orange-400 group-hover:scale-110 transition-transform" />
+            {totalItem > 0 && (
+              <span className="absolute -top-2 -right-2 bg-orange-500 text-white text-[10px] font-black w-4 h-4 rounded-full flex items-center justify-center shadow-xs">
+                {totalItem > 99 ? '99+' : totalItem}
+              </span>
+            )}
+          </div>
+          <div className="text-left">
+            <span className="block text-xs font-extrabold text-white leading-none mb-0.5">Keranjang Belanja</span>
+            <span className="block text-[10px] text-orange-400 font-semibold leading-none">
+              {totalItem} item {totalPrice > 0 && `• ${formatRupiah(totalPrice)}`}
+            </span>
+          </div>
+        </button>
+      </div>
 
       {/* Quick View Modal */}
       {quickViewProduct && (
