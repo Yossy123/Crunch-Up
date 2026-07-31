@@ -1,74 +1,104 @@
-# CatalogApp - Toko Snack Online & Checkout WhatsApp
+<div align="center">
 
-CatalogApp adalah aplikasi e-commerce toko snack ringan modern berbahasa Indonesia yang dibangun menggunakan **React 19**, **Vite 8**, **Tailwind CSS v4**, dan **React Router 7**. Aplikasi ini memungkinkan pengguna menjelajahi katalog produk snack, memfilter berdasarkan kategori dan rasa, mencari produk, mengelola keranjang belanja dengan validasi stok real-time, serta melakukan checkout pesanan langsung via WhatsApp.
+# 🍿 CatalogApp — Snack Store & Direct WhatsApp Order
 
----
+<p align="center">
+  <b>Aplikasi Katalog E-Commerce Snack Ringan Modern & Super Fast dengan Checkout WhatsApp Direct</b>
+</p>
 
-## 🚀 Fitur Utama
+[![React 19](https://img.shields.io/badge/React-19.0.0-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://react.dev/)
+[![Vite 8](https://img.shields.io/badge/Vite-8.1.5-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vitejs.dev/)
+[![Tailwind CSS v4](https://img.shields.io/badge/Tailwind_CSS-v4.0.0-38BDF8?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
+[![React Router 7](https://img.shields.io/badge/React_Router-v7.1.5-CA4245?style=for-the-badge&logo=react-router&logoColor=white)](https://reactrouter.com/)
+[![Vercel Ready](https://img.shields.io/badge/Deployment-Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://vercel.com/)
 
-- **Katalog Produk Interaktif**: Menampilkan 20 produk unggulan dari 4 kategori favorit (`Biskuit & Cookies`, `Cokelat & Permen`, `Keripik & Macaroni`, `Snack Pedas`) dengan filter kategori, varian rasa, serta pencarian kata kunci secara cepat.
-- **Urutkan Produk**: Pengurutan berdasarkan popularitas, harga (terendah/tertinggi), dan rating.
-- **Manajemen Keranjang Belanja**:
-  - Tambah item, ubah kuantitas, dan hapus item dari keranjang.
-  - Sticky floating cart button untuk akses cepat.
-  - Simpan status keranjang belanja secara otomatis di `localStorage`.
-- **Validasi Stok Real-Time**: Pembatasan kuantitas pembelian sesuai ketersediaan stok produk pada stepper kuantitas dan context keranjang.
-- **Checkout via WhatsApp**: Pengiriman ringkasan pesanan otomatis lengkap dengan nama, nomor HP, alamat pengiriman, dan catatan penjual langsung ke WhatsApp merchant.
-- **Desain Responsif & Modern**: Didesain dengan antarmuka yang intuitif dan nyaman digunakan di berbagai perangkat (Mobile & Desktop).
+</div>
 
 ---
 
-## 🛠️ Teknologi & Stack
+## 📌 Tentang Project
 
-- **Frontend**: React 19, React Router 7
-- **Build Tool**: Vite 8
-- **Styling**: Tailwind CSS v4
-- **Icons**: React Icons (`react-icons`)
-- **Linter**: Oxlint
+**CatalogApp** adalah aplikasi e-commerce toko cemilan / snack ringan modern berbahasa Indonesia yang dirancang cepat, responsif, dan ramah pengguna di perangkat mobile maupun desktop. 
+
+Aplikasi ini menggunakan teknologi web terkini seperti **React 19**, **Vite 8**, dan **Tailwind CSS v4**. Pengunjung dapat menjelajahi katalog snack, menyaring produk berdasarkan kategori dan varian rasa, mengelola keranjang belanja interaktif dengan penyimpan otomatis (`localStorage`), serta melakukan pemesanan langsung (*direct checkout*) yang terintegrasi dengan **WhatsApp API**.
 
 ---
 
-## 📦 Konfigurasi Environment (`.env`)
+## ✨ Fitur Utama
 
-Buat file `.env` di root direktori project (atau salin dari `.env.example`):
+- 🎨 **Desain Modern & UI/UX Premium**: Antarmuka bersih, responsif, hemat energi di perangkat seluler dengan optimasi GPU 60 FPS.
+- ⚡ **Images Cloud Hosted (ImgBB CDN)**: Seluruh aset gambar hosted secara eksternal via ImgBB CDN dengan *Native HTML Lazy Loading* (`loading="lazy"` & `decoding="async"`) untuk performa super cepat.
+- 🔀 **Code-Splitting & Route Lazy Loading**: Menggunakan `React.lazy()` & `Suspense` untuk pemuatan bundle awal yang super cepat.
+- 🔍 **Filter & Pencarian Pintar**:
+  - Filter berdasarkan Kategori (`Biskuit & Cookies`, `Cokelat & Permen`, `Keripik & Macaroni`, `Snack Pedas`).
+  - Filter berdasarkan Varian Rasa (`Original`, `Pedas Balado`, `Keju / Asin Gurih`, `Cokelat / Manis`, `BBQ / Savory`).
+  - Pencarian kata kunci real-time dengan logika ter-memoization (`useMemo`).
+  - Pengurutan (*Sorting*) berdasarkan Popularitas, Harga (Terendah/Tertinggi), dan Rating.
+- 🛒 **Manajemen Keranjang Belanja**:
+  - Tambah item, ubah jumlah kuantitas, dan hapus item dari keranjang.
+  - Floating Cart Pill Button yang fleksibel.
+  - Penyimpanan state keranjang otomatis di `localStorage`.
+- 📦 **Validasi Stok Real-Time**: Pembatasan kuantitas pembelian secara dinamis sesuai ketersediaan stok produk.
+- 💬 **Direct WhatsApp Checkout**: Mengirimkan draf format pesanan rapi berisi detail produk, jumlah unit, dan kalkulasi subtotal langsung ke WhatsApp Admin.
+
+---
+
+## 🛠️ Teknologi & Tools
+
+| Kategori | Teknologi / Library |
+|---|---|
+| **Core Framework** | React 19 |
+| **Build Tool** | Vite 8 |
+| **Routing** | React Router 7 |
+| **Styling** | Tailwind CSS v4 |
+| **Icons** | React Icons (`react-icons/fi`) |
+| **Asset Hosting** | ImgBB CDN (High-speed Cloud Storage) |
+| **Deployment** | Vercel |
+
+---
+
+## ⚙️ Konfigurasi Environment (`.env`)
+
+Untuk mengkonfigurasi nomor WhatsApp penerima pesanan, buat file `.env` di root proyek (atau salin dari `.env.example`):
 
 ```env
-VITE_WA_PHONE=6285174103353
+VITE_WA_PHONE=6281234567890
 ```
 
-- `VITE_WA_PHONE`: Nomor WhatsApp penjual/merchant (format internasional tanpa tanda `+`, contoh: `6285174103353`).
+> [!NOTE]
+> Ganti `6281234567890` dengan nomor WhatsApp bisnis / admin Anda (gunakan format internasional tanpa tanda `+` atau spasi, contoh: `6281234567890`).
 
 ---
 
-## 💻 Cara Install & Menjalankan Project
+## 🚀 Panduan Instalasi & Pengembangan Lokal
 
 ### Prasyarat
-- Node.js (`^20.19.0 || >=22.12.0`)
-- npm / yarn / pnpm
+- **Node.js**: versi `^20.19.0` atau `>=22.12.0`
+- **npm** / **pnpm** / **yarn**
 
-### Langkah Pemasangan
+### Langkah-Langkah
 
-1. **Clone repository**:
+1. **Clone Repository**:
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/Username/Catalog-app.git
    cd Catalog-app
    ```
 
-2. **Install dependensi**:
+2. **Install Dependensi**:
    ```bash
    npm install
    ```
 
-3. **Jalankan server pengembangan (Dev Mode)**:
+3. **Buat File Environment**:
+   ```bash
+   cp .env.example .env
+   ```
+
+4. **Jalankan Server Pengembang Mode Dev**:
    ```bash
    npm run dev
    ```
-   Aplikasi akan berjalan di `http://localhost:5173`.
-
-4. **Jalankan Linter**:
-   ```bash
-   npm run lint
-   ```
+   Buka [http://localhost:5173](http://localhost:5173) di browser Anda.
 
 5. **Build untuk Produksi**:
    ```bash
@@ -77,29 +107,34 @@ VITE_WA_PHONE=6285174103353
 
 ---
 
-## 📂 Struktur Folder Project
+## 📂 Struktur Direktori Proyek
 
 ```text
 Catalog-app/
 ├── public/
-│   ├── favicon.svg
-│   ├── icons.svg
-│   └── images/              # Gambar produk snack
+│   ├── favicon.svg          # Favicon aplikasi
+│   └── icons.svg            # Ikon SVG pendukung
 ├── src/
 │   ├── components/          # Komponen UI (Navbar, Banner, ProductCard, CartSidebar, Footer, dll)
 │   ├── context/             # CartContext untuk manajemen state keranjang & toast
 │   ├── data/
-│   │   └── products.json    # Data produk snack (kategori, rasa, harga, stok, gambar, dll)
+│   │   └── products.json    # Data produk snack (CDN image link, kategori, rasa, harga, stok)
 │   ├── pages/
 │   │   ├── Home.jsx         # Halaman utama katalog
-│   │   └── ProductDetailPage.jsx  # Halaman detail produk
+│   │   └── ProductDetailPage.jsx  # Halaman detail produk (Lazy Loaded)
 │   ├── utils/
 │   │   └── format.js        # Utilitas format mata uang Rupiah
-│   ├── App.jsx              # Routing & Provider utama
-│   ├── index.css            # Setup Tailwind v4 & style global
+│   ├── App.jsx              # Routing, Suspense & Provider utama
+│   ├── index.css            # Setup Tailwind CSS v4 & gaya global
 │   └── main.jsx             # Entry point React
 ├── .env.example             # Template variabel lingkungan
-├── index.html               # Entry HTML & favicon setup
+├── index.html               # Entry HTML utama
 ├── package.json             # Konfigurasi dependensi & npm scripts
-└── README.md                # Dokumentasi project
+└── README.md                # Dokumentasi proyek
 ```
+
+---
+
+<div align="center">
+  <sub>Dibuat dengan ❤️ untuk Toko Snack Indonesia • CatalogApp</sub>
+</div>
