@@ -6,9 +6,6 @@ import Banner from '../components/Banner';
 import CategoryFilter from '../components/CategoryFilter';
 import ProductGrid from '../components/ProductGrid';
 import ProductDetailModal from '../components/ProductDetailModal';
-import CartSidebar from '../components/CartSidebar';
-import CheckoutModal from '../components/CheckoutModal';
-import Toast from '../components/Toast';
 import Footer from '../components/Footer';
 import { useCart } from '../context/CartContext';
 import { FiShoppingBag } from 'react-icons/fi';
@@ -108,14 +105,6 @@ const Home = () => {
         />
       )}
 
-      {/* Cart Sidebar Drawer */}
-      <CartSidebar />
-
-      {/* Checkout WhatsApp Modal */}
-      <CheckoutModal />
-
-      {/* Toast Notification */}
-      <Toast />
     </div>
   );
 };

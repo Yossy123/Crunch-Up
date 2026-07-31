@@ -3,7 +3,6 @@ import { useParams, useNavigate, Link } from 'react-router-dom';
 import productsData from '../data/products.json';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-import CartSidebar from '../components/CartSidebar';
 import ProductCard from '../components/ProductCard';
 import { useCart } from '../context/CartContext';
 import { 
@@ -298,8 +297,6 @@ const ProductDetailPage = () => {
         </div>
       )}
 
-      {/* Cart Sidebar */}
-      <CartSidebar />
     </div>
   );
 };
