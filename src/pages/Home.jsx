@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import productsData from '../data/products.json';
 import Navbar from '../components/Navbar';
 import Banner from '../components/Banner';
@@ -13,6 +14,7 @@ import { useCart } from '../context/CartContext';
 import { FiShoppingBag } from 'react-icons/fi';
 
 const Home = () => {
+  const navigate = useNavigate();
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('Semua Kategori');
   const [selectedFlavor, setSelectedFlavor] = useState('Semua Rasa');
@@ -66,7 +68,7 @@ const Home = () => {
           selectedCategory={selectedCategory} 
           selectedFlavor={selectedFlavor}
           sortBy={sortBy}
-          onQuickView={(product) => setQuickViewProduct(product)}
+          onQuickView={(product) => navigate(`/product/${product.id}`)}
           resetFilters={resetFilters}
         />
       </main>

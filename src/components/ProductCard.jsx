@@ -1,9 +1,19 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
 import { FiStar, FiShoppingBag, FiEye } from 'react-icons/fi';
 
 const ProductCard = ({ product, onQuickView }) => {
   const { addItem } = useCart();
+  const navigate = useNavigate();
+
+  const handleProductClick = () => {
+    if (onQuickView) {
+      onQuickView(product);
+    } else {
+      navigate(`/product/${product.id}`);
+    }
+  };
 
   const formatRupiah = (price) => {
     return new Intl.NumberFormat('id-ID', {
@@ -17,7 +27,7 @@ const ProductCard = ({ product, onQuickView }) => {
     <div className="group bg-white rounded-2xl border border-slate-200/80 shadow-xs hover:shadow-xl hover:border-orange-200 transition-all duration-300 flex flex-col overflow-hidden relative">
       
       {/* Image & Badges */}
-      <div className="relative aspect-square overflow-hidden bg-slate-100 cursor-pointer" onClick={() => onQuickView(product)}>
+      <div className="relative aspect-square overflow-hidden bg-slate-100 cursor-pointer" onClick={handleProductClick}>
         <img
           src={product.image}
           alt={product.name}
@@ -48,7 +58,7 @@ const ProductCard = ({ product, onQuickView }) => {
           <button 
             onClick={(e) => {
               e.stopPropagation();
-              onQuickView(product);
+              handleProductClick();
             }}
             className="p-2.5 rounded-full bg-white/90 text-slate-800 hover:bg-white hover:scale-110 shadow-md transition-transform cursor-pointer"
             title="Lihat Detail"
@@ -71,7 +81,7 @@ const ProductCard = ({ product, onQuickView }) => {
 
           {/* Title */}
           <h3 
-            onClick={() => onQuickView(product)}
+            onClick={handleProductClick}
             className="text-xs sm:text-sm font-semibold text-slate-800 group-hover:text-orange-600 line-clamp-2 transition-colors cursor-pointer mb-2 leading-snug"
           >
             {product.name}

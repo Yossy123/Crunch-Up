@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { FiChevronLeft, FiChevronRight, FiTag, FiZap, FiTruck } from 'react-icons/fi';
+import { FiChevronLeft, FiChevronRight, FiTag, FiZap, FiStar } from 'react-icons/fi';
 
 const banners = [
   {
@@ -26,10 +26,10 @@ const banners = [
   },
   {
     id: 3,
-    badge: 'GRATIS ONGKIR EXTRA',
-    badgeIcon: FiTruck,
-    title: 'Bebas Ongkir Seluruh Indonesia',
-    subtitle: 'Tanpa minimum belanja. Pengiriman cepat & aman sampai depan rumahmu.',
+    badge: 'ORDER PRAKTIS VIA WA',
+    badgeIcon: FiStar,
+    title: 'Pesan Kapan Saja Langsung via WhatsApp',
+    subtitle: 'Proses transaksi cepat, praktis & tanpa ribet. Langsung terhubung dengan admin kami.',
     cta: 'Pesan Sekarang',
     bgColor: 'from-slate-900 via-emerald-950 to-slate-900',
     accentColor: 'from-emerald-400 to-teal-500',
