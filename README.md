@@ -66,7 +66,7 @@ VITE_WA_PHONE=NO HP BUSINESS
 ```
 
 > [!NOTE]
-> Ganti `6281234567890` dengan nomor WhatsApp bisnis / admin Anda (gunakan format internasional tanpa tanda `+` atau spasi, contoh: `6281234567890`).
+> Ganti `NO HP BUSINESS` dengan nomor WhatsApp bisnis / admin Anda (gunakan format internasional tanpa tanda `+` atau spasi, contoh: `6281234567890`).
 
 ---
 
