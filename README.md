@@ -62,7 +62,7 @@ Aplikasi ini menggunakan teknologi web terkini seperti **React 19**, **Vite 8**,
 Untuk mengkonfigurasi nomor WhatsApp penerima pesanan, buat file `.env` di root proyek (atau salin dari `.env.example`):
 
 ```env
-VITE_WA_PHONE=6281234567890
+VITE_WA_PHONE=NO HP BUSINESS
 ```
 
 > [!NOTE]
