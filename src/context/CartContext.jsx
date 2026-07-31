@@ -62,44 +62,36 @@ export const CartProvider = ({ children }) => {
       return;
     }
 
-    let isCapped = false;
-    let isAlreadyAtMax = false;
+    const existingItem = cartItems.find(item => item.product.id === product.id);
+    const existingQty = existingItem ? existingItem.quantity : 0;
+    const targetQty = existingQty + quantity;
 
-    setCartItems(prevItems => {
-      const existingIndex = prevItems.findIndex(item => item.product.id === product.id);
-      if (existingIndex > -1) {
-        const existingItem = prevItems[existingIndex];
-        const targetQty = existingItem.quantity + quantity;
-        const cappedQty = Math.min(maxStock, targetQty);
-
-        if (existingItem.quantity >= maxStock) {
-          isAlreadyAtMax = true;
-          return prevItems;
-        }
-
-        if (cappedQty < targetQty) {
-          isCapped = true;
-        }
-
-        const updated = [...prevItems];
-        updated[existingIndex] = { ...existingItem, quantity: cappedQty };
-        return updated;
-      } else {
-        const cappedQty = Math.min(maxStock, quantity);
-        if (cappedQty < quantity) {
-          isCapped = true;
-        }
-        return [...prevItems, { product, quantity: cappedQty }];
-      }
-    });
-
-    if (isAlreadyAtMax) {
+    if (existingQty >= maxStock) {
       showToastNotification(`Stok "${product.name}" sudah mencapai batas maksimal (${maxStock})!`, 'error');
-    } else if (isCapped) {
+      return;
+    }
+
+    if (targetQty > maxStock) {
       showToastNotification(`Jumlah "${product.name}" disesuaikan ke batas stok (${maxStock})!`, 'info');
     } else {
       showToastNotification(`"${product.name}" ditambahkan ke keranjang!`, 'success');
     }
+
+    setCartItems(prevItems => {
+      const existingIndex = prevItems.findIndex(item => item.product.id === product.id);
+      if (existingIndex > -1) {
+        const itemInPrev = prevItems[existingIndex];
+        const nextQty = Math.min(maxStock, itemInPrev.quantity + quantity);
+        if (nextQty === itemInPrev.quantity) return prevItems;
+
+        const updated = [...prevItems];
+        updated[existingIndex] = { ...itemInPrev, quantity: nextQty };
+        return updated;
+      } else {
+        const nextQty = Math.min(maxStock, quantity);
+        return [...prevItems, { product, quantity: nextQty }];
+      }
+    });
   };
 
   const removeItem = (productId) => {
@@ -111,32 +103,27 @@ export const CartProvider = ({ children }) => {
   };
 
   const updateQty = (productId, delta) => {
-    let stockReached = false;
-    let maxStock = 999;
-    let productName = '';
+    const existingItem = cartItems.find(item => item.product.id === productId);
+    if (!existingItem) return;
+
+    const maxStock = existingItem.product.stock ?? 999;
+    const targetQty = existingItem.quantity + delta;
+
+    if (delta > 0 && targetQty > maxStock) {
+      showToastNotification(`Stok "${existingItem.product.name}" sudah mencapai batas maksimal (${maxStock})!`, 'error');
+    }
 
     setCartItems(prev => {
       return prev.map(item => {
         if (item.product.id === productId) {
           const itemStock = item.product.stock ?? 999;
-          const targetQty = item.quantity + delta;
-
-          if (delta > 0 && targetQty > itemStock) {
-            stockReached = true;
-            maxStock = itemStock;
-            productName = item.product.name;
-            return { ...item, quantity: itemStock };
-          }
-
-          return targetQty > 0 ? { ...item, quantity: targetQty } : null;
+          const nextQty = item.quantity + delta;
+          const cappedQty = Math.min(itemStock, nextQty);
+          return cappedQty > 0 ? { ...item, quantity: cappedQty } : null;
         }
         return item;
       }).filter(Boolean);
     });
-
-    if (stockReached) {
-      showToastNotification(`Stok "${productName}" sudah mencapai batas maksimal (${maxStock})!`, 'error');
-    }
   };
 
   const clearCart = () => {

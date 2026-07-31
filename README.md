@@ -6,7 +6,7 @@ CatalogApp adalah aplikasi e-commerce toko snack ringan modern berbahasa Indones
 
 ## 🚀 Fitur Utama
 
-- **Katalog Produk Interaktif**: Menampilkan daftar produk dengan filter kategori, varian rasa, serta pencarian kata kunci secara cepat.
+- **Katalog Produk Interaktif**: Menampilkan 20 produk unggulan dari 4 kategori favorit (`Biskuit & Cookies`, `Cokelat & Permen`, `Keripik & Macaroni`, `Snack Pedas`) dengan filter kategori, varian rasa, serta pencarian kata kunci secara cepat.
 - **Urutkan Produk**: Pengurutan berdasarkan popularitas, harga (terendah/tertinggi), dan rating.
 - **Manajemen Keranjang Belanja**:
   - Tambah item, ubah kuantitas, dan hapus item dari keranjang.
@@ -43,7 +43,7 @@ VITE_WA_PHONE=6285174103353
 ## 💻 Cara Install & Menjalankan Project
 
 ### Prasyarat
-- Node.js (versi 18+)
+- Node.js (`^20.19.0 || >=22.12.0`)
 - npm / yarn / pnpm
 
 ### Langkah Pemasangan
@@ -86,7 +86,6 @@ Catalog-app/
 │   ├── icons.svg
 │   └── images/              # Gambar produk snack
 ├── src/
-│   ├── assets/              # Aset pendukung
 │   ├── components/          # Komponen UI (Navbar, Banner, ProductCard, CartSidebar, Footer, dll)
 │   ├── context/             # CartContext untuk manajemen state keranjang & toast
 │   ├── data/
