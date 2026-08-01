@@ -1,6 +1,8 @@
-import React, { useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import ProductCard from './ProductCard';
-import { FiInbox, FiRefreshCw } from 'react-icons/fi';
+import { FiInbox, FiRefreshCw, FiChevronLeft, FiChevronRight, FiChevronsLeft, FiChevronsRight } from 'react-icons/fi';
+
+const ITEMS_PER_PAGE = 10;
 
 const ProductGrid = ({ 
   products, 
@@ -11,6 +13,8 @@ const ProductGrid = ({
   onQuickView, 
   resetFilters 
 }) => {
+  const [currentPage, setCurrentPage] = useState(1);
+
   // Filter & Sort Logic (Memoized)
   const filteredProducts = useMemo(() => {
     let result = products.filter(product => {
@@ -49,10 +53,49 @@ const ProductGrid = ({
     return result;
   }, [products, searchQuery, selectedCategory, selectedFlavor, sortBy]);
 
+  // Reset page to 1 when filters or search change
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [searchQuery, selectedCategory, selectedFlavor, sortBy]);
+
+  const totalPages = Math.max(1, Math.ceil(filteredProducts.length / ITEMS_PER_PAGE));
+
+  // Current page products
+  const currentProducts = useMemo(() => {
+    const start = (currentPage - 1) * ITEMS_PER_PAGE;
+    return filteredProducts.slice(start, start + ITEMS_PER_PAGE);
+  }, [filteredProducts, currentPage]);
+
+  const handlePageChange = (newPage) => {
+    if (newPage >= 1 && newPage <= totalPages && newPage !== currentPage) {
+      setCurrentPage(newPage);
+      const catalogElement = document.getElementById('katalog');
+      if (catalogElement) {
+        catalogElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+  };
+
   const isFilteredActive = 
     (selectedCategory && selectedCategory !== 'Semua Kategori' && selectedCategory !== 'Semua') ||
     (selectedFlavor && selectedFlavor !== 'Semua Rasa' && selectedFlavor !== 'Semua') ||
     (searchQuery && searchQuery.trim() !== '');
+
+  const startItem = filteredProducts.length > 0 ? (currentPage - 1) * ITEMS_PER_PAGE + 1 : 0;
+  const endItem = Math.min(currentPage * ITEMS_PER_PAGE, filteredProducts.length);
+
+  const getPageNumbers = () => {
+    if (totalPages <= 7) {
+      return Array.from({ length: totalPages }, (_, i) => i + 1);
+    }
+    if (currentPage <= 4) {
+      return [1, 2, 3, 4, 5, '...', totalPages];
+    }
+    if (currentPage >= totalPages - 3) {
+      return [1, '...', totalPages - 4, totalPages - 3, totalPages - 2, totalPages - 1, totalPages];
+    }
+    return [1, '...', currentPage - 1, currentPage, currentPage + 1, '...', totalPages];
+  };
 
   return (
     <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 my-8">
@@ -63,7 +106,13 @@ const ProductGrid = ({
             Katalog Snack Terbaru
           </h2>
           <p className="text-xs sm:text-sm text-slate-500 mt-1">
-            Menampilkan <span className="font-bold text-orange-600">{filteredProducts.length}</span> cemilan lezat
+            {filteredProducts.length > 0 ? (
+              <>
+                Menampilkan <span className="font-bold text-orange-600">{startItem}-{endItem}</span> dari <span className="font-bold text-orange-600">{filteredProducts.length}</span> cemilan lezat (Halaman {currentPage} dari {totalPages})
+              </>
+            ) : (
+              'Tidak ada cemilan ditemukan'
+            )}
           </p>
         </div>
 
@@ -79,16 +128,92 @@ const ProductGrid = ({
       </div>
 
       {/* Grid or Empty State */}
-      {filteredProducts.length > 0 ? (
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 sm:gap-6">
-          {filteredProducts.map(product => (
-            <ProductCard 
-              key={product.id} 
-              product={product} 
-              onQuickView={onQuickView} 
-            />
-          ))}
-        </div>
+      {currentProducts.length > 0 ? (
+        <>
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 sm:gap-6">
+            {currentProducts.map(product => (
+              <ProductCard 
+                key={product.id} 
+                product={product} 
+                onQuickView={onQuickView} 
+              />
+            ))}
+          </div>
+
+          {/* Pagination Controls */}
+          {filteredProducts.length > 0 && (
+            <div className="mt-10 flex flex-col sm:flex-row items-center justify-between gap-4 pt-6 border-t border-slate-200/80">
+              <span className="text-xs text-slate-500 font-medium">
+                Halaman <strong className="text-slate-800">{currentPage}</strong> dari <strong className="text-slate-800">{totalPages}</strong> (Total {filteredProducts.length} produk)
+              </span>
+
+              <div className="flex items-center space-x-1 sm:space-x-1.5">
+                {/* First Page */}
+                <button
+                  onClick={() => handlePageChange(1)}
+                  disabled={currentPage === 1}
+                  className="p-2.5 rounded-xl border border-slate-200 text-slate-600 hover:bg-orange-50 hover:border-orange-200 hover:text-orange-600 disabled:opacity-40 disabled:hover:bg-transparent disabled:hover:border-slate-200 disabled:hover:text-slate-600 transition-colors cursor-pointer disabled:cursor-not-allowed"
+                  title="Halaman Pertama"
+                  aria-label="Halaman Pertama"
+                >
+                  <FiChevronsLeft className="text-base" />
+                </button>
+
+                {/* Previous Page */}
+                <button
+                  onClick={() => handlePageChange(currentPage - 1)}
+                  disabled={currentPage === 1}
+                  className="p-2.5 rounded-xl border border-slate-200 text-slate-600 hover:bg-orange-50 hover:border-orange-200 hover:text-orange-600 disabled:opacity-40 disabled:hover:bg-transparent disabled:hover:border-slate-200 disabled:hover:text-slate-600 transition-colors cursor-pointer disabled:cursor-not-allowed"
+                  title="Halaman Sebelumnya"
+                  aria-label="Halaman Sebelumnya"
+                >
+                  <FiChevronLeft className="text-base" />
+                </button>
+
+                {/* Numbered Page Buttons */}
+                {getPageNumbers().map((num, idx) => (
+                  num === '...' ? (
+                    <span key={`ellipsis-${idx}`} className="px-2 py-1 text-slate-400 text-xs font-bold">...</span>
+                  ) : (
+                    <button
+                      key={`page-${num}`}
+                      onClick={() => handlePageChange(num)}
+                      className={`w-9 h-9 sm:w-10 sm:h-10 rounded-xl text-xs sm:text-sm font-bold transition-all cursor-pointer ${
+                        currentPage === num
+                          ? 'bg-orange-500 text-white shadow-md shadow-orange-500/30'
+                          : 'bg-white border border-slate-200 text-slate-700 hover:bg-orange-50 hover:border-orange-200 hover:text-orange-600'
+                      }`}
+                    >
+                      {num}
+                    </button>
+                  )
+                ))}
+
+                {/* Next Page */}
+                <button
+                  onClick={() => handlePageChange(currentPage + 1)}
+                  disabled={currentPage === totalPages}
+                  className="p-2.5 rounded-xl border border-slate-200 text-slate-600 hover:bg-orange-50 hover:border-orange-200 hover:text-orange-600 disabled:opacity-40 disabled:hover:bg-transparent disabled:hover:border-slate-200 disabled:hover:text-slate-600 transition-colors cursor-pointer disabled:cursor-not-allowed"
+                  title="Halaman Selanjutnya"
+                  aria-label="Halaman Selanjutnya"
+                >
+                  <FiChevronRight className="text-base" />
+                </button>
+
+                {/* Last Page */}
+                <button
+                  onClick={() => handlePageChange(totalPages)}
+                  disabled={currentPage === totalPages}
+                  className="p-2.5 rounded-xl border border-slate-200 text-slate-600 hover:bg-orange-50 hover:border-orange-200 hover:text-orange-600 disabled:opacity-40 disabled:hover:bg-transparent disabled:hover:border-slate-200 disabled:hover:text-slate-600 transition-colors cursor-pointer disabled:cursor-not-allowed"
+                  title="Halaman Terakhir"
+                  aria-label="Halaman Terakhir"
+                >
+                  <FiChevronsRight className="text-base" />
+                </button>
+              </div>
+            </div>
+          )}
+        </>
       ) : (
         <div className="bg-white rounded-3xl p-12 text-center border border-slate-200/80 shadow-xs max-w-lg mx-auto my-12">
           <div className="w-16 h-16 rounded-full bg-orange-50 text-orange-500 flex items-center justify-center mx-auto mb-4 text-2xl">
