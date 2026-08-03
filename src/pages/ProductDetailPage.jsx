@@ -21,7 +21,7 @@ import {
 const ProductDetailPage = () => {
   const { id } = useParams();
   const navigate = useNavigate();
-  const { addItem, totalItem, setIsCartOpen } = useCart();
+  const { addItem, totalItem, setIsCartOpen, setIsCheckoutOpen } = useCart();
 
   const [quantity, setQuantity] = useState(1);
   const [copied, setCopied] = useState(false);
@@ -64,14 +64,8 @@ const ProductDetailPage = () => {
 
 
   const handleDirectWhatsApp = () => {
-    const phoneNumber = import.meta.env.VITE_WA_PHONE || '6285174103353';
-    const text = `Halo Admin CatalogApp, saya ingin memesan:\n\n` +
-      `- *${product.name}*\n` +
-      `  Jumlah: ${quantity} unit\n` +
-      `  Total: ${formatRupiah(product.price * quantity)}\n\n` +
-      `Mohon diinfokan ketersediaannya. Terima kasih!`;
-    const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(text)}`;
-    window.open(url, '_blank');
+    addItem(product, quantity);
+    setIsCheckoutOpen(true);
   };
 
   const handleShare = () => {
