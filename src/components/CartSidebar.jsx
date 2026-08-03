@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useCart } from '../context/CartContext';
 import { formatRupiah } from '../utils/format';
 import CartItem from './CartItem';
@@ -15,8 +15,29 @@ const CartSidebar = () => {
     setIsCheckoutOpen
   } = useCart();
 
-  if (!isCartOpen) return null;
+  const [shouldRender, setShouldRender] = useState(false);
+  const [isClosing, setIsClosing] = useState(false);
 
+  useEffect(() => {
+    if (isCartOpen) {
+      setShouldRender(true);
+      setIsClosing(false);
+      document.body.style.overflow = 'hidden';
+    } else if (shouldRender) {
+      setIsClosing(true);
+      const timer = setTimeout(() => {
+        setShouldRender(false);
+        setIsClosing(false);
+      }, 250);
+      document.body.style.overflow = '';
+      return () => clearTimeout(timer);
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isCartOpen, shouldRender]);
+
+  if (!shouldRender) return null;
 
   const handleCheckoutClick = () => {
     setIsCartOpen(false);
@@ -27,13 +48,17 @@ const CartSidebar = () => {
     <div className="fixed inset-0 z-50 overflow-hidden">
       {/* Backdrop for Desktop */}
       <div 
-        className="absolute inset-0 bg-slate-900/60 backdrop-blur-xs transition-opacity duration-300 animate-in fade-in"
+        className={`absolute inset-0 bg-slate-900/60 backdrop-blur-xs transition-opacity duration-300 ${
+          isClosing ? 'animate-out fade-out duration-300' : 'animate-in fade-in duration-300'
+        }`}
         onClick={() => setIsCartOpen(false)}
       />
 
       {/* Main Drawer Container: Full Screen on Mobile (inset-0 w-full h-full), Sidebar on Desktop */}
       <div className="fixed inset-0 sm:inset-y-0 sm:right-0 sm:left-auto flex w-full sm:w-auto sm:max-w-full sm:pl-10 z-10">
-        <div className="w-full sm:w-105 h-full bg-white shadow-2xl flex flex-col justify-between transform transition-transform duration-300 ease-in-out">
+        <div className={`w-full sm:w-105 h-full bg-white shadow-2xl flex flex-col justify-between transform transition-transform duration-300 ease-in-out ${
+          isClosing ? 'animate-out slide-out-to-right duration-300' : 'animate-in slide-in-from-right duration-300'
+        }`}>
           
           {/* Header */}
           <div className="px-4 sm:px-6 py-4 border-b border-slate-100 flex items-center justify-between bg-slate-50/50 shrink-0">

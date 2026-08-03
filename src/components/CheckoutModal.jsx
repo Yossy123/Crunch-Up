@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useCart } from '../context/CartContext';
 import { formatRupiah } from '../utils/format';
 import { FiX, FiUser, FiMapPin, FiPhone, FiMessageSquare, FiAlertCircle } from 'react-icons/fi';
@@ -23,8 +23,29 @@ const CheckoutModal = () => {
   });
 
   const [errorMessage, setErrorMessage] = useState('');
+  const [shouldRender, setShouldRender] = useState(false);
+  const [isClosing, setIsClosing] = useState(false);
 
-  if (!isCheckoutOpen) return null;
+  useEffect(() => {
+    if (isCheckoutOpen) {
+      setShouldRender(true);
+      setIsClosing(false);
+      document.body.style.overflow = 'hidden';
+    } else if (shouldRender) {
+      setIsClosing(true);
+      const timer = setTimeout(() => {
+        setShouldRender(false);
+        setIsClosing(false);
+      }, 200);
+      document.body.style.overflow = '';
+      return () => clearTimeout(timer);
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isCheckoutOpen, shouldRender]);
+
+  if (!shouldRender) return null;
 
 
   const handleInputChange = (e) => {
@@ -76,8 +97,12 @@ ${itemsList}
   };
 
   return (
-    <div className="fixed inset-0 z-50 overflow-y-auto bg-slate-900/60 backdrop-blur-xs flex items-center justify-center p-4">
-      <div className="relative bg-white rounded-3xl max-w-lg w-full overflow-hidden shadow-2xl transition-all transform animate-in fade-in zoom-in duration-200">
+    <div className={`fixed inset-0 z-50 overflow-y-auto bg-slate-900/60 backdrop-blur-xs flex items-center justify-center p-4 transition-opacity duration-200 ${
+      isClosing ? 'animate-out fade-out duration-200' : 'animate-in fade-in duration-200'
+    }`}>
+      <div className={`relative bg-white rounded-3xl max-w-lg w-full overflow-hidden shadow-2xl transition-all transform ${
+        isClosing ? 'animate-out fade-out zoom-out duration-200' : 'animate-in fade-in zoom-in duration-200'
+      }`}>
 
         {/* Modal Header */}
         <div className="px-6 py-4 bg-linear-to-r from-emerald-600 to-teal-600 text-white flex items-center justify-between">
