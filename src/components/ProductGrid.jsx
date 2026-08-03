@@ -85,16 +85,16 @@ const ProductGrid = ({
   const endItem = Math.min(currentPage * ITEMS_PER_PAGE, filteredProducts.length);
 
   const getPageNumbers = () => {
-    if (totalPages <= 7) {
+    if (totalPages <= 5) {
       return Array.from({ length: totalPages }, (_, i) => i + 1);
     }
-    if (currentPage <= 4) {
-      return [1, 2, 3, 4, 5, '...', totalPages];
+    if (currentPage <= 3) {
+      return [1, 2, 3, '...', totalPages];
     }
-    if (currentPage >= totalPages - 3) {
-      return [1, '...', totalPages - 4, totalPages - 3, totalPages - 2, totalPages - 1, totalPages];
+    if (currentPage >= totalPages - 2) {
+      return [1, '...', totalPages - 2, totalPages - 1, totalPages];
     }
-    return [1, '...', currentPage - 1, currentPage, currentPage + 1, '...', totalPages];
+    return [1, '...', currentPage, '...', totalPages];
   };
 
   return (
@@ -142,43 +142,43 @@ const ProductGrid = ({
 
           {/* Pagination Controls */}
           {filteredProducts.length > 0 && (
-            <div className="mt-10 flex flex-col sm:flex-row items-center justify-between gap-4 pt-6 border-t border-slate-200/80">
-              <span className="text-xs text-slate-500 font-medium">
+            <div className="mt-10 flex flex-col sm:flex-row items-center justify-between gap-4 pt-6 border-t border-slate-200/80 w-full">
+              <span className="text-xs text-slate-500 font-medium text-center sm:text-left">
                 Halaman <strong className="text-slate-800">{currentPage}</strong> dari <strong className="text-slate-800">{totalPages}</strong> (Total {filteredProducts.length} produk)
               </span>
 
-              <div className="flex items-center space-x-1 sm:space-x-1.5">
-                {/* First Page */}
+              <div className="flex flex-wrap items-center justify-center gap-1 sm:gap-1.5 max-w-full">
+                {/* First Page (Hidden on Mobile) */}
                 <button
                   onClick={() => handlePageChange(1)}
                   disabled={currentPage === 1}
-                  className="p-2.5 rounded-xl border border-slate-200 text-slate-600 hover:bg-orange-50 hover:border-orange-200 hover:text-orange-600 disabled:opacity-40 disabled:hover:bg-transparent disabled:hover:border-slate-200 disabled:hover:text-slate-600 transition-colors cursor-pointer disabled:cursor-not-allowed"
+                  className="hidden sm:inline-flex p-2 sm:p-2.5 rounded-lg sm:rounded-xl border border-slate-200 text-slate-600 hover:bg-orange-50 hover:border-orange-200 hover:text-orange-600 disabled:opacity-40 disabled:hover:bg-transparent disabled:hover:border-slate-200 disabled:hover:text-slate-600 transition-colors cursor-pointer disabled:cursor-not-allowed"
                   title="Halaman Pertama"
                   aria-label="Halaman Pertama"
                 >
-                  <FiChevronsLeft className="text-base" />
+                  <FiChevronsLeft className="text-sm sm:text-base" />
                 </button>
 
                 {/* Previous Page */}
                 <button
                   onClick={() => handlePageChange(currentPage - 1)}
                   disabled={currentPage === 1}
-                  className="p-2.5 rounded-xl border border-slate-200 text-slate-600 hover:bg-orange-50 hover:border-orange-200 hover:text-orange-600 disabled:opacity-40 disabled:hover:bg-transparent disabled:hover:border-slate-200 disabled:hover:text-slate-600 transition-colors cursor-pointer disabled:cursor-not-allowed"
+                  className="p-2 sm:p-2.5 rounded-lg sm:rounded-xl border border-slate-200 text-slate-600 hover:bg-orange-50 hover:border-orange-200 hover:text-orange-600 disabled:opacity-40 disabled:hover:bg-transparent disabled:hover:border-slate-200 disabled:hover:text-slate-600 transition-colors cursor-pointer disabled:cursor-not-allowed"
                   title="Halaman Sebelumnya"
                   aria-label="Halaman Sebelumnya"
                 >
-                  <FiChevronLeft className="text-base" />
+                  <FiChevronLeft className="text-sm sm:text-base" />
                 </button>
 
                 {/* Numbered Page Buttons */}
                 {getPageNumbers().map((num, idx) => (
                   num === '...' ? (
-                    <span key={`ellipsis-${idx}`} className="px-2 py-1 text-slate-400 text-xs font-bold">...</span>
+                    <span key={`ellipsis-${idx}`} className="px-1 sm:px-2 py-1 text-slate-400 text-xs font-bold select-none">...</span>
                   ) : (
                     <button
                       key={`page-${num}`}
                       onClick={() => handlePageChange(num)}
-                      className={`w-9 h-9 sm:w-10 sm:h-10 rounded-xl text-xs sm:text-sm font-bold transition-all cursor-pointer ${
+                      className={`w-8 h-8 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl text-xs sm:text-sm font-bold transition-all cursor-pointer ${
                         currentPage === num
                           ? 'bg-orange-500 text-white shadow-md shadow-orange-500/30'
                           : 'bg-white border border-slate-200 text-slate-700 hover:bg-orange-50 hover:border-orange-200 hover:text-orange-600'
@@ -193,22 +193,22 @@ const ProductGrid = ({
                 <button
                   onClick={() => handlePageChange(currentPage + 1)}
                   disabled={currentPage === totalPages}
-                  className="p-2.5 rounded-xl border border-slate-200 text-slate-600 hover:bg-orange-50 hover:border-orange-200 hover:text-orange-600 disabled:opacity-40 disabled:hover:bg-transparent disabled:hover:border-slate-200 disabled:hover:text-slate-600 transition-colors cursor-pointer disabled:cursor-not-allowed"
+                  className="p-2 sm:p-2.5 rounded-lg sm:rounded-xl border border-slate-200 text-slate-600 hover:bg-orange-50 hover:border-orange-200 hover:text-orange-600 disabled:opacity-40 disabled:hover:bg-transparent disabled:hover:border-slate-200 disabled:hover:text-slate-600 transition-colors cursor-pointer disabled:cursor-not-allowed"
                   title="Halaman Selanjutnya"
                   aria-label="Halaman Selanjutnya"
                 >
-                  <FiChevronRight className="text-base" />
+                  <FiChevronRight className="text-sm sm:text-base" />
                 </button>
 
-                {/* Last Page */}
+                {/* Last Page (Hidden on Mobile) */}
                 <button
                   onClick={() => handlePageChange(totalPages)}
                   disabled={currentPage === totalPages}
-                  className="p-2.5 rounded-xl border border-slate-200 text-slate-600 hover:bg-orange-50 hover:border-orange-200 hover:text-orange-600 disabled:opacity-40 disabled:hover:bg-transparent disabled:hover:border-slate-200 disabled:hover:text-slate-600 transition-colors cursor-pointer disabled:cursor-not-allowed"
+                  className="hidden sm:inline-flex p-2 sm:p-2.5 rounded-lg sm:rounded-xl border border-slate-200 text-slate-600 hover:bg-orange-50 hover:border-orange-200 hover:text-orange-600 disabled:opacity-40 disabled:hover:bg-transparent disabled:hover:border-slate-200 disabled:hover:text-slate-600 transition-colors cursor-pointer disabled:cursor-not-allowed"
                   title="Halaman Terakhir"
                   aria-label="Halaman Terakhir"
                 >
-                  <FiChevronsRight className="text-base" />
+                  <FiChevronsRight className="text-sm sm:text-base" />
                 </button>
               </div>
             </div>

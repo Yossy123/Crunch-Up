@@ -28,11 +28,11 @@ const Navbar = ({ searchQuery, setSearchQuery, onResetFilters }) => {
               <FiShoppingBag className="text-xl sm:text-2xl" />
             </div>
             <div>
-              <span className="text-lg sm:text-xl font-bold bg-linear-to-r from-slate-900 via-slate-800 to-orange-600 bg-clip-text text-transparent tracking-tight">
-                CatalogApp
+              <span className="text-lg sm:text-xl font-extrabold bg-linear-to-r from-orange-600 via-amber-500 to-orange-500 bg-clip-text text-transparent tracking-tight">
+                Snackify
               </span>
-              <span className="hidden sm:block text-[11px] font-medium text-slate-400 tracking-wider uppercase">
-                Snack Store
+              <span className="hidden sm:block text-[11px] font-semibold text-slate-400 tracking-wider uppercase">
+                Snack & Cemilan Store
               </span>
             </div>
           </Link>

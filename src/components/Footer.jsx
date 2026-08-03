@@ -84,10 +84,10 @@ const Footer = ({ onSelectCategory }) => {
               </div>
               <div>
                 <span className="text-xl font-bold bg-linear-to-r from-white via-slate-200 to-orange-400 bg-clip-text text-transparent tracking-tight">
-                  CatalogApp
+                  Snackify
                 </span>
                 <span className="block text-[10px] font-semibold text-orange-400 uppercase tracking-widest">
-                  Snack Store
+                  Snack & Cemilan Store
                 </span>
               </div>
             </div>
@@ -159,7 +159,7 @@ const Footer = ({ onSelectCategory }) => {
         {/* Bottom Bar */}
         <div className="mt-12 pt-8 border-t border-slate-800/60 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs">
           <div className="text-slate-500 text-center sm:text-left">
-            © {new Date().getFullYear()} <span className="text-slate-300 font-semibold">CatalogApp Store</span>. All rights reserved.
+            © {new Date().getFullYear()} <span className="text-slate-300 font-semibold">Snackify Store</span>. All rights reserved.
           </div>
 
           <div className="flex items-center space-x-1 text-slate-500">

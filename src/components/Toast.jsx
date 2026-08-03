@@ -32,10 +32,10 @@ const Toast = () => {
   };
 
   return (
-    <div className="fixed bottom-6 right-6 z-50 transition-all duration-300 transform translate-y-0 opacity-100">
-      <div className={`flex items-center space-x-3 px-5 py-3.5 rounded-2xl shadow-xl border backdrop-blur-md ${getToastStyles()}`}>
+    <div className="fixed top-4 sm:top-6 left-4 right-4 sm:left-auto sm:right-6 sm:max-w-md z-50 transition-all duration-300 transform animate-in fade-in slide-in-from-top-4">
+      <div className={`flex items-center space-x-3 px-4.5 py-3 sm:px-5 sm:py-3.5 rounded-2xl shadow-2xl border backdrop-blur-md ${getToastStyles()}`}>
         {renderIcon()}
-        <span className="text-sm font-medium">{toast.message}</span>
+        <span className="text-xs sm:text-sm font-semibold tracking-wide leading-tight">{toast.message}</span>
       </div>
     </div>
   );
