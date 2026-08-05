@@ -1,9 +1,9 @@
 <div align="center">
 
-# 🍿 CatalogApp — Snack Store & Direct WhatsApp Order
+# 🍿 Snack Ringan — CatalogApp & WhatsApp Direct Order
 
 <p align="center">
-  <b>Aplikasi Katalog E-Commerce Snack Ringan Modern & Super Fast dengan Checkout WhatsApp Direct</b>
+  <b>Aplikasi Web Katalog E-Commerce Snack Ringan Modern, Fast & Ultra-Responsive dengan Checkout WhatsApp Direct</b>
 </p>
 
 [![React 19](https://img.shields.io/badge/React-19.0.0-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://react.dev/)
@@ -16,67 +16,79 @@
 
 ---
 
-## 📌 Tentang Project
+## 📌 Tentang Proyek
 
-**CatalogApp** adalah aplikasi e-commerce toko cemilan / snack ringan modern berbahasa Indonesia yang dirancang cepat, responsif, dan ramah pengguna di perangkat mobile maupun desktop. 
+**Snack Ringan CatalogApp** adalah platform e-commerce katalog makanan ringan & cemilan khas Nusantara yang dirancang dengan performa tinggi, tampilan UI/UX yang modern, serta pengalaman berbelanja yang intuitif.
 
-Aplikasi ini menggunakan teknologi web terkini seperti **React 19**, **Vite 8**, dan **Tailwind CSS v4**. Pengunjung dapat menjelajahi katalog snack, menyaring produk berdasarkan kategori dan varian rasa, mengelola keranjang belanja interaktif dengan penyimpan otomatis (`localStorage`), serta melakukan pemesanan langsung (*direct checkout*) yang terintegrasi dengan **WhatsApp API**.
+Aplikasi ini memudahkan pelanggan untuk menemukan snack favorit mereka berdasarkan kategori dan varian rasa, melihat ketersediaan status secara *real-time*, serta langsung memesan melalui **WhatsApp Direct Checkout** tanpa kerumitan registrasi akun.
 
 ---
 
-## ✨ Fitur Utama
+## ✨ Fitur-Fitur Utama
 
-- 🎨 **Desain Modern & UI/UX Premium**: Antarmuka bersih, responsif, hemat energi di perangkat seluler dengan optimasi GPU 60 FPS.
-- ⚡ **Images Cloud Hosted (ImgBB CDN)**: Seluruh aset gambar hosted secara eksternal via ImgBB CDN dengan *Native HTML Lazy Loading* (`loading="lazy"` & `decoding="async"`) untuk performa super cepat.
-- 🔀 **Code-Splitting & Route Lazy Loading**: Menggunakan `React.lazy()` & `Suspense` untuk pemuatan bundle awal yang super cepat.
-- 🔍 **Filter & Pencarian Pintar**:
-  - Filter berdasarkan Kategori (`Biskuit & Cookies`, `Cokelat & Permen`, `Keripik & Macaroni`, `Snack Pedas`).
-  - Filter berdasarkan Varian Rasa (`Original`, `Pedas Balado`, `Keju / Asin Gurih`, `Cokelat / Manis`, `BBQ / Savory`).
-  - Pencarian kata kunci real-time dengan logika ter-memoization (`useMemo`).
-  - Pengurutan (*Sorting*) berdasarkan Popularitas, Harga (Terendah/Tertinggi), dan Rating.
-- 🛒 **Manajemen Keranjang Belanja**:
-  - Tambah item, ubah jumlah kuantitas, dan hapus item dari keranjang.
+- 🎨 **Desain UI/UX Modern & Premium**:
+  - Warna warm amber & orange yang membangkitkan selera.
+  - Tampilan responsif optimal untuk semua ukuran layar (Mobile, Tablet, Desktop).
+  - Animasi halus, hover effects, dan modal interaktif.
+
+- 🛍️ **Katalog Snack Lengkap & Sinkron**:
+  - Lebih dari 100+ varian snack berkualitas.
+  - Penamaan produk bersih tanpa keterangan berat yang menumpuk.
+  - Penanganan otomatis produk *Price Rp 0* dengan indikator status **`NOT AVAILABLE`** dan proteksi keranjang.
+
+- 🔍 **Filter & Pencarian Cerdas**:
+  - **Filter Kategori**: *Keripik & Macaroni*, *Kacang & Biji-bijian*, *Snack Pedas*, *Biskuit & Cookies*, *Cokelat & Permen*.
+  - **Filter Varian Rasa**: *Original*, *Pedas Balado*, *Keju / Asin Gurih*, *Cokelat / Manis*, *BBQ / Savory*.
+  - **Pencarian Real-Time**: Pencarian cepat berdasar nama, deskripsi, atau rasa produk.
+  - **Pengurutan (Sorting)**: Berdasarkan *Terpopuler*, *Harga Terendah*, *Harga Tertinggi*, dan *Rating*.
+  - **Pagination Interaktif**: Navigasi halaman yang cepat dan nyaman.
+
+- 🛒 **Keranjang Belanja & Direct WhatsApp Order**:
+  - Stateful cart dengan penyimpanan otomatis di `localStorage`.
   - Floating Cart Pill Button yang fleksibel.
-  - Penyimpanan state keranjang otomatis di `localStorage`.
-- 📦 **Validasi Stok Real-Time**: Pembatasan kuantitas pembelian secara dinamis sesuai ketersediaan stok produk.
-- 💬 **Direct WhatsApp Checkout**: Mengirimkan draf format pesanan rapi berisi detail produk, jumlah unit, dan kalkulasi subtotal langsung ke WhatsApp Admin.
+  - Validasi stok real-time saat menambah kuantitas item.
+  - Format pesan WhatsApp otomatis yang rapi dan siap kirim ke admin toko.
+
+- ⚡ **Optimasi Performa Super Cepat**:
+  - **Code-Splitting & Route Lazy Loading** via `React.lazy()` & `Suspense`.
+  - Image hosting via ImgBB CDN dengan *Native HTML Lazy Loading* (`loading="lazy"` & `decoding="async"`).
 
 ---
 
-## 🛠️ Teknologi & Tools
+## 🛠️ Teknologi & Library
 
 | Kategori | Teknologi / Library |
 |---|---|
-| **Core Framework** | React 19 |
-| **Build Tool** | Vite 8 |
-| **Routing** | React Router 7 |
-| **Styling** | Tailwind CSS v4 |
-| **Icons** | React Icons (`react-icons/fi`) |
-| **Asset Hosting** | ImgBB CDN (High-speed Cloud Storage) |
-| **Deployment** | Vercel |
+| **Core Framework** | [React 19](https://react.dev/) |
+| **Build Tool & Bundler** | [Vite 8](https://vitejs.dev/) |
+| **Routing** | [React Router 7](https://reactrouter.com/) |
+| **Styling** | [Tailwind CSS v4](https://tailwindcss.com/) |
+| **Iconography** | [React Icons](https://react-icons.github.io/react-icons/) (`react-icons/fi`) |
+| **Asset CDN** | ImgBB High-Speed Cloud Storage |
+| **Deployment Platform** | Vercel |
 
 ---
 
 ## ⚙️ Konfigurasi Environment (`.env`)
 
-Untuk mengkonfigurasi nomor WhatsApp penerima pesanan, buat file `.env` di root proyek (atau salin dari `.env.example`):
+Untuk mengonfigurasi nomor WhatsApp admin penerima pesanan, buat file `.env` di root direktori proyek (atau salin dari `.env.example`):
 
 ```env
-VITE_WA_PHONE=NO HP BUSINESS
+VITE_WA_PHONE=6281234567890
 ```
 
 > [!NOTE]
-> Ganti `NO HP BUSINESS` dengan nomor WhatsApp bisnis / admin Anda (gunakan format internasional tanpa tanda `+` atau spasi, contoh: `6281234567890`).
+> Masukkan nomor WhatsApp bisnis / admin toko Anda menggunakan format internasional tanpa spasi atau tanda `+` (contoh: `6281234567890`).
 
 ---
 
 ## 🚀 Panduan Instalasi & Pengembangan Lokal
 
 ### Prasyarat
-- **Node.js**: versi `^20.19.0` atau `>=22.12.0`
-- **npm** / **pnpm** / **yarn**
+- **Node.js**: `^20.19.0` atau `>=22.12.0`
+- **Package Manager**: `npm`, `pnpm`, atau `yarn`
 
-### Langkah-Langkah
+### Langkah Instalasi
 
 1. **Clone Repository**:
    ```bash
@@ -89,16 +101,16 @@ VITE_WA_PHONE=NO HP BUSINESS
    npm install
    ```
 
-3. **Buat File Environment**:
+3. **Konfigurasi Environment**:
    ```bash
    cp .env.example .env
    ```
 
-4. **Jalankan Server Pengembang Mode Dev**:
+4. **Jalankan Development Server**:
    ```bash
    npm run dev
    ```
-   Buka [http://localhost:5173](http://localhost:5173) di browser Anda.
+   Akses aplikasi melalui browser di: `http://localhost:5173`
 
 5. **Build untuk Produksi**:
    ```bash
@@ -112,25 +124,36 @@ VITE_WA_PHONE=NO HP BUSINESS
 ```text
 Catalog-app/
 ├── public/
-│   ├── favicon.svg          # Favicon aplikasi
-│   └── icons.svg            # Ikon SVG pendukung
+│   ├── favicon.svg          # Favicon resmi aplikasi
+│   └── icons.svg            # Iconset SVG pendukung
 ├── src/
-│   ├── components/          # Komponen UI (Navbar, Banner, ProductCard, CartSidebar, Footer, dll)
-│   ├── context/             # CartContext untuk manajemen state keranjang & toast
+│   ├── components/          # Komponen UI Reusable
+│   │   ├── Banner.jsx       # Promo Banner Carousel
+│   │   ├── CartItem.jsx     # Item Keranjang Belanja
+│   │   ├── CartSidebar.jsx  # Drawer Sidebar Keranjang
+│   │   ├── CategoryFilter.jsx # Panel Filter & Sorting
+│   │   ├── CheckoutModal.jsx # Modal Form Checkout WhatsApp
+│   │   ├── Footer.jsx       # Footer Informasi Toko
+│   │   ├── Navbar.jsx       # Top Bar & Pencarian
+│   │   ├── ProductCard.jsx  # Card Produk & Badge Status
+│   │   ├── ProductGrid.jsx  # Grid Katalog & Pagination
+│   │   └── Toast.jsx        # Notifikasi Toast Pop-up
+│   ├── context/
+│   │   └── CartContext.jsx  # State Management Keranjang & Toast
 │   ├── data/
-│   │   └── products.json    # Data produk snack (CDN image link, kategori, rasa, harga, stok)
+│   │   └── products.json    # Dataset Produk Snack & Image Links
 │   ├── pages/
-│   │   ├── Home.jsx         # Halaman utama katalog
-│   │   └── ProductDetailPage.jsx  # Halaman detail produk (Lazy Loaded)
+│   │   ├── Home.jsx         # Halaman Utama Katalog
+│   │   └── ProductDetailPage.jsx # Halaman Detail Produk (Lazy Loaded)
 │   ├── utils/
-│   │   └── format.js        # Utilitas format mata uang Rupiah
-│   ├── App.jsx              # Routing, Suspense & Provider utama
-│   ├── index.css            # Setup Tailwind CSS v4 & gaya global
-│   └── main.jsx             # Entry point React
-├── .env.example             # Template variabel lingkungan
-├── index.html               # Entry HTML utama
-├── package.json             # Konfigurasi dependensi & npm scripts
-└── README.md                # Dokumentasi proyek
+│   │   └── format.js        # Formatter Mata Uang Rupiah (IDR)
+│   ├── App.jsx              # Main Router & Provider
+│   ├── index.css            # Custom Styling & Tailwind v4
+│   └── main.jsx             # React Entry Point
+├── .env.example             # Template variabel environment
+├── index.html               # Document HTML Utama
+├── package.json             # Manifes Proyek & Script npm
+└── README.md                # Dokumentasi Proyek
 ```
 
 ---
