@@ -16,7 +16,7 @@ const Home = () => {
   const [selectedCategory, setSelectedCategory] = useState('Semua Kategori');
   const [selectedFlavor, setSelectedFlavor] = useState('Semua Rasa');
   const [selectedStatus, setSelectedStatus] = useState('Semua Status');
-  const [sortBy, setSortBy] = useState('popular');
+  const [sortBy, setSortBy] = useState('price-asc');
 
   const { totalItem, totalHarga, setIsCartOpen } = useCart();
 
@@ -25,7 +25,7 @@ const Home = () => {
     setSelectedCategory('Semua Kategori');
     setSelectedFlavor('Semua Rasa');
     setSelectedStatus('Semua Status');
-    setSortBy('popular');
+    setSortBy('price-asc');
   };
 
   return (

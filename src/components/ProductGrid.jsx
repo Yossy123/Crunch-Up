@@ -48,14 +48,19 @@ const ProductGrid = ({
       return matchesCategory && matchesFlavor && matchesStatus && matchesSearch;
     });
 
-    if (sortBy === 'price-asc') {
-      result = [...result].sort((a, b) => a.price - b.price);
-    } else if (sortBy === 'price-desc') {
-      result = [...result].sort((a, b) => b.price - a.price);
-    } else if (sortBy === 'rating') {
-      result = [...result].sort((a, b) => b.rating - a.rating);
-    } else if (sortBy === 'popular') {
-      result = [...result].sort((a, b) => b.soldCount - a.soldCount);
+    if (sortBy === 'price-desc') {
+      result = [...result].sort((a, b) => {
+        if (a.price === 0 && b.price > 0) return 1;
+        if (a.price > 0 && b.price === 0) return -1;
+        return b.price - a.price;
+      });
+    } else {
+      // Default: price-asc (Harga Terendah)
+      result = [...result].sort((a, b) => {
+        if (a.price === 0 && b.price > 0) return 1;
+        if (a.price > 0 && b.price === 0) return -1;
+        return a.price - b.price;
+      });
     }
 
     return result;
