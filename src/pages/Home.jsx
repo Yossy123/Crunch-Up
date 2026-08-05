@@ -15,6 +15,7 @@ const Home = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('Semua Kategori');
   const [selectedFlavor, setSelectedFlavor] = useState('Semua Rasa');
+  const [selectedStatus, setSelectedStatus] = useState('Semua Status');
   const [sortBy, setSortBy] = useState('popular');
 
   const { totalItem, totalHarga, setIsCartOpen } = useCart();
@@ -23,6 +24,7 @@ const Home = () => {
     setSearchQuery('');
     setSelectedCategory('Semua Kategori');
     setSelectedFlavor('Semua Rasa');
+    setSelectedStatus('Semua Status');
     setSortBy('popular');
   };
 
@@ -46,6 +48,8 @@ const Home = () => {
             setSelectedCategory={setSelectedCategory} 
             selectedFlavor={selectedFlavor}
             setSelectedFlavor={setSelectedFlavor}
+            selectedStatus={selectedStatus}
+            setSelectedStatus={setSelectedStatus}
             sortBy={sortBy}
             setSortBy={setSortBy}
             resetFilters={resetFilters}
@@ -57,6 +61,7 @@ const Home = () => {
             searchQuery={searchQuery} 
             selectedCategory={selectedCategory} 
             selectedFlavor={selectedFlavor}
+            selectedStatus={selectedStatus}
             sortBy={sortBy}
             onQuickView={(product) => navigate(`/product/${product.id}`)}
             resetFilters={resetFilters}

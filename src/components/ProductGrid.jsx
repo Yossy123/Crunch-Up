@@ -9,6 +9,7 @@ const ProductGrid = ({
   searchQuery, 
   selectedCategory, 
   selectedFlavor,
+  selectedStatus,
   sortBy,
   onQuickView, 
   resetFilters 
@@ -30,6 +31,13 @@ const ProductGrid = ({
         selectedFlavor === 'Semua' ||
         product.flavor === selectedFlavor;
 
+      const matchesStatus = 
+        !selectedStatus ||
+        selectedStatus === 'Semua Status' ||
+        selectedStatus === 'Semua' ||
+        (selectedStatus === 'Tersedia' && product.isAvailable !== false && product.price > 0) ||
+        (selectedStatus === 'Tidak Tersedia' && (product.isAvailable === false || product.price === 0));
+
       const matchesSearch = 
         !searchQuery ||
         product.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -37,7 +45,7 @@ const ProductGrid = ({
         (product.flavor && product.flavor.toLowerCase().includes(searchQuery.toLowerCase())) ||
         (product.description && product.description.toLowerCase().includes(searchQuery.toLowerCase()));
 
-      return matchesCategory && matchesFlavor && matchesSearch;
+      return matchesCategory && matchesFlavor && matchesStatus && matchesSearch;
     });
 
     if (sortBy === 'price-asc') {
@@ -51,12 +59,12 @@ const ProductGrid = ({
     }
 
     return result;
-  }, [products, searchQuery, selectedCategory, selectedFlavor, sortBy]);
+  }, [products, searchQuery, selectedCategory, selectedFlavor, selectedStatus, sortBy]);
 
   // Reset page to 1 when filters or search change
   useEffect(() => {
     setCurrentPage(1);
-  }, [searchQuery, selectedCategory, selectedFlavor, sortBy]);
+  }, [searchQuery, selectedCategory, selectedFlavor, selectedStatus, sortBy]);
 
   const totalPages = Math.max(1, Math.ceil(filteredProducts.length / ITEMS_PER_PAGE));
 

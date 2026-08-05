@@ -37,8 +37,10 @@ Aplikasi ini memudahkan pelanggan untuk menemukan snack favorit mereka berdasark
   - Penanganan otomatis produk *Price Rp 0* dengan indikator status **`NOT AVAILABLE`** dan proteksi keranjang.
 
 - 🔍 **Filter & Pencarian Cerdas**:
+  - **Barisan Pill Button Kategori**: Akses cepat 1-klik untuk berganti kategori snack.
   - **Filter Kategori**: *Keripik & Macaroni*, *Kacang & Biji-bijian*, *Snack Pedas*, *Biskuit & Cookies*, *Cokelat & Permen*.
   - **Filter Varian Rasa**: *Original*, *Pedas Balado*, *Keju / Asin Gurih*, *Cokelat / Manis*, *BBQ / Savory*.
+  - **Filter Status Ketersediaan**: *Semua Status*, *Tersedia (Bisa Dibeli)*, *Tidak Tersedia (Not Available)*.
   - **Pencarian Real-Time**: Pencarian cepat berdasar nama, deskripsi, atau rasa produk.
   - **Pengurutan (Sorting)**: Berdasarkan *Terpopuler*, *Harga Terendah*, *Harga Tertinggi*, dan *Rating*.
   - **Pagination Interaktif**: Navigasi halaman yang cepat dan nyaman.
