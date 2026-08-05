@@ -46,6 +46,13 @@ const ProductCard = ({ product, onQuickView }) => {
               {product.flavor}
             </span>
           )}
+
+          {/* Not Available Badge */}
+          {(product.isAvailable === false || product.price === 0) && (
+            <span className="px-2 py-0.5 bg-rose-600/95 text-white text-[10px] font-black uppercase tracking-wider rounded-md truncate max-w-[90%] border border-white/10 shadow-xs">
+              Not Available
+            </span>
+          )}
         </div>
         
         {/* Quick view button overlay */}
@@ -80,19 +87,29 @@ const ProductCard = ({ product, onQuickView }) => {
         <div className="pt-2 border-t border-slate-100 flex items-center justify-between gap-1.5 mt-auto">
           <div className="min-w-0">
             <span className="block text-[10px] text-slate-400 uppercase font-semibold">Harga</span>
-            <span className="text-xs sm:text-base font-extrabold text-orange-600 truncate block">
+            <span className={`text-xs sm:text-base font-extrabold truncate block ${product.price === 0 || product.isAvailable === false ? 'text-slate-400' : 'text-orange-600'}`}>
               {formatRupiah(product.price)}
             </span>
           </div>
 
-          <button
-            onClick={() => addItem(product)}
-            className="inline-flex items-center space-x-1 px-2.5 py-2 rounded-xl bg-orange-500 hover:bg-orange-600 text-white font-bold text-xs shadow-md shadow-orange-500/20 active:scale-95 transition-all cursor-pointer shrink-0"
-            title="Tambah ke Keranjang"
-          >
-            <FiShoppingBag className="text-sm" />
-            <span className="hidden xs:inline">+ Cart</span>
-          </button>
+          {product.isAvailable !== false && product.price > 0 ? (
+            <button
+              onClick={() => addItem(product)}
+              className="inline-flex items-center space-x-1 px-2.5 py-2 rounded-xl bg-orange-500 hover:bg-orange-600 text-white font-bold text-xs shadow-md shadow-orange-500/20 active:scale-95 transition-all cursor-pointer shrink-0"
+              title="Tambah ke Keranjang"
+            >
+              <FiShoppingBag className="text-sm" />
+              <span className="hidden xs:inline">+ Cart</span>
+            </button>
+          ) : (
+            <button
+              disabled
+              className="inline-flex items-center space-x-1 px-2 py-1.5 rounded-xl bg-rose-50 text-rose-500 font-bold text-[10px] border border-rose-200 cursor-not-allowed shrink-0"
+              title="Tidak Tersedia"
+            >
+              <span>Not Available</span>
+            </button>
+          )}
         </div>
 
       </div>

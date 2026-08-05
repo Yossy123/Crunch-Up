@@ -133,6 +133,11 @@ const ProductDetailPage = () => {
                       {product.flavor}
                     </span>
                   )}
+                  {(product.isAvailable === false || product.price === 0) && (
+                    <span className="px-3 py-1 bg-rose-600 text-white text-xs font-black uppercase tracking-wider rounded-full shadow-sm border border-white/10">
+                      Not Available
+                    </span>
+                  )}
                 </div>
 
                 {/* Share Button */}
@@ -154,11 +159,19 @@ const ProductDetailPage = () => {
                   </h1>
 
                   {/* Price Banner */}
-                  <div className="bg-slate-50 p-4 rounded-2xl border border-slate-100 mb-6 flex items-baseline space-x-2">
-                    <span className="text-3xl sm:text-4xl font-black text-orange-600">
-                      {formatRupiah(product.price)}
-                    </span>
-                    <span className="text-xs text-slate-400 font-medium">/ porsi</span>
+                  <div className="bg-slate-50 p-4 rounded-2xl border border-slate-100 mb-6 flex items-center justify-between">
+                    <div className="flex items-baseline space-x-2">
+                      <span className={`text-3xl sm:text-4xl font-black ${product.price === 0 || product.isAvailable === false ? 'text-slate-400' : 'text-orange-600'}`}>
+                        {formatRupiah(product.price)}
+                      </span>
+                      <span className="text-xs text-slate-400 font-medium">/ porsi</span>
+                    </div>
+
+                    {(product.isAvailable === false || product.price === 0) && (
+                      <span className="px-3 py-1 bg-rose-100 text-rose-700 font-bold text-xs rounded-lg border border-rose-200">
+                        Tidak Tersedia (Not Available)
+                      </span>
+                    )}
                   </div>
 
                   {/* Quantity Selector */}
@@ -171,7 +184,7 @@ const ProductDetailPage = () => {
                         <button
                           onClick={() => setQuantity((prev) => Math.max(1, prev - 1))}
                           className="w-8 h-8 rounded-lg bg-white hover:bg-slate-100 text-slate-700 flex items-center justify-center transition-colors shadow-xs cursor-pointer disabled:opacity-50"
-                          disabled={quantity <= 1 || (product.stock ?? 0) <= 0}
+                          disabled={quantity <= 1 || (product.stock ?? 0) <= 0 || product.price === 0 || product.isAvailable === false}
                         >
                           <FiMinus className="text-xs" />
                         </button>
@@ -181,7 +194,7 @@ const ProductDetailPage = () => {
                         <button
                           onClick={() => setQuantity((prev) => Math.min(product.stock ?? 999, prev + 1))}
                           className="w-8 h-8 rounded-lg bg-white hover:bg-slate-100 text-slate-700 flex items-center justify-center transition-colors shadow-xs cursor-pointer disabled:opacity-50"
-                          disabled={quantity >= (product.stock ?? 0)}
+                          disabled={quantity >= (product.stock ?? 0) || product.price === 0 || product.isAvailable === false}
                         >
                           <FiPlus className="text-xs" />
                         </button>
@@ -199,16 +212,23 @@ const ProductDetailPage = () => {
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                     <button
                       onClick={handleAddToCart}
-                      disabled={(product.stock ?? 0) <= 0}
+                      disabled={(product.stock ?? 0) <= 0 || product.price === 0 || product.isAvailable === false}
                       className="py-3.5 px-5 rounded-2xl bg-linear-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white font-extrabold text-sm shadow-lg shadow-orange-500/25 transition-all transform active:scale-95 flex items-center justify-center space-x-2 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
                     >
                       <FiShoppingBag className="text-lg" />
-                      <span>{(product.stock ?? 0) > 0 ? '+ Tambah Keranjang' : 'Stok Habis'}</span>
+                      <span>
+                        {product.price === 0 || product.isAvailable === false
+                          ? 'Not Available'
+                          : (product.stock ?? 0) > 0
+                          ? '+ Tambah Keranjang'
+                          : 'Stok Habis'}
+                      </span>
                     </button>
 
                     <button
                       onClick={handleDirectWhatsApp}
-                      className="py-3.5 px-5 rounded-2xl bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold text-sm shadow-lg shadow-emerald-600/25 transition-all transform active:scale-95 flex items-center justify-center space-x-2 cursor-pointer"
+                      disabled={product.price === 0 || product.isAvailable === false}
+                      className="py-3.5 px-5 rounded-2xl bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold text-sm shadow-lg shadow-emerald-600/25 transition-all transform active:scale-95 flex items-center justify-center space-x-2 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
                     >
                       <FiMessageSquare className="text-lg" />
                       <span>Order via WhatsApp</span>

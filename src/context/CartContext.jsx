@@ -55,6 +55,11 @@ export const CartProvider = ({ children }) => {
   };
 
   const addItem = (product, quantity = 1) => {
+    if (product.price === 0 || product.isAvailable === false) {
+      showToastNotification(`Produk "${product.name}" belum tersedia (Not Available)!`, 'error');
+      return;
+    }
+
     const maxStock = product.stock ?? 999;
 
     if (maxStock <= 0) {
