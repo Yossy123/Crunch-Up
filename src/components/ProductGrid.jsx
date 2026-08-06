@@ -79,13 +79,24 @@ const ProductGrid = ({
     return filteredProducts.slice(start, start + ITEMS_PER_PAGE);
   }, [filteredProducts, currentPage]);
 
+  const scrollToCatalogTop = () => {
+    const catalogElement = document.getElementById('katalog');
+    if (catalogElement) {
+      const navbarHeight = document.querySelector('header')?.offsetHeight || 80;
+      const elementPosition = catalogElement.getBoundingClientRect().top + window.scrollY;
+      const offsetPosition = elementPosition - navbarHeight - 12;
+
+      window.scrollTo({
+        top: Math.max(0, offsetPosition),
+        behavior: 'smooth'
+      });
+    }
+  };
+
   const handlePageChange = (newPage) => {
     if (newPage >= 1 && newPage <= totalPages && newPage !== currentPage) {
       setCurrentPage(newPage);
-      const catalogElement = document.getElementById('katalog');
-      if (catalogElement) {
-        catalogElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
+      scrollToCatalogTop();
     }
   };
 
