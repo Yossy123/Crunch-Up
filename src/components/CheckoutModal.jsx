@@ -74,7 +74,7 @@ const CheckoutModal = () => {
       return;
     }
 
-    const merchantPhone = import.meta.env.VITE_WA_PHONE || '6285174103353';
+    const merchantPhone = import.meta.env.VITE_WA_PHONE || '628128050439';
     const itemsList = cartItems.map(item => {
       const lineSubtotal = item.product.price * item.quantity;
       return `- ${item.product.name} (${item.quantity}x) = ${formatRupiah(lineSubtotal)}`;
