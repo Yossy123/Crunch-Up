@@ -79,24 +79,39 @@ const ProductGrid = ({
     return filteredProducts.slice(start, start + ITEMS_PER_PAGE);
   }, [filteredProducts, currentPage]);
 
-  const scrollToCatalogTop = () => {
-    const catalogElement = document.getElementById('katalog');
-    if (catalogElement) {
-      const navbarHeight = document.querySelector('header')?.offsetHeight || 80;
-      const elementPosition = catalogElement.getBoundingClientRect().top + window.scrollY;
-      const offsetPosition = elementPosition - navbarHeight - 12;
+  const isInitialMount = React.useRef(true);
 
-      window.scrollTo({
-        top: Math.max(0, offsetPosition),
-        behavior: 'smooth'
-      });
-    }
+  const scrollToCatalogTop = () => {
+    requestAnimationFrame(() => {
+      setTimeout(() => {
+        const catalogElement = document.getElementById('katalog') || document.querySelector('section');
+        if (catalogElement) {
+          const headerElement = document.querySelector('header');
+          const navbarHeight = headerElement ? headerElement.getBoundingClientRect().height : 80;
+          const elementPosition = catalogElement.getBoundingClientRect().top + window.pageYOffset;
+          const targetPosition = Math.max(0, elementPosition - navbarHeight - 12);
+
+          window.scrollTo({
+            top: targetPosition,
+            behavior: 'smooth'
+          });
+        }
+      }, 50);
+    });
   };
+
+  // Trigger smooth scroll UP to top of catalog whenever page changes
+  useEffect(() => {
+    if (isInitialMount.current) {
+      isInitialMount.current = false;
+      return;
+    }
+    scrollToCatalogTop();
+  }, [currentPage]);
 
   const handlePageChange = (newPage) => {
     if (newPage >= 1 && newPage <= totalPages && newPage !== currentPage) {
       setCurrentPage(newPage);
-      scrollToCatalogTop();
     }
   };
 
