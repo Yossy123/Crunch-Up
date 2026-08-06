@@ -21,20 +21,14 @@ const Navbar = ({ searchQuery, setSearchQuery, onResetFilters, onSearchSubmit })
           <Link 
             to="/" 
             onClick={handleLogoClick}
-            className="flex items-center space-x-3 shrink-0 group cursor-pointer"
-            title="Kembali ke Beranda"
+            className="flex items-center shrink-0 group cursor-pointer"
+            title="Kembali ke Beranda Bekal Snacks"
           >
-            <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-2xl bg-linear-to-tr from-orange-500 to-amber-400 flex items-center justify-center text-white shadow-md shadow-orange-500/20 transform transition-transform group-hover:scale-105">
-              <FiShoppingBag className="text-xl sm:text-2xl" />
-            </div>
-            <div>
-              <span className="text-lg sm:text-xl font-extrabold bg-linear-to-r from-orange-600 via-amber-500 to-orange-500 bg-clip-text text-transparent tracking-tight">
-                Snackify
-              </span>
-              <span className="hidden sm:block text-[11px] font-semibold text-slate-400 tracking-wider uppercase">
-                Snack & Cemilan Store
-              </span>
-            </div>
+            <img 
+              src="/logo.png" 
+              alt="Bekal Snacks" 
+              className="h-12 sm:h-16 md:h-18 w-auto object-contain transform transition-transform group-hover:scale-105"
+            />
           </Link>
 
           {/* Search Input Bar */}

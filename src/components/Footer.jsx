@@ -3,8 +3,6 @@ import productsData from '../data/products.json';
 import { 
   FiShoppingBag, 
   FiPhone, 
-  FiMapPin, 
-  FiClock, 
   FiShield, 
   FiHeart, 
   FiArrowUp, 
@@ -79,17 +77,11 @@ const Footer = ({ onSelectCategory }) => {
           {/* Column 1: Brand Info */}
           <div className="lg:col-span-2 space-y-4">
             <div className="flex items-center space-x-3">
-              <div className="w-10 h-10 rounded-2xl bg-linear-to-tr from-orange-500 to-amber-400 flex items-center justify-center text-white shadow-lg shadow-orange-500/20">
-                <FiShoppingBag className="text-xl" />
-              </div>
-              <div>
-                <span className="text-xl font-bold bg-linear-to-r from-white via-slate-200 to-orange-400 bg-clip-text text-transparent tracking-tight">
-                  Snackify
-                </span>
-                <span className="block text-[10px] font-semibold text-orange-400 uppercase tracking-widest">
-                  Snack & Cemilan Store
-                </span>
-              </div>
+              <img 
+                src="/logo.png" 
+                alt="Bekal Snacks" 
+                className="h-16 sm:h-20 w-auto object-contain bg-white/95 p-2 rounded-2xl shadow-md"
+              />
             </div>
 
             <p className="text-xs sm:text-sm text-slate-400 leading-relaxed max-w-sm">
@@ -129,10 +121,6 @@ const Footer = ({ onSelectCategory }) => {
               <span className="absolute -bottom-1 left-0 w-8 h-0.5 bg-orange-500 rounded-full" />
             </h3>
             <ul className="space-y-3 text-xs sm:text-sm">
-              <li className="flex items-start space-x-3">
-                <FiMapPin className="text-orange-400 text-base shrink-0 mt-0.5" />
-                <span className="text-slate-400">Bandung, Jawa Barat, Indonesia</span>
-              </li>
               <li className="flex items-center space-x-3">
                 <FiPhone className="text-orange-400 text-base shrink-0" />
                 <a 
@@ -144,11 +132,6 @@ const Footer = ({ onSelectCategory }) => {
                   +{import.meta.env.VITE_WA_PHONE || '628128050439'}
                 </a>
               </li>
-
-              <li className="flex items-center space-x-3">
-                <FiClock className="text-orange-400 text-base shrink-0" />
-                <span className="text-slate-400">08.00 - 21.00 WIB</span>
-              </li>
             </ul>
           </div>
 
@@ -159,7 +142,7 @@ const Footer = ({ onSelectCategory }) => {
         {/* Bottom Bar */}
         <div className="mt-12 pt-8 border-t border-slate-800/60 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs">
           <div className="text-slate-500 text-center sm:text-left">
-            © {new Date().getFullYear()} <span className="text-slate-300 font-semibold">Snackify Store</span>. All rights reserved.
+            © {new Date().getFullYear()} <span className="text-slate-300 font-semibold">Bekal Snacks</span>. All rights reserved.
           </div>
 
           <div className="flex items-center space-x-1 text-slate-500">
