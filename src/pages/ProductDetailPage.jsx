@@ -184,7 +184,7 @@ const ProductDetailPage = () => {
                         <button
                           onClick={() => setQuantity((prev) => Math.max(1, prev - 1))}
                           className="w-8 h-8 rounded-lg bg-white hover:bg-slate-100 text-slate-700 flex items-center justify-center transition-colors shadow-xs cursor-pointer disabled:opacity-50"
-                          disabled={quantity <= 1 || (product.stock ?? 0) <= 0 || product.price === 0 || product.isAvailable === false}
+                          disabled={quantity <= 1 || product.price === 0 || product.isAvailable === false}
                         >
                           <FiMinus className="text-xs" />
                         </button>
@@ -192,9 +192,9 @@ const ProductDetailPage = () => {
                           {quantity}
                         </span>
                         <button
-                          onClick={() => setQuantity((prev) => Math.min(product.stock ?? 999, prev + 1))}
+                          onClick={() => setQuantity((prev) => prev + 1)}
                           className="w-8 h-8 rounded-lg bg-white hover:bg-slate-100 text-slate-700 flex items-center justify-center transition-colors shadow-xs cursor-pointer disabled:opacity-50"
-                          disabled={quantity >= (product.stock ?? 0) || product.price === 0 || product.isAvailable === false}
+                          disabled={product.price === 0 || product.isAvailable === false}
                         >
                           <FiPlus className="text-xs" />
                         </button>
@@ -212,16 +212,14 @@ const ProductDetailPage = () => {
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                     <button
                       onClick={handleAddToCart}
-                      disabled={(product.stock ?? 0) <= 0 || product.price === 0 || product.isAvailable === false}
+                      disabled={product.price === 0 || product.isAvailable === false}
                       className="py-3.5 px-5 rounded-2xl bg-linear-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white font-extrabold text-sm shadow-lg shadow-orange-500/25 transition-all transform active:scale-95 flex items-center justify-center space-x-2 enabled:cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
                     >
                       <FiShoppingBag className="text-lg" />
                       <span>
                         {product.price === 0 || product.isAvailable === false
                           ? 'Not Available'
-                          : (product.stock ?? 0) > 0
-                          ? '+ Tambah Keranjang'
-                          : 'Stok Habis'}
+                          : '+ Tambah Keranjang'}
                       </span>
                     </button>
 

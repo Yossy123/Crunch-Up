@@ -60,41 +60,17 @@ export const CartProvider = ({ children }) => {
       return;
     }
 
-    const maxStock = product.stock ?? 999;
-
-    if (maxStock <= 0) {
-      showToastNotification(`Stok "${product.name}" telah habis!`, 'error');
-      return;
-    }
-
-    const existingItem = cartItems.find(item => item.product.id === product.id);
-    const existingQty = existingItem ? existingItem.quantity : 0;
-    const targetQty = existingQty + quantity;
-
-    if (existingQty >= maxStock) {
-      showToastNotification(`Stok "${product.name}" sudah mencapai batas maksimal (${maxStock})!`, 'error');
-      return;
-    }
-
-    if (targetQty > maxStock) {
-      showToastNotification(`Jumlah "${product.name}" disesuaikan ke batas stok (${maxStock})!`, 'info');
-    } else {
-      showToastNotification(`"${product.name}" ditambahkan ke keranjang!`, 'success');
-    }
+    showToastNotification(`"${product.name}" ditambahkan ke keranjang!`, 'success');
 
     setCartItems(prevItems => {
       const existingIndex = prevItems.findIndex(item => item.product.id === product.id);
       if (existingIndex > -1) {
         const itemInPrev = prevItems[existingIndex];
-        const nextQty = Math.min(maxStock, itemInPrev.quantity + quantity);
-        if (nextQty === itemInPrev.quantity) return prevItems;
-
         const updated = [...prevItems];
-        updated[existingIndex] = { ...itemInPrev, quantity: nextQty };
+        updated[existingIndex] = { ...itemInPrev, quantity: itemInPrev.quantity + quantity };
         return updated;
       } else {
-        const nextQty = Math.min(maxStock, quantity);
-        return [...prevItems, { product, quantity: nextQty }];
+        return [...prevItems, { product, quantity }];
       }
     });
   };
@@ -111,20 +87,11 @@ export const CartProvider = ({ children }) => {
     const existingItem = cartItems.find(item => item.product.id === productId);
     if (!existingItem) return;
 
-    const maxStock = existingItem.product.stock ?? 999;
-    const targetQty = existingItem.quantity + delta;
-
-    if (delta > 0 && targetQty > maxStock) {
-      showToastNotification(`Stok "${existingItem.product.name}" sudah mencapai batas maksimal (${maxStock})!`, 'error');
-    }
-
     setCartItems(prev => {
       return prev.map(item => {
         if (item.product.id === productId) {
-          const itemStock = item.product.stock ?? 999;
           const nextQty = item.quantity + delta;
-          const cappedQty = Math.min(itemStock, nextQty);
-          return cappedQty > 0 ? { ...item, quantity: cappedQty } : null;
+          return nextQty > 0 ? { ...item, quantity: nextQty } : null;
         }
         return item;
       }).filter(Boolean);
