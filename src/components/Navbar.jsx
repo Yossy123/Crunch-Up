@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { useCart } from '../context/CartContext';
+import { useCart } from '../context/useCart';
 import { FiShoppingBag, FiSearch, FiX } from 'react-icons/fi';
 
-const Navbar = ({ searchQuery, setSearchQuery, onResetFilters }) => {
+const Navbar = ({ searchQuery, setSearchQuery, onResetFilters, onSearchSubmit }) => {
   const { totalItem, setIsCartOpen } = useCart();
 
   const handleLogoClick = () => {
@@ -38,13 +38,20 @@ const Navbar = ({ searchQuery, setSearchQuery, onResetFilters }) => {
           </Link>
 
           {/* Search Input Bar */}
-          <div className="flex-1 max-w-lg mx-1 sm:mx-6">
+          <form
+            className="flex-1 max-w-lg mx-1 sm:mx-6"
+            role="search"
+            onSubmit={(e) => {
+              e.preventDefault();
+              if (onSearchSubmit) onSearchSubmit();
+            }}
+          >
             <div className="relative group">
               <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400 group-focus-within:text-orange-500 transition-colors">
                 <FiSearch className="text-lg" />
               </div>
               <input
-                type="text"
+                type="search"
                 placeholder="Cari snack favoritmu..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
@@ -52,14 +59,16 @@ const Navbar = ({ searchQuery, setSearchQuery, onResetFilters }) => {
               />
               {searchQuery && (
                 <button
+                  type="button"
                   onClick={() => setSearchQuery('')}
-                  className="absolute inset-y-0 right-0 pr-3 flex items-center text-slate-400 hover:text-slate-600 transition-colors"
+                  aria-label="Hapus Pencarian"
+                  className="absolute inset-y-0 right-0 pr-3 flex items-center text-slate-400 hover:text-slate-600 transition-colors cursor-pointer"
                 >
                   <FiX className="text-lg" />
                 </button>
               )}
             </div>
-          </div>
+          </form>
 
           {/* Cart Button with Icon & Count Badge */}
           <div className="flex items-center shrink-0">

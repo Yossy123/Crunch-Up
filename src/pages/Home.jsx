@@ -1,18 +1,19 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useSearchParams } from 'react-router-dom';
 import productsData from '../data/products.json';
 import Navbar from '../components/Navbar';
 import Banner from '../components/Banner';
 import CategoryFilter from '../components/CategoryFilter';
 import ProductGrid from '../components/ProductGrid';
 import Footer from '../components/Footer';
-import { useCart } from '../context/CartContext';
+import { useCart } from '../context/useCart';
 import { formatRupiah } from '../utils/format';
 import { FiShoppingBag } from 'react-icons/fi';
 
 const Home = () => {
   const navigate = useNavigate();
-  const [searchQuery, setSearchQuery] = useState('');
+  const [searchParams] = useSearchParams();
+  const [searchQuery, setSearchQuery] = useState(() => searchParams.get('q') || '');
   const [selectedCategory, setSelectedCategory] = useState('Semua Kategori');
   const [selectedFlavor, setSelectedFlavor] = useState('Semua Rasa');
   const [selectedStatus, setSelectedStatus] = useState('Semua Status');
@@ -28,6 +29,15 @@ const Home = () => {
     setSortBy('price-asc');
   };
 
+  const handleSelectCategory = (category) => {
+    resetFilters();
+    setSelectedCategory(category);
+  };
+
+  const handleSearchSubmit = () => {
+    navigate(`/?q=${encodeURIComponent(searchQuery.trim())}`);
+  };
+
   return (
     <div className="min-h-screen bg-slate-50 flex flex-col justify-between selection:bg-orange-500 selection:text-white overflow-x-hidden">
       <main className="pb-24 sm:pb-28 flex-1">
@@ -36,6 +46,7 @@ const Home = () => {
           searchQuery={searchQuery} 
           setSearchQuery={setSearchQuery} 
           onResetFilters={resetFilters}
+          onSearchSubmit={handleSearchSubmit}
         />
 
         {/* Promo Hero Banner */}
@@ -70,7 +81,7 @@ const Home = () => {
       </main>
 
       {/* Modern Footer */}
-      <Footer onSelectCategory={setSelectedCategory} />
+      <Footer onSelectCategory={handleSelectCategory} />
 
       {/* Floating Sticky Cart Button (Compact Pill Style) */}
       {totalItem > 0 && (

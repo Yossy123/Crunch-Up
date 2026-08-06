@@ -72,7 +72,7 @@ const Banner = () => {
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      <div className="relative overflow-hidden rounded-3xl shadow-xl min-h-105 xs:min-h-100 sm:min-h-90 md:min-h-90 flex items-center">
+      <div className="relative overflow-hidden rounded-3xl shadow-xl min-h-105 sm:min-h-90 md:min-h-90 flex items-center">
         {banners.map((slide, index) => {
           const BadgeIcon = slide.badgeIcon;
           return (

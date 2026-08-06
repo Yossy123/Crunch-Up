@@ -92,6 +92,8 @@ const ProductGrid = ({
   const isFilteredActive = 
     (selectedCategory && selectedCategory !== 'Semua Kategori' && selectedCategory !== 'Semua') ||
     (selectedFlavor && selectedFlavor !== 'Semua Rasa' && selectedFlavor !== 'Semua') ||
+    (selectedStatus && selectedStatus !== 'Semua Status' && selectedStatus !== 'Semua') ||
+    (sortBy && sortBy !== 'price-asc') ||
     (searchQuery && searchQuery.trim() !== '');
 
   const startItem = filteredProducts.length > 0 ? (currentPage - 1) * ITEMS_PER_PAGE + 1 : 0;

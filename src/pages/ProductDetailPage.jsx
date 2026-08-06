@@ -4,7 +4,7 @@ import productsData from '../data/products.json';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import ProductCard from '../components/ProductCard';
-import { useCart } from '../context/CartContext';
+import { useCart } from '../context/useCart';
 import { formatRupiah } from '../utils/format';
 import { 
   FiArrowLeft, 
@@ -33,12 +33,16 @@ const ProductDetailPage = () => {
     setQuantity(1);
   }, [id]);
 
+  const handleSearchSubmit = () => {
+    navigate(`/?q=${encodeURIComponent(searchQuery.trim())}`);
+  };
+
   const product = productsData.find((p) => p.id === parseInt(id, 10));
 
   if (!product) {
     return (
       <div className="min-h-screen bg-slate-50 flex flex-col justify-between">
-        <Navbar searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
+        <Navbar searchQuery={searchQuery} setSearchQuery={setSearchQuery} onSearchSubmit={handleSearchSubmit} />
         <div className="max-w-md mx-auto px-4 py-20 text-center">
           <div className="w-16 h-16 bg-orange-100 text-orange-500 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl">
             <FiPackage />
@@ -85,7 +89,7 @@ const ProductDetailPage = () => {
     <div className="min-h-screen bg-slate-50 flex flex-col justify-between selection:bg-orange-500 selection:text-white">
       <div className="flex-1">
         {/* Header */}
-        <Navbar searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
+        <Navbar searchQuery={searchQuery} setSearchQuery={setSearchQuery} onSearchSubmit={handleSearchSubmit} />
 
         {/* Breadcrumb & Navigation Bar */}
         <div className="bg-white border-b border-slate-200/80">

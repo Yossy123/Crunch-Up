@@ -1,5 +1,5 @@
 import React from 'react';
-import { useCart } from '../context/CartContext';
+import { useCart } from '../context/useCart';
 import { formatRupiah } from '../utils/format';
 import { FiMinus, FiPlus, FiTrash2 } from 'react-icons/fi';
 
@@ -37,6 +37,7 @@ const CartItem = ({ item }) => {
           onClick={() => removeItem(product.id)}
           className="text-slate-400 hover:text-red-500 transition-colors p-1 cursor-pointer"
           title="Hapus Item"
+          aria-label={`Hapus ${product.name} dari keranjang`}
         >
           <FiTrash2 className="text-xs sm:text-sm" />
         </button>

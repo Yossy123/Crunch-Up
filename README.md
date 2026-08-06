@@ -6,10 +6,10 @@
   <b>Aplikasi Web Katalog E-Commerce Snack Ringan Modern, Fast & Ultra-Responsive dengan Checkout WhatsApp Direct</b>
 </p>
 
-[![React 19](https://img.shields.io/badge/React-19.0.0-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://react.dev/)
-[![Vite 8](https://img.shields.io/badge/Vite-8.1.5-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vitejs.dev/)
-[![Tailwind CSS v4](https://img.shields.io/badge/Tailwind_CSS-v4.0.0-38BDF8?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
-[![React Router 7](https://img.shields.io/badge/React_Router-v7.1.5-CA4245?style=for-the-badge&logo=react-router&logoColor=white)](https://reactrouter.com/)
+[![React 19](https://img.shields.io/badge/React-19.2-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://react.dev/)
+[![Vite 8](https://img.shields.io/badge/Vite-8.1-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vitejs.dev/)
+[![Tailwind CSS v4](https://img.shields.io/badge/Tailwind_CSS-v4-38BDF8?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
+[![React Router 7](https://img.shields.io/badge/React_Router-v7-CA4245?style=for-the-badge&logo=react-router&logoColor=white)](https://reactrouter.com/)
 [![Vercel Ready](https://img.shields.io/badge/Deployment-Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://vercel.com/)
 
 </div>
@@ -37,8 +37,8 @@ Aplikasi ini memudahkan pelanggan untuk menemukan snack favorit mereka berdasark
   - Penanganan otomatis produk *Price Rp 0* dengan indikator status **`NOT AVAILABLE`** dan proteksi keranjang.
 
 - 🔍 **Filter & Pencarian Cerdas**:
-  - **Dropdown Kategori Rapi**: *Semua Kategori*, *Keripik & Macaroni*, *Kacang & Biji-bijian*, *Snack Pedas*, *Biskuit & Cookies*, *Cokelat & Permen*.
-  - **Dropdown Varian Rasa**: *Semua Rasa*, *Original*, *Pedas Balado*, *Keju / Asin Gurih*, *Cokelat / Manis*, *BBQ / Savory*.
+  - **Dropdown Kategori Rapi**: *Semua Kategori*, *Seafood & Bakso*, *Basreng & Seblak*, *Snack Jagung & Ekstrusi*, *Kue Kering*, *Emping & Melinjo*, *Kerupuk*, *Stik & Makaroni*, *Kacang*, *Kue Tradisional*, *Keripik*.
+  - **Dropdown Varian Rasa**: *Semua Rasa*, *Asin*, *Pedas*, *Manis*, *Keju*.
   - **Dropdown Status Ketersediaan**: *Semua Status*, *Tersedia (Bisa Dibeli)*, *Tidak Tersedia (Not Available)*.
   - **Dropdown Pengurutan (Sorting)**: *Harga: Terendah* & *Harga: Tertinggi* (Opsi *Paling Populer* & *Rating* di-nonaktifkan sementara).
   - **Layout Grid Responsif**: Tampilan grid 2-kolom ringkas di mobile (HP) dan 4-kolom sejajar di desktop tanpa horizontal scrolling yang mengganggu.
@@ -48,7 +48,6 @@ Aplikasi ini memudahkan pelanggan untuk menemukan snack favorit mereka berdasark
 - 🛒 **Keranjang Belanja & Direct WhatsApp Order**:
   - Stateful cart dengan penyimpanan otomatis di `localStorage`.
   - Floating Cart Pill Button yang fleksibel.
-  - Validasi stok real-time saat menambah kuantitas item.
   - Format pesan WhatsApp otomatis yang rapi dan siap kirim ke admin toko.
 
 - ⚡ **Optimasi Performa Super Cepat**:

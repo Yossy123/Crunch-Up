@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useCart } from '../context/CartContext';
+import { useCart } from '../context/useCart';
 import { formatRupiah } from '../utils/format';
 import CartItem from './CartItem';
 import { FiX, FiShoppingBag, FiTrash2, FiArrowRight } from 'react-icons/fi';

@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useCart } from '../context/CartContext';
+import { useCart } from '../context/useCart';
 import { formatRupiah } from '../utils/format';
 import { FiShoppingBag, FiEye } from 'react-icons/fi';
 
@@ -99,7 +99,7 @@ const ProductCard = ({ product, onQuickView }) => {
               title="Tambah ke Keranjang"
             >
               <FiShoppingBag className="text-sm" />
-              <span className="hidden xs:inline">+ Cart</span>
+              <span className="hidden sm:inline">+ Cart</span>
             </button>
           ) : (
             <button

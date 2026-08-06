@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { useCart } from '../context/CartContext';
+import { useCart } from '../context/useCart';
 import { FiCheckCircle, FiInfo, FiAlertCircle } from 'react-icons/fi';
 
 const Toast = () => {
@@ -55,7 +55,7 @@ const Toast = () => {
   };
 
   return (
-    <div className={`fixed top-4 sm:top-6 left-4 right-4 sm:left-auto sm:right-6 sm:max-w-md z-50 transition-all duration-300 transform ${
+    <div role="status" aria-live="polite" className={`fixed top-4 sm:top-6 left-4 right-4 sm:left-auto sm:right-6 sm:max-w-md z-50 transition-all duration-300 transform ${
       isClosing ? 'animate-out fade-out slide-out-to-top-4 duration-300' : 'animate-in fade-in slide-in-from-top-4 duration-300'
     }`}>
       <div className={`flex items-center space-x-3 px-4.5 py-3 sm:px-5 sm:py-3.5 rounded-2xl shadow-2xl border backdrop-blur-md ${getToastStyles()}`}>

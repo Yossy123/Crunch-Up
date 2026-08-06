@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useCart } from '../context/CartContext';
+import { useCart } from '../context/useCart';
 import { formatRupiah } from '../utils/format';
 import { FiX, FiUser, FiMapPin, FiPhone, FiMessageSquare, FiAlertCircle } from 'react-icons/fi';
 import { FaWhatsapp } from 'react-icons/fa6';
@@ -68,6 +68,12 @@ const CheckoutModal = () => {
       return;
     }
 
+    const phonePattern = /^\+?[0-9]{9,15}$/;
+    if (!phonePattern.test(formData.noHp.trim())) {
+      setErrorMessage('Nomor HP tidak valid. Gunakan 9-15 digit angka, boleh diawali tanda + atau 08.');
+      return;
+    }
+
     const merchantPhone = import.meta.env.VITE_WA_PHONE || '6285174103353';
     const itemsList = cartItems.map(item => {
       const lineSubtotal = item.product.price * item.quantity;
@@ -117,6 +123,7 @@ ${itemsList}
             type="button"
             onClick={handleClose}
             className="w-8 h-8 rounded-full bg-white/20 hover:bg-white/30 text-white flex items-center justify-center transition-colors cursor-pointer"
+            aria-label="Tutup Checkout"
           >
             <FiX className="text-lg" />
           </button>
