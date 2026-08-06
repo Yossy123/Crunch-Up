@@ -81,32 +81,25 @@ const ProductGrid = ({
 
   const isInitialMount = React.useRef(true);
 
-  const scrollToCatalogTop = () => {
-    requestAnimationFrame(() => {
-      setTimeout(() => {
-        const catalogElement = document.getElementById('katalog') || document.querySelector('section');
-        if (catalogElement) {
-          const headerElement = document.querySelector('header');
-          const navbarHeight = headerElement ? headerElement.getBoundingClientRect().height : 80;
-          const elementPosition = catalogElement.getBoundingClientRect().top + window.pageYOffset;
-          const targetPosition = Math.max(0, elementPosition - navbarHeight - 12);
-
-          window.scrollTo({
-            top: targetPosition,
-            behavior: 'smooth'
-          });
-        }
-      }, 50);
-    });
-  };
-
-  // Trigger smooth scroll UP to top of catalog whenever page changes
-  useEffect(() => {
+  // Synchronously set scroll position before browser paint to prevent any bounce effect
+  React.useLayoutEffect(() => {
     if (isInitialMount.current) {
       isInitialMount.current = false;
       return;
     }
-    scrollToCatalogTop();
+
+    const catalogElement = document.getElementById('katalog') || document.querySelector('section');
+    if (catalogElement) {
+      const headerElement = document.querySelector('header');
+      const navbarHeight = headerElement ? headerElement.getBoundingClientRect().height : 80;
+      const elementPosition = catalogElement.getBoundingClientRect().top + window.pageYOffset;
+      const targetPosition = Math.max(0, elementPosition - navbarHeight - 12);
+
+      window.scrollTo({
+        top: targetPosition,
+        behavior: 'auto'
+      });
+    }
   }, [currentPage]);
 
   const handlePageChange = (newPage) => {
