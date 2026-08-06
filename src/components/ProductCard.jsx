@@ -2,6 +2,9 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useCart } from '../context/useCart';
 import { formatRupiah } from '../utils/format';
+import { Card } from '@/components/ui/card';
+import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
 import { FiShoppingBag, FiEye } from 'react-icons/fi';
 
 const ProductCard = ({ product, onQuickView }) => {
@@ -16,9 +19,8 @@ const ProductCard = ({ product, onQuickView }) => {
     }
   };
 
-
   return (
-    <div className="group bg-white rounded-2xl border border-slate-200/80 shadow-xs hover:shadow-xl hover:border-orange-200 transition-shadow transition-border duration-200 flex flex-col overflow-hidden relative">
+    <Card className="group border-slate-200/80 hover:border-orange-300 hover:shadow-xl transition-all duration-300 flex flex-col overflow-hidden relative">
       
       {/* Image & Badges */}
       <div className="relative aspect-square overflow-hidden bg-slate-100 cursor-pointer" onClick={handleProductClick}>
@@ -36,44 +38,45 @@ const ProductCard = ({ product, onQuickView }) => {
         {/* Badges Container (Flex Horizontal Wrap, Top-Left) */}
         <div className="absolute top-2 left-2 right-2 z-20 flex flex-wrap gap-1 items-start pointer-events-none">
           {/* Category Badge */}
-          <span className="px-2 py-0.5 bg-slate-900/90 text-white text-[10px] font-bold rounded-md truncate max-w-[90%] border border-white/10 shadow-xs">
+          <Badge variant="secondary" className="bg-slate-900/90 text-white text-[10px] border-white/10 font-bold">
             {product.category}
-          </span>
+          </Badge>
 
           {/* Flavor Badge */}
           {product.flavor && (
-            <span className="px-2 py-0.5 bg-orange-500/95 text-white text-[10px] font-extrabold rounded-md truncate max-w-[90%] border border-white/10 shadow-xs">
+            <Badge variant="default" className="bg-orange-500/95 text-white text-[10px] font-extrabold border-white/10">
               {product.flavor}
-            </span>
+            </Badge>
           )}
 
           {/* Not Available Badge */}
           {(product.isAvailable === false || product.price === 0) && (
-            <span className="px-2 py-0.5 bg-rose-600/95 text-white text-[10px] font-black uppercase tracking-wider rounded-md truncate max-w-[90%] border border-white/10 shadow-xs">
+            <Badge variant="destructive" className="bg-rose-600/95 text-white text-[10px] font-black uppercase tracking-wider">
               Not Available
-            </span>
+            </Badge>
           )}
         </div>
         
         {/* Quick view button overlay */}
         <div className="absolute inset-0 bg-slate-900/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center z-20">
-          <button 
+          <Button 
+            size="icon"
+            variant="secondary"
             onClick={(e) => {
               e.stopPropagation();
               handleProductClick();
             }}
-            className="p-2.5 rounded-full bg-white text-slate-800 hover:scale-110 shadow-md transition-transform cursor-pointer"
+            className="rounded-full bg-white hover:scale-110 shadow-md cursor-pointer"
             title="Lihat Detail"
           >
-            <FiEye className="text-lg" />
-          </button>
+            <FiEye className="text-lg text-slate-800" />
+          </Button>
         </div>
       </div>
 
       {/* Card Content */}
       <div className="p-3 sm:p-4 flex-1 flex flex-col justify-between">
         <div>
-
           {/* Title */}
           <h3 
             onClick={handleProductClick}
@@ -81,13 +84,13 @@ const ProductCard = ({ product, onQuickView }) => {
           >
             {product.name}
           </h3>
-          <span className="inline-block px-1.5 py-0.5 bg-amber-50 text-amber-700 border border-amber-200/80 text-[10px] font-extrabold rounded-md mb-2">
+          <Badge variant="outline" className="bg-amber-50/80 text-amber-700 border-amber-200 text-[10px] font-bold">
             Netto: {product.weight || '250gr'}
-          </span>
+          </Badge>
         </div>
 
         {/* Price & Action Button */}
-        <div className="pt-2 border-t border-slate-100 flex items-center justify-between gap-1.5 mt-auto">
+        <div className="pt-2.5 border-t border-slate-100 flex items-center justify-between gap-1.5 mt-3">
           <div className="min-w-0">
             <span className="block text-[10px] text-slate-400 uppercase font-semibold">Harga</span>
             <span className={`text-xs sm:text-base font-extrabold truncate block ${product.price === 0 || product.isAvailable === false ? 'text-slate-400' : 'text-orange-600'}`}>
@@ -96,28 +99,30 @@ const ProductCard = ({ product, onQuickView }) => {
           </div>
 
           {product.isAvailable !== false && product.price > 0 ? (
-            <button
+            <Button
+              size="sm"
               onClick={() => addItem(product)}
-              className="inline-flex items-center space-x-1 px-2.5 py-2 rounded-xl bg-orange-500 hover:bg-orange-600 text-white font-bold text-xs shadow-md shadow-orange-500/20 active:scale-95 transition-all cursor-pointer shrink-0"
+              className="bg-orange-500 hover:bg-orange-600 text-white font-bold text-xs shadow-md shadow-orange-500/20 px-2.5 rounded-xl cursor-pointer"
               title="Tambah ke Keranjang"
             >
-              <FiShoppingBag className="text-sm" />
+              <FiShoppingBag className="text-sm mr-1" />
               <span className="hidden sm:inline">+ Cart</span>
-            </button>
+            </Button>
           ) : (
-            <button
+            <Button
               disabled
-              className="inline-flex items-center space-x-1 px-2 py-1.5 rounded-xl bg-rose-50 text-rose-500 font-bold text-[10px] border border-rose-200 cursor-not-allowed shrink-0"
-              title="Tidak Tersedia"
+              variant="outline"
+              size="sm"
+              className="bg-rose-50 text-rose-500 font-bold text-[10px] border-rose-200 h-8 px-2 rounded-xl"
             >
               <span>Not Available</span>
-            </button>
+            </Button>
           )}
         </div>
 
       </div>
 
-    </div>
+    </Card>
   );
 };
 

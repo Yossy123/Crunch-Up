@@ -1,13 +1,12 @@
 import React from 'react';
 import productsData from '../data/products.json';
 import { 
-  FiShoppingBag, 
   FiPhone, 
-  FiShield, 
   FiHeart, 
-  FiArrowUp, 
+  FiShield, 
+  FiMessageSquare,
   FiCheckCircle,
-  FiMessageSquare
+  FiArrowUp
 } from 'react-icons/fi';
 
 const categories = Array.from(new Set(productsData.map(p => p.category).filter(Boolean)));

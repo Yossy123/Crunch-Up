@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useCart } from '../context/useCart';
-import { FiCheckCircle, FiInfo, FiAlertCircle } from 'react-icons/fi';
+import { CheckCircle2, AlertCircle, Info } from 'lucide-react';
 
 const Toast = () => {
   const { toast } = useCart();
@@ -33,24 +33,24 @@ const Toast = () => {
   const getToastStyles = () => {
     switch (currentToast.type) {
       case 'error':
-        return 'bg-rose-600/95 text-white border-rose-500';
+        return 'bg-rose-600 text-white border-rose-500 shadow-rose-950/10';
       case 'info':
-        return 'bg-slate-900/90 text-white border-slate-700';
+        return 'bg-slate-900 text-white border-slate-700 shadow-slate-950/10';
       case 'success':
       default:
-        return 'bg-emerald-600/95 text-white border-emerald-500';
+        return 'bg-emerald-600 text-white border-emerald-500 shadow-emerald-950/10';
     }
   };
 
   const renderIcon = () => {
     switch (currentToast.type) {
       case 'error':
-        return <FiAlertCircle className="text-xl text-rose-200 shrink-0" />;
+        return <AlertCircle className="h-5 w-5 text-rose-200 shrink-0" />;
       case 'info':
-        return <FiInfo className="text-xl text-sky-400 shrink-0" />;
+        return <Info className="h-5 w-5 text-sky-300 shrink-0" />;
       case 'success':
       default:
-        return <FiCheckCircle className="text-xl text-emerald-300 shrink-0" />;
+        return <CheckCircle2 className="h-5 w-5 text-emerald-200 shrink-0" />;
     }
   };
 
@@ -58,7 +58,7 @@ const Toast = () => {
     <div role="status" aria-live="polite" className={`fixed top-4 sm:top-6 left-4 right-4 sm:left-auto sm:right-6 sm:max-w-md z-50 transition-all duration-300 transform ${
       isClosing ? 'animate-out fade-out slide-out-to-top-4 duration-300' : 'animate-in fade-in slide-in-from-top-4 duration-300'
     }`}>
-      <div className={`flex items-center space-x-3 px-4.5 py-3 sm:px-5 sm:py-3.5 rounded-2xl shadow-2xl border backdrop-blur-md ${getToastStyles()}`}>
+      <div className={`flex items-center space-x-3 px-4.5 py-3.5 rounded-2xl shadow-xl border backdrop-blur-md ${getToastStyles()}`}>
         {renderIcon()}
         <span className="text-xs sm:text-sm font-semibold tracking-wide leading-tight">{currentToast.message}</span>
       </div>

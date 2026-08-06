@@ -1,9 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useCart } from '../context/useCart';
 import { formatRupiah } from '../utils/format';
-import { FiX, FiUser, FiMapPin, FiPhone, FiMessageSquare, FiAlertCircle, FiHelpCircle, FiCheckCircle } from 'react-icons/fi';
+import { Dialog, DialogContent, DialogTitle } from '@/components/ui/dialog';
+import { Input } from '@/components/ui/input';
+import { Textarea } from '@/components/ui/textarea';
+import { Label } from '@/components/ui/label';
+import { Button } from '@/components/ui/button';
+import { FiUser, FiMapPin, FiPhone, FiMessageSquare, FiAlertCircle, FiHelpCircle } from 'react-icons/fi';
 import { FaWhatsapp } from 'react-icons/fa6';
-
 
 const CheckoutModal = () => {
   const {
@@ -23,33 +27,7 @@ const CheckoutModal = () => {
   });
 
   const [errorMessage, setErrorMessage] = useState('');
-  const [shouldRender, setShouldRender] = useState(false);
-  const [isClosing, setIsClosing] = useState(false);
   const [showConfirmation, setShowConfirmation] = useState(false);
-
-  useEffect(() => {
-    if (isCheckoutOpen) {
-      setShouldRender(true);
-      setIsClosing(false);
-      setShowConfirmation(false);
-      document.body.style.overflow = 'hidden';
-    } else if (shouldRender) {
-      setIsClosing(true);
-      const timer = setTimeout(() => {
-        setShouldRender(false);
-        setIsClosing(false);
-        setShowConfirmation(false);
-      }, 200);
-      document.body.style.overflow = '';
-      return () => clearTimeout(timer);
-    }
-    return () => {
-      document.body.style.overflow = '';
-    };
-  }, [isCheckoutOpen, shouldRender]);
-
-  if (!shouldRender) return null;
-
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -63,7 +41,6 @@ const CheckoutModal = () => {
     setShowConfirmation(false);
   };
 
-  // Step 1: Validate and open confirmation popup
   const handleWASubmit = (e) => {
     e.preventDefault();
 
@@ -81,7 +58,6 @@ const CheckoutModal = () => {
     setShowConfirmation(true);
   };
 
-  // Step 2: Proceed to WhatsApp after user confirms
   const proceedToWhatsApp = () => {
     const merchantPhone = import.meta.env.VITE_WA_PHONE || '628128050439';
     const itemsList = cartItems.map(item => {
@@ -112,36 +88,28 @@ ${itemsList}
   };
 
   return (
-    <div className={`fixed inset-0 z-50 overflow-y-auto bg-slate-900/60 backdrop-blur-xs flex items-center justify-center p-4 transition-opacity duration-200 ${
-      isClosing ? 'animate-out fade-out duration-200' : 'animate-in fade-in duration-200'
-    }`}>
-      <div className={`relative bg-white rounded-3xl max-w-lg w-full overflow-hidden shadow-2xl transition-all transform ${
-        isClosing ? 'animate-out fade-out zoom-out duration-200' : 'animate-in fade-in zoom-in duration-200'
-      }`}>
+    <Dialog open={isCheckoutOpen} onOpenChange={(open) => { if (!open) handleClose(); }}>
+      <DialogContent className="max-w-lg p-0 overflow-hidden rounded-3xl border-0">
 
         {/* Modal Header */}
         <div className="px-6 py-4 bg-linear-to-r from-emerald-600 to-teal-600 text-white flex items-center justify-between">
           <div className="flex items-center space-x-2.5">
             <FaWhatsapp className="text-2xl text-emerald-200" />
             <div>
-              <h3 className="text-lg font-bold leading-tight">Checkout via WhatsApp</h3>
-              <p className="text-xs text-emerald-100 font-medium">Kirim Rincian Pesanan Langsung ke WhatsApp Penjual</p>
+              <DialogTitle className="text-lg font-bold leading-tight text-white">
+                Checkout via WhatsApp
+              </DialogTitle>
+              <p className="text-xs text-emerald-100 font-medium">
+                Kirim Rincian Pesanan Langsung ke WhatsApp Penjual
+              </p>
             </div>
           </div>
-          <button
-            type="button"
-            onClick={handleClose}
-            className="w-8 h-8 rounded-full bg-white/20 hover:bg-white/30 text-white flex items-center justify-center transition-colors cursor-pointer"
-            aria-label="Tutup Checkout"
-          >
-            <FiX className="text-lg" />
-          </button>
         </div>
 
         {/* MODAL CONTENT SWITCHER */}
         {showConfirmation ? (
           /* CONFIRMATION POPUP VIEW */
-          <div className="p-6 space-y-5 text-center animate-in fade-in zoom-in-95 duration-200">
+          <div className="p-6 space-y-5 text-center">
             <div className="w-16 h-16 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center mx-auto shadow-md ring-8 ring-emerald-500/10">
               <FiHelpCircle className="text-3xl" />
             </div>
@@ -173,21 +141,22 @@ ${itemsList}
 
             {/* Confirmation Action Buttons */}
             <div className="flex items-center gap-3 pt-2">
-              <button
+              <Button
                 type="button"
+                variant="outline"
                 onClick={() => setShowConfirmation(false)}
-                className="flex-1 py-3 px-4 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-2xl font-bold text-xs sm:text-sm transition-colors cursor-pointer"
+                className="flex-1 py-3 h-11 rounded-2xl font-bold text-xs sm:text-sm cursor-pointer"
               >
                 Batal
-              </button>
-              <button
+              </Button>
+              <Button
                 type="button"
                 onClick={proceedToWhatsApp}
-                className="flex-1 py-3 px-4 bg-emerald-600 hover:bg-emerald-700 text-white rounded-2xl font-extrabold text-xs sm:text-sm shadow-lg shadow-emerald-600/25 flex items-center justify-center space-x-2 transition-transform transform active:scale-98 cursor-pointer"
+                className="flex-1 py-3 h-11 bg-emerald-600 hover:bg-emerald-700 text-white rounded-2xl font-extrabold text-xs sm:text-sm shadow-lg shadow-emerald-600/25 flex items-center justify-center space-x-2 cursor-pointer"
               >
                 <FaWhatsapp className="text-lg" />
                 <span>Lanjut ke WA</span>
-              </button>
+              </Button>
             </div>
           </div>
         ) : (
@@ -228,88 +197,89 @@ ${itemsList}
             </div>
 
             {/* Input: Nama */}
-            <div>
-              <label className="text-xs font-bold text-slate-700 mb-1.5 flex items-center space-x-1">
+            <div className="space-y-1.5">
+              <Label className="text-xs font-bold text-slate-700 flex items-center space-x-1">
                 <FiUser className="text-emerald-500" />
                 <span>Nama Lengkap *</span>
-              </label>
-              <input
+              </Label>
+              <Input
                 type="text"
                 name="nama"
                 required
                 placeholder="Contoh: Budi Santoso"
                 value={formData.nama}
                 onChange={handleInputChange}
-                className="w-full px-4 py-2.5 text-sm bg-slate-50 border border-slate-200 rounded-xl focus:ring-4 focus:ring-emerald-500/10 outline-none transition-all"
+                className="bg-slate-50 border-slate-200 focus-visible:ring-emerald-500"
               />
             </div>
 
             {/* Input: No HP */}
-            <div>
-              <label className="text-xs font-bold text-slate-700 mb-1.5 flex items-center space-x-1">
+            <div className="space-y-1.5">
+              <Label className="text-xs font-bold text-slate-700 flex items-center space-x-1">
                 <FiPhone className="text-emerald-500" />
                 <span>Nomor WhatsApp / HP *</span>
-              </label>
-              <input
+              </Label>
+              <Input
                 type="tel"
                 name="noHp"
                 required
                 placeholder="Contoh: 081234567890"
                 value={formData.noHp}
                 onChange={handleInputChange}
-                className="w-full px-4 py-2.5 text-sm bg-slate-50 border border-slate-200 rounded-xl focus:ring-4 focus:ring-emerald-500/10 outline-none transition-all"
+                className="bg-slate-50 border-slate-200 focus-visible:ring-emerald-500"
               />
             </div>
 
             {/* Input: Alamat */}
-            <div>
-              <label className="text-xs font-bold text-slate-700 mb-1.5 flex items-center space-x-1">
+            <div className="space-y-1.5">
+              <Label className="text-xs font-bold text-slate-700 flex items-center space-x-1">
                 <FiMapPin className="text-emerald-500" />
                 <span>Alamat Lengkap Pengiriman *</span>
-              </label>
-              <textarea
+              </Label>
+              <Textarea
                 name="alamat"
                 required
-                rows="2"
+                rows={2}
                 placeholder="Contoh: Jl. Merdeka No. 45, Kecamatan Gambir, Jakarta Pusat"
                 value={formData.alamat}
                 onChange={handleInputChange}
-                className="w-full px-4 py-2.5 text-sm bg-slate-50 border border-slate-200 rounded-xl focus:ring-4 focus:ring-emerald-500/10 outline-none transition-all resize-none"
+                className="bg-slate-50 border-slate-200 focus-visible:ring-emerald-500 resize-none"
               />
             </div>
 
             {/* Input: Catatan untuk Penjual (Opsional) */}
-            <div>
-              <label className="text-xs font-bold text-slate-700 mb-1.5 flex items-center space-x-1">
+            <div className="space-y-1.5">
+              <Label className="text-xs font-bold text-slate-700 flex items-center space-x-1">
                 <FiMessageSquare className="text-emerald-500" />
                 <span>Catatan untuk Penjual (Opsional)</span>
-              </label>
-              <textarea
+              </Label>
+              <Textarea
                 name="catatan"
-                rows="2"
+                rows={2}
                 placeholder="Contoh: Tolong bungkus extra bubble wrap / rasa pedasnya minta yang ekstra pedas ya"
                 value={formData.catatan}
                 onChange={handleInputChange}
-                className="w-full px-4 py-2.5 text-sm bg-slate-50 border border-slate-200 rounded-xl focus:ring-4 focus:ring-emerald-500/10 outline-none transition-all resize-none"
+                className="bg-slate-50 border-slate-200 focus-visible:ring-emerald-500 resize-none"
               />
             </div>
 
             {/* Submit Action */}
             <div className="pt-2">
-              <button
+              <Button
                 type="submit"
-                className="w-full py-3.5 px-4 bg-emerald-600 hover:bg-emerald-700 text-white rounded-2xl font-extrabold text-sm shadow-xl shadow-emerald-600/25 flex items-center justify-center space-x-2 transition-transform transform active:scale-98 cursor-pointer"
+                size="lg"
+                className="w-full h-12 bg-emerald-600 hover:bg-emerald-700 text-white rounded-2xl font-extrabold text-sm shadow-xl shadow-emerald-600/25 flex items-center justify-center space-x-2 cursor-pointer"
               >
                 <FaWhatsapp className="text-xl" />
                 <span>Kirim Pesanan via WhatsApp</span>
-              </button>
+              </Button>
             </div>
 
           </form>
         )}
 
-      </div>
-    </div>
+      </DialogContent>
+    </Dialog>
   );
 };
 

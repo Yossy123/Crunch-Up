@@ -6,6 +6,14 @@ import Footer from '../components/Footer';
 import ProductCard from '../components/ProductCard';
 import { useCart } from '../context/useCart';
 import { formatRupiah } from '../utils/format';
+import { Button } from '@/components/ui/button';
+import { Badge } from '@/components/ui/badge';
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from '@/components/ui/accordion';
 import { 
   FiArrowLeft, 
   FiShoppingBag, 
@@ -16,6 +24,7 @@ import {
   FiShare2,
   FiPackage
 } from 'react-icons/fi';
+import { ShieldCheck, Info, Truck } from 'lucide-react';
 
 
 const ProductDetailPage = () => {
@@ -49,13 +58,15 @@ const ProductDetailPage = () => {
           </div>
           <h2 className="text-xl font-bold text-slate-800 mb-2">Produk Tidak Ditemukan</h2>
           <p className="text-sm text-slate-500 mb-6">Maaf, produk yang kamu cari mungkin sudah tidak tersedia.</p>
-          <Link
-            to="/"
-            className="inline-flex items-center space-x-2 px-5 py-2.5 bg-orange-500 text-white font-bold text-sm rounded-xl hover:bg-orange-600 transition-all shadow-md"
+          <Button
+            asChild
+            className="bg-orange-500 hover:bg-orange-600 text-white font-bold"
           >
-            <FiArrowLeft />
-            <span>Kembali ke Katalog</span>
-          </Link>
+            <Link to="/">
+              <FiArrowLeft className="mr-2" />
+              <span>Kembali ke Katalog</span>
+            </Link>
+          </Button>
         </div>
         <Footer />
       </div>
@@ -65,7 +76,6 @@ const ProductDetailPage = () => {
   const handleAddToCart = () => {
     addItem(product, quantity);
   };
-
 
   const handleDirectWhatsApp = () => {
     addItem(product, quantity);
@@ -80,7 +90,6 @@ const ProductDetailPage = () => {
     }
   };
 
-  // Get related products from the same category or flavor
   const relatedProducts = productsData
     .filter((p) => p.id !== product.id && p.category === product.category)
     .slice(0, 4);
@@ -114,7 +123,7 @@ const ProductDetailPage = () => {
 
         {/* Product Detail Section */}
         <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
-          <div className="bg-white rounded-3xl border border-slate-200/80 shadow-sm p-5 sm:p-8 lg:p-10">
+          <div className="bg-white rounded-3xl border border-slate-200/80 shadow-xs p-5 sm:p-8 lg:p-10">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
               
               {/* Product Image Container */}
@@ -129,32 +138,34 @@ const ProductDetailPage = () => {
 
                 {/* Badges Overlay */}
                 <div className="absolute top-4 left-4 z-10 flex flex-wrap gap-2">
-                  <span className="px-3 py-1 bg-slate-900 text-white text-xs font-bold rounded-full shadow-sm border border-white/10">
+                  <Badge variant="secondary" className="bg-slate-900 text-white border-white/10 font-bold px-3 py-1 text-xs rounded-full">
                     {product.category}
-                  </span>
+                  </Badge>
                   {product.flavor && (
-                    <span className="px-3 py-1 bg-orange-500 text-white text-xs font-extrabold rounded-full shadow-sm border border-white/10">
+                    <Badge variant="default" className="bg-orange-500 text-white font-extrabold px-3 py-1 text-xs rounded-full">
                       {product.flavor}
-                    </span>
+                    </Badge>
                   )}
-                  <span className="px-3 py-1 bg-amber-500 text-white text-xs font-extrabold rounded-full shadow-sm border border-white/10">
+                  <Badge variant="outline" className="bg-amber-500 text-white border-0 font-extrabold px-3 py-1 text-xs rounded-full">
                     Netto: {product.weight || '250gr'}
-                  </span>
+                  </Badge>
                   {(product.isAvailable === false || product.price === 0) && (
-                    <span className="px-3 py-1 bg-rose-600 text-white text-xs font-black uppercase tracking-wider rounded-full shadow-sm border border-white/10">
+                    <Badge variant="destructive" className="bg-rose-600 text-white font-black uppercase tracking-wider px-3 py-1 text-xs rounded-full">
                       Not Available
-                    </span>
+                    </Badge>
                   )}
                 </div>
 
                 {/* Share Button */}
-                <button
+                <Button
+                  size="icon"
+                  variant="secondary"
                   onClick={handleShare}
-                  className="absolute top-4 right-4 z-10 w-9 h-9 rounded-full bg-white text-slate-700 flex items-center justify-center shadow-md transition-all active:scale-95 cursor-pointer"
+                  className="absolute top-4 right-4 z-10 rounded-full bg-white text-slate-700 shadow-md cursor-pointer"
                   title="Bagikan Produk"
                 >
-                  {copied ? <FiCheck className="text-emerald-600" /> : <FiShare2 className="text-base" />}
-                </button>
+                  {copied ? <FiCheck className="text-emerald-600 text-lg" /> : <FiShare2 className="text-base" />}
+                </Button>
               </div>
 
               {/* Product Information Column */}
@@ -175,9 +186,9 @@ const ProductDetailPage = () => {
                     </div>
 
                     {(product.isAvailable === false || product.price === 0) && (
-                      <span className="px-3 py-1 bg-rose-100 text-rose-700 font-bold text-xs rounded-lg border border-rose-200">
+                      <Badge variant="destructive" className="bg-rose-100 text-rose-700 font-bold text-xs border border-rose-200 rounded-lg">
                         Tidak Tersedia (Not Available)
-                      </span>
+                      </Badge>
                     )}
                   </div>
 
@@ -212,15 +223,58 @@ const ProductDetailPage = () => {
                       </span>
                     </div>
                   </div>
+
+                  {/* Shadcn Accordion for Product Specifications & Info */}
+                  <div className="mt-6 pt-4 border-t border-slate-100">
+                    <Accordion type="single" collapsible defaultValue="description" className="w-full">
+                      <AccordionItem value="description">
+                        <AccordionTrigger className="text-sm font-extrabold text-slate-800">
+                          <span className="flex items-center gap-2">
+                            <Info className="h-4 w-4 text-orange-500" /> Deskripsi Snack
+                          </span>
+                        </AccordionTrigger>
+                        <AccordionContent className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                          {product.description || `Cemilan lezat ${product.name} diolah secara higienis menggunakan bahan alami berkualitas tinggi. Memiliki tekstur renyah dan cita rasa khas ${product.flavor || product.category} yang cocok dinikmati kapan saja bersama keluarga maupun sahabat.`}
+                        </AccordionContent>
+                      </AccordionItem>
+
+                      <AccordionItem value="composition">
+                        <AccordionTrigger className="text-sm font-extrabold text-slate-800">
+                          <span className="flex items-center gap-2">
+                            <ShieldCheck className="h-4 w-4 text-emerald-500" /> Komposisi & Daya Tahan
+                          </span>
+                        </AccordionTrigger>
+                        <AccordionContent className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                          <ul className="list-disc list-inside space-y-1">
+                            <li><strong>Komposisi utama:</strong> Tepung Pilihan, Rempah Alami, Minyak Nabati, Bumbu Spesial {product.flavor || 'Snackify'}.</li>
+                            <li><strong>Berat Bersih:</strong> {product.weight || '250gr'}</li>
+                            <li><strong>Masa Simpan:</strong> Hingga 6 Bulan (Simpan di tempat sejuk & tertutup rapat).</li>
+                            <li><strong>Sertifikasi:</strong> 100% Halal & Bebas Bahan Pengawet Buatan.</li>
+                          </ul>
+                        </AccordionContent>
+                      </AccordionItem>
+
+                      <AccordionItem value="shipping">
+                        <AccordionTrigger className="text-sm font-extrabold text-slate-800">
+                          <span className="flex items-center gap-2">
+                            <Truck className="h-4 w-4 text-amber-500" /> Pengiriman & Packing Safetylock
+                          </span>
+                        </AccordionTrigger>
+                        <AccordionContent className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                          Setiap pesanan dipacking menggunakan kardus tebal dan *bubble wrap* berlapis tanpa biaya tambahan untuk menjamin snack sampai dalam kondisi utuh dan renyah.
+                        </AccordionContent>
+                      </AccordionItem>
+                    </Accordion>
+                  </div>
                 </div>
 
                 {/* Action Buttons */}
                 <div className="space-y-3 pt-4 border-t border-slate-100">
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                    <button
+                    <Button
                       onClick={handleAddToCart}
                       disabled={product.price === 0 || product.isAvailable === false}
-                      className="py-3.5 px-5 rounded-2xl bg-linear-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white font-extrabold text-sm shadow-lg shadow-orange-500/25 transition-all transform active:scale-95 flex items-center justify-center space-x-2 enabled:cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
+                      className="h-12 rounded-2xl bg-linear-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white font-extrabold text-sm shadow-lg shadow-orange-500/25 flex items-center justify-center space-x-2 cursor-pointer"
                     >
                       <FiShoppingBag className="text-lg" />
                       <span>
@@ -228,16 +282,16 @@ const ProductDetailPage = () => {
                           ? 'Not Available'
                           : '+ Tambah Keranjang'}
                       </span>
-                    </button>
+                    </Button>
 
-                    <button
+                    <Button
                       onClick={handleDirectWhatsApp}
                       disabled={product.price === 0 || product.isAvailable === false}
-                      className="py-3.5 px-5 rounded-2xl bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold text-sm shadow-lg shadow-emerald-600/25 transition-all transform active:scale-95 flex items-center justify-center space-x-2 enabled:cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
+                      className="h-12 rounded-2xl bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold text-sm shadow-lg shadow-emerald-600/25 flex items-center justify-center space-x-2 cursor-pointer"
                     >
                       <FiMessageSquare className="text-lg" />
                       <span>Order via WhatsApp</span>
-                    </button>
+                    </Button>
                   </div>
                 </div>
 

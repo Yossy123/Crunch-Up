@@ -8,6 +8,14 @@ import {
   FiCheckCircle
 } from 'react-icons/fi';
 import productsData from '../data/products.json';
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from '@/components/ui/select';
+import { Button } from '@/components/ui/button';
 
 const categoryOptions = [
   'Semua Kategori',
@@ -66,14 +74,16 @@ const CategoryFilter = ({
           </div>
 
           {isFiltered && (
-            <button
+            <Button
               type="button"
+              variant="secondary"
+              size="sm"
               onClick={resetFilters}
-              className="inline-flex items-center space-x-1.5 px-2.5 py-1.5 rounded-xl bg-orange-50 hover:bg-orange-100 text-orange-600 text-[11px] sm:text-xs font-bold transition-all cursor-pointer shrink-0 ml-2"
+              className="bg-orange-50 hover:bg-orange-100 text-orange-600 text-[11px] sm:text-xs font-bold px-2.5 py-1.5 h-8 rounded-xl shrink-0 ml-2"
             >
-              <FiRotateCcw className="text-xs" />
+              <FiRotateCcw className="text-xs mr-1" />
               <span>Reset</span>
-            </button>
+            </Button>
           )}
         </div>
 
@@ -81,99 +91,79 @@ const CategoryFilter = ({
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-2.5 sm:gap-4">
           
           {/* Dropdown 1: Kategori Snack */}
-          <div className="relative w-full min-w-0">
-            <label className="flex items-center gap-1 text-[10px] sm:text-[11px] font-bold text-slate-500 uppercase tracking-wider mb-1 truncate">
+          <div className="w-full min-w-0 space-y-1">
+            <label className="flex items-center gap-1 text-[10px] sm:text-[11px] font-bold text-slate-500 uppercase tracking-wider truncate">
               <FiGrid className="text-orange-500 shrink-0" /> Kategori
             </label>
-            <select
-              value={selectedCategory}
-              onChange={(e) => setSelectedCategory(e.target.value)}
-              className="w-full bg-slate-50 hover:bg-slate-100/80 border border-slate-200 text-slate-800 font-semibold text-xs sm:text-sm py-2 sm:py-2.5 pl-2.5 pr-7 rounded-xl sm:rounded-2xl shadow-2xs focus:outline-none focus:ring-2 focus:ring-orange-500/20 focus:border-orange-500 cursor-pointer transition-all appearance-none truncate"
-              style={{
-                backgroundImage: `url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%2394A3B8%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E")`,
-                backgroundRepeat: 'no-repeat',
-                backgroundPosition: 'right 0.65rem center',
-                backgroundSize: '0.6rem auto'
-              }}
-            >
-              {categoryOptions.map((cat) => (
-                <option key={cat} value={cat}>
-                  {cat}
-                </option>
-              ))}
-            </select>
+            <Select value={selectedCategory} onValueChange={setSelectedCategory}>
+              <SelectTrigger className="w-full bg-slate-50 border-slate-200 text-xs sm:text-sm font-semibold rounded-xl sm:rounded-2xl">
+                <SelectValue placeholder="Pilih Kategori" />
+              </SelectTrigger>
+              <SelectContent>
+                {categoryOptions.map((cat) => (
+                  <SelectItem key={cat} value={cat}>
+                    {cat}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
           </div>
 
           {/* Dropdown 2: Varian Rasa */}
-          <div className="relative w-full min-w-0">
-            <label className="flex items-center gap-1 text-[10px] sm:text-[11px] font-bold text-slate-500 uppercase tracking-wider mb-1 truncate">
+          <div className="w-full min-w-0 space-y-1">
+            <label className="flex items-center gap-1 text-[10px] sm:text-[11px] font-bold text-slate-500 uppercase tracking-wider truncate">
               <FiSmile className="text-orange-500 shrink-0" /> Rasa
             </label>
-            <select
-              value={selectedFlavor}
-              onChange={(e) => setSelectedFlavor(e.target.value)}
-              className="w-full bg-slate-50 hover:bg-slate-100/80 border border-slate-200 text-slate-800 font-semibold text-xs sm:text-sm py-2 sm:py-2.5 pl-2.5 pr-7 rounded-xl sm:rounded-2xl shadow-2xs focus:outline-none focus:ring-2 focus:ring-orange-500/20 focus:border-orange-500 cursor-pointer transition-all appearance-none truncate"
-              style={{
-                backgroundImage: `url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%2394A3B8%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E")`,
-                backgroundRepeat: 'no-repeat',
-                backgroundPosition: 'right 0.65rem center',
-                backgroundSize: '0.6rem auto'
-              }}
-            >
-              {flavorOptions.map((flavor) => (
-                <option key={flavor} value={flavor}>
-                  {flavor}
-                </option>
-              ))}
-            </select>
+            <Select value={selectedFlavor} onValueChange={setSelectedFlavor}>
+              <SelectTrigger className="w-full bg-slate-50 border-slate-200 text-xs sm:text-sm font-semibold rounded-xl sm:rounded-2xl">
+                <SelectValue placeholder="Pilih Rasa" />
+              </SelectTrigger>
+              <SelectContent>
+                {flavorOptions.map((flavor) => (
+                  <SelectItem key={flavor} value={flavor}>
+                    {flavor}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
           </div>
 
           {/* Dropdown 3: Status Stok */}
-          <div className="relative w-full min-w-0">
-            <label className="flex items-center gap-1 text-[10px] sm:text-[11px] font-bold text-slate-500 uppercase tracking-wider mb-1 truncate">
+          <div className="w-full min-w-0 space-y-1">
+            <label className="flex items-center gap-1 text-[10px] sm:text-[11px] font-bold text-slate-500 uppercase tracking-wider truncate">
               <FiCheckCircle className="text-orange-500 shrink-0" /> Status
             </label>
-            <select
-              value={selectedStatus}
-              onChange={(e) => setSelectedStatus(e.target.value)}
-              className="w-full bg-slate-50 hover:bg-slate-100/80 border border-slate-200 text-slate-800 font-semibold text-xs sm:text-sm py-2 sm:py-2.5 pl-2.5 pr-7 rounded-xl sm:rounded-2xl shadow-2xs focus:outline-none focus:ring-2 focus:ring-orange-500/20 focus:border-orange-500 cursor-pointer transition-all appearance-none truncate"
-              style={{
-                backgroundImage: `url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%2394A3B8%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E")`,
-                backgroundRepeat: 'no-repeat',
-                backgroundPosition: 'right 0.65rem center',
-                backgroundSize: '0.6rem auto'
-              }}
-            >
-              {statusOptions.map((status) => (
-                <option key={status.id} value={status.id}>
-                  {status.label}
-                </option>
-              ))}
-            </select>
+            <Select value={selectedStatus} onValueChange={setSelectedStatus}>
+              <SelectTrigger className="w-full bg-slate-50 border-slate-200 text-xs sm:text-sm font-semibold rounded-xl sm:rounded-2xl">
+                <SelectValue placeholder="Pilih Status" />
+              </SelectTrigger>
+              <SelectContent>
+                {statusOptions.map((status) => (
+                  <SelectItem key={status.id} value={status.id}>
+                    {status.label}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
           </div>
 
           {/* Dropdown 4: Urutkan (Sort By) */}
-          <div className="relative w-full min-w-0">
-            <label className="flex items-center gap-1 text-[10px] sm:text-[11px] font-bold text-slate-500 uppercase tracking-wider mb-1 truncate">
+          <div className="w-full min-w-0 space-y-1">
+            <label className="flex items-center gap-1 text-[10px] sm:text-[11px] font-bold text-slate-500 uppercase tracking-wider truncate">
               <FiSliders className="text-orange-500 shrink-0" /> Urutkan
             </label>
-            <select
-              value={sortBy}
-              onChange={(e) => setSortBy(e.target.value)}
-              className="w-full bg-slate-50 hover:bg-slate-100/80 border border-slate-200 text-slate-800 font-semibold text-xs sm:text-sm py-2 sm:py-2.5 pl-2.5 pr-7 rounded-xl sm:rounded-2xl shadow-2xs focus:outline-none focus:ring-2 focus:ring-orange-500/20 focus:border-orange-500 cursor-pointer transition-all appearance-none truncate"
-              style={{
-                backgroundImage: `url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%2394A3B8%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E")`,
-                backgroundRepeat: 'no-repeat',
-                backgroundPosition: 'right 0.65rem center',
-                backgroundSize: '0.6rem auto'
-              }}
-            >
-              {sortOptions.map((sort) => (
-                <option key={sort.id} value={sort.id} disabled={sort.disabled}>
-                  {sort.label}
-                </option>
-              ))}
-            </select>
+            <Select value={sortBy} onValueChange={setSortBy}>
+              <SelectTrigger className="w-full bg-slate-50 border-slate-200 text-xs sm:text-sm font-semibold rounded-xl sm:rounded-2xl">
+                <SelectValue placeholder="Urutkan" />
+              </SelectTrigger>
+              <SelectContent>
+                {sortOptions.map((sort) => (
+                  <SelectItem key={sort.id} value={sort.id} disabled={sort.disabled}>
+                    {sort.label}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
           </div>
 
         </div>
@@ -183,5 +173,3 @@ const CategoryFilter = ({
 };
 
 export default CategoryFilter;
-
-
