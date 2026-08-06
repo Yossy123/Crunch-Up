@@ -101,7 +101,7 @@ const ProductDetailPage = () => {
             <div className="flex items-center space-x-2 text-xs text-slate-400">
               <Link to="/" className="hover:text-slate-600">Home</Link>
               <span>/</span>
-              <span className="text-slate-600 font-medium truncate max-w-[150px] sm:max-w-xs">
+              <span className="text-slate-600 font-medium truncate max-w-37.5 sm:max-w-xs">
                 {product.name}
               </span>
             </div>
@@ -213,7 +213,7 @@ const ProductDetailPage = () => {
                     <button
                       onClick={handleAddToCart}
                       disabled={(product.stock ?? 0) <= 0 || product.price === 0 || product.isAvailable === false}
-                      className="py-3.5 px-5 rounded-2xl bg-linear-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white font-extrabold text-sm shadow-lg shadow-orange-500/25 transition-all transform active:scale-95 flex items-center justify-center space-x-2 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
+                      className="py-3.5 px-5 rounded-2xl bg-linear-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white font-extrabold text-sm shadow-lg shadow-orange-500/25 transition-all transform active:scale-95 flex items-center justify-center space-x-2 enabled:cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
                     >
                       <FiShoppingBag className="text-lg" />
                       <span>
@@ -228,7 +228,7 @@ const ProductDetailPage = () => {
                     <button
                       onClick={handleDirectWhatsApp}
                       disabled={product.price === 0 || product.isAvailable === false}
-                      className="py-3.5 px-5 rounded-2xl bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold text-sm shadow-lg shadow-emerald-600/25 transition-all transform active:scale-95 flex items-center justify-center space-x-2 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
+                      className="py-3.5 px-5 rounded-2xl bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold text-sm shadow-lg shadow-emerald-600/25 transition-all transform active:scale-95 flex items-center justify-center space-x-2 enabled:cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
                     >
                       <FiMessageSquare className="text-lg" />
                       <span>Order via WhatsApp</span>

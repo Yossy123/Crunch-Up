@@ -72,7 +72,7 @@ const Banner = () => {
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      <div className="relative overflow-hidden rounded-3xl shadow-xl min-h-[420px] xs:min-h-[400px] sm:min-h-[360px] md:min-h-90 flex items-center">
+      <div className="relative overflow-hidden rounded-3xl shadow-xl min-h-105 xs:min-h-100 sm:min-h-90 md:min-h-90 flex items-center">
         {banners.map((slide, index) => {
           const BadgeIcon = slide.badgeIcon;
           return (
@@ -110,7 +110,7 @@ const Banner = () => {
                 </div>
 
                 {/* Banner Image Visual (Visible on Mobile & Desktop) */}
-                <div className="relative z-10 w-full max-w-[240px] sm:max-w-xs md:w-72 lg:w-96 h-28 sm:h-36 md:h-48 lg:h-60 rounded-2xl overflow-hidden shadow-2xl border border-white/10 group shrink-0">
+                <div className="relative z-10 w-full max-w-60 sm:max-w-xs md:w-72 lg:w-96 h-28 sm:h-36 md:h-48 lg:h-60 rounded-2xl overflow-hidden shadow-2xl border border-white/10 group shrink-0">
                   <img
                     src={slide.image}
                     alt={slide.title}

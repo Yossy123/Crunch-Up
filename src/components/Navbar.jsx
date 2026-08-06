@@ -48,7 +48,7 @@ const Navbar = ({ searchQuery, setSearchQuery, onResetFilters }) => {
                 placeholder="Cari snack favoritmu..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full pl-10 pr-10 py-2.5 sm:py-3 text-xs sm:text-sm bg-slate-100/80 hover:bg-slate-100 focus:bg-white text-slate-900 rounded-2xl border border-transparent focus:border-orange-500 focus:ring-4 focus:ring-orange-500/10 outline-none transition-all placeholder:text-slate-400"
+                className="w-full pl-10 pr-10 py-2.5 sm:py-3 text-xs sm:text-sm bg-slate-100 hover:bg-slate-100/90 focus:bg-white text-slate-900 rounded-2xl border border-slate-200/60 focus:border-orange-500 focus:ring-4 focus:ring-orange-500/10 outline-none transition-all placeholder:text-slate-400"
               />
               {searchQuery && (
                 <button

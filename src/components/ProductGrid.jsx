@@ -165,7 +165,7 @@ const ProductGrid = ({
                 <button
                   onClick={() => handlePageChange(1)}
                   disabled={currentPage === 1}
-                  className="hidden sm:inline-flex p-2 sm:p-2.5 rounded-lg sm:rounded-xl border border-slate-200 text-slate-600 hover:bg-orange-50 hover:border-orange-200 hover:text-orange-600 disabled:opacity-40 disabled:hover:bg-transparent disabled:hover:border-slate-200 disabled:hover:text-slate-600 transition-colors cursor-pointer disabled:cursor-not-allowed"
+                  className="hidden sm:inline-flex p-2 sm:p-2.5 rounded-lg sm:rounded-xl border border-slate-200 text-slate-600 hover:bg-orange-50 hover:border-orange-200 hover:text-orange-600 disabled:opacity-40 disabled:hover:bg-transparent disabled:hover:border-slate-200 disabled:hover:text-slate-600 transition-colors enabled:cursor-pointer disabled:cursor-not-allowed"
                   title="Halaman Pertama"
                   aria-label="Halaman Pertama"
                 >
@@ -176,7 +176,7 @@ const ProductGrid = ({
                 <button
                   onClick={() => handlePageChange(currentPage - 1)}
                   disabled={currentPage === 1}
-                  className="p-2 sm:p-2.5 rounded-lg sm:rounded-xl border border-slate-200 text-slate-600 hover:bg-orange-50 hover:border-orange-200 hover:text-orange-600 disabled:opacity-40 disabled:hover:bg-transparent disabled:hover:border-slate-200 disabled:hover:text-slate-600 transition-colors cursor-pointer disabled:cursor-not-allowed"
+                  className="p-2 sm:p-2.5 rounded-lg sm:rounded-xl border border-slate-200 text-slate-600 hover:bg-orange-50 hover:border-orange-200 hover:text-orange-600 disabled:opacity-40 disabled:hover:bg-transparent disabled:hover:border-slate-200 disabled:hover:text-slate-600 transition-colors enabled:cursor-pointer disabled:cursor-not-allowed"
                   title="Halaman Sebelumnya"
                   aria-label="Halaman Sebelumnya"
                 >
@@ -206,7 +206,7 @@ const ProductGrid = ({
                 <button
                   onClick={() => handlePageChange(currentPage + 1)}
                   disabled={currentPage === totalPages}
-                  className="p-2 sm:p-2.5 rounded-lg sm:rounded-xl border border-slate-200 text-slate-600 hover:bg-orange-50 hover:border-orange-200 hover:text-orange-600 disabled:opacity-40 disabled:hover:bg-transparent disabled:hover:border-slate-200 disabled:hover:text-slate-600 transition-colors cursor-pointer disabled:cursor-not-allowed"
+                  className="p-2 sm:p-2.5 rounded-lg sm:rounded-xl border border-slate-200 text-slate-600 hover:bg-orange-50 hover:border-orange-200 hover:text-orange-600 disabled:opacity-40 disabled:hover:bg-transparent disabled:hover:border-slate-200 disabled:hover:text-slate-600 transition-colors enabled:cursor-pointer disabled:cursor-not-allowed"
                   title="Halaman Selanjutnya"
                   aria-label="Halaman Selanjutnya"
                 >
@@ -217,7 +217,7 @@ const ProductGrid = ({
                 <button
                   onClick={() => handlePageChange(totalPages)}
                   disabled={currentPage === totalPages}
-                  className="hidden sm:inline-flex p-2 sm:p-2.5 rounded-lg sm:rounded-xl border border-slate-200 text-slate-600 hover:bg-orange-50 hover:border-orange-200 hover:text-orange-600 disabled:opacity-40 disabled:hover:bg-transparent disabled:hover:border-slate-200 disabled:hover:text-slate-600 transition-colors cursor-pointer disabled:cursor-not-allowed"
+                  className="hidden sm:inline-flex p-2 sm:p-2.5 rounded-lg sm:rounded-xl border border-slate-200 text-slate-600 hover:bg-orange-50 hover:border-orange-200 hover:text-orange-600 disabled:opacity-40 disabled:hover:bg-transparent disabled:hover:border-slate-200 disabled:hover:text-slate-600 transition-colors enabled:cursor-pointer disabled:cursor-not-allowed"
                   title="Halaman Terakhir"
                   aria-label="Halaman Terakhir"
                 >
