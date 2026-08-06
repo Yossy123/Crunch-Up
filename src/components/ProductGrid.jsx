@@ -164,7 +164,7 @@ const ProductGrid = ({
       {/* Grid or Empty State */}
       {currentProducts.length > 0 ? (
         <>
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 sm:gap-6 min-h-[480px] sm:min-h-[580px]">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 sm:gap-6 items-start">
             {currentProducts.map(product => (
               <ProductCard 
                 key={product.id} 

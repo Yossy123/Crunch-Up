@@ -32,7 +32,7 @@
   {
     "id": 4,
     "name": "Brondong Manis",
-    "category": "Snack Jagung & Ekstrusi",
+    "category": "Snack Modern",
     "flavor": "Manis",
     "price": 16000,
     "image": "https://i.ibb.co.com/kVmwTy5t/snack-Brondong-Manis.jpg",
@@ -42,7 +42,7 @@
   {
     "id": 5,
     "name": "Brownies Kering Mini",
-    "category": "Kue Kering",
+    "category": "Snack Modern",
     "flavor": "Manis",
     "price": 26000,
     "image": "https://i.ibb.co.com/zhyqB439/snack-Brownies-Kering-Mini.jpg",
@@ -52,7 +52,7 @@
   {
     "id": 6,
     "name": "Cha cha coklat",
-    "category": "Kue Kering",
+    "category": "Snack Modern",
     "flavor": "Manis",
     "price": 16000,
     "image": "https://i.ibb.co.com/FqfKWP7N/snack-Cha-cha-coklat.jpg",
@@ -72,7 +72,7 @@
   {
     "id": 8,
     "name": "Gabus Asin",
-    "category": "Snack Jagung & Ekstrusi",
+    "category": "Snack Modern",
     "flavor": "Asin",
     "price": 26000,
     "image": "https://i.ibb.co.com/DDyqV1ss/snack-Gabus-Asin.jpg",
@@ -82,7 +82,7 @@
   {
     "id": 9,
     "name": "Gabus Indosari",
-    "category": "Snack Jagung & Ekstrusi",
+    "category": "Snack Modern",
     "flavor": "Keju",
     "price": 19000,
     "image": "https://i.ibb.co.com/ns5LRnMp/snack-Gabus-Indosari.jpg",
@@ -232,7 +232,7 @@
   {
     "id": 24,
     "name": "Keciput Bulat Mini",
-    "category": "Kue Tradisional",
+    "category": "Snack Tradisional",
     "flavor": "Manis",
     "price": 21000,
     "image": "https://i.ibb.co.com/tytSsM1/snack-Keciput-Bulat-Mini.jpg",
@@ -242,7 +242,7 @@
   {
     "id": 25,
     "name": "Kembang Goyang",
-    "category": "Kue Tradisional",
+    "category": "Snack Tradisional",
     "flavor": "Manis",
     "price": 0,
     "image": "https://i.ibb.co.com/0jYsm6z0/snack-Kembang-Goyang.jpg",
@@ -662,7 +662,7 @@
   {
     "id": 67,
     "name": "Kue Kering (Gosyen)",
-    "category": "Kue Kering",
+    "category": "Snack Modern",
     "flavor": "Manis",
     "price": 22000,
     "image": "https://i.ibb.co.com/Q1wQwqv/snack-Kue-Kering.jpg",
@@ -672,7 +672,7 @@
   {
     "id": 68,
     "name": "Kue Pang Pang",
-    "category": "Kue Kering",
+    "category": "Snack Modern",
     "flavor": "Manis",
     "price": 0,
     "image": "https://i.ibb.co.com/hxPYZ7HZ/snack-Kue-Pang-Pang.jpg",
@@ -682,7 +682,7 @@
   {
     "id": 69,
     "name": "Kue Semprong",
-    "category": "Kue Tradisional",
+    "category": "Snack Tradisional",
     "flavor": "Manis",
     "price": 26000,
     "image": "https://i.ibb.co.com/fYPzStHB/snack-Kue-Semprong.jpg",
@@ -692,7 +692,7 @@
   {
     "id": 70,
     "name": "Kue Tambang",
-    "category": "Kue Tradisional",
+    "category": "Snack Tradisional",
     "flavor": "Manis",
     "price": 16000,
     "image": "https://i.ibb.co.com/hJpV7xKh/snack-Kue-Tambang.jpg",
@@ -702,7 +702,7 @@
   {
     "id": 71,
     "name": "Kuping Gajah",
-    "category": "Kue Tradisional",
+    "category": "Snack Tradisional",
     "flavor": "Manis",
     "price": 26000,
     "image": "https://i.ibb.co.com/QFtX3BvL/snack-Kuping-Gajah.jpg",
@@ -782,7 +782,7 @@
   {
     "id": 79,
     "name": "Marie Wijan",
-    "category": "Kue Kering",
+    "category": "Snack Modern",
     "flavor": "Manis",
     "price": 21000,
     "image": "https://i.ibb.co.com/YrvNWrZ/snack-Marie-Wijen.jpg",
@@ -802,7 +802,7 @@
   {
     "id": 81,
     "name": "Pilus Cikur",
-    "category": "Snack Jagung & Ekstrusi",
+    "category": "Snack Modern",
     "flavor": "Asin",
     "price": 16000,
     "image": "https://i.ibb.co.com/bxLmVNv/snack-Pilus-Cikur.jpg",
@@ -812,7 +812,7 @@
   {
     "id": 82,
     "name": "Pilus Kecil",
-    "category": "Snack Jagung & Ekstrusi",
+    "category": "Snack Modern",
     "flavor": "Asin",
     "price": 21000,
     "image": "https://i.ibb.co.com/twYSQ7G2/snack-Pilus-Kecil.jpg",
@@ -822,7 +822,7 @@
   {
     "id": 83,
     "name": "Pisang Aroma",
-    "category": "Kue Tradisional",
+    "category": "Snack Tradisional",
     "flavor": "Manis",
     "price": 21000,
     "image": "https://i.ibb.co.com/qY3rYNjn/snack-Pisang-Aroma.jpg",
@@ -852,7 +852,7 @@
   {
     "id": 86,
     "name": "Ring Keju",
-    "category": "Snack Jagung & Ekstrusi",
+    "category": "Snack Modern",
     "flavor": "Keju",
     "price": 16000,
     "image": "https://i.ibb.co.com/Y4nrtzpm/snack-Ring-Keju.jpg",
@@ -862,7 +862,7 @@
   {
     "id": 87,
     "name": "Roti Bagelen",
-    "category": "Kue Kering",
+    "category": "Snack Modern",
     "flavor": "Manis",
     "price": 26000,
     "image": "https://i.ibb.co.com/8nSRFfmY/snack-Roti-Bagelen.jpg",
@@ -872,7 +872,7 @@
   {
     "id": 88,
     "name": "Sale Jari",
-    "category": "Kue Tradisional",
+    "category": "Snack Tradisional",
     "flavor": "Manis",
     "price": 32000,
     "image": "https://i.ibb.co.com/xtMtKcFY/snack-Sale-Jari.jpg",
@@ -882,7 +882,7 @@
   {
     "id": 89,
     "name": "Samosa",
-    "category": "Kue Tradisional",
+    "category": "Snack Tradisional",
     "flavor": "Asin",
     "price": 28000,
     "image": "https://i.ibb.co.com/kg330x7m/snack-Samosa.jpg",
@@ -902,7 +902,7 @@
   {
     "id": 91,
     "name": "Semprong Wisen",
-    "category": "Kue Tradisional",
+    "category": "Snack Tradisional",
     "flavor": "Manis",
     "price": 0,
     "image": "https://i.ibb.co.com/Zzj1K32Q/snack-Semprong-Wisen.jpg",
@@ -912,7 +912,7 @@
   {
     "id": 92,
     "name": "Sereal Coklat",
-    "category": "Snack Jagung & Ekstrusi",
+    "category": "Snack Modern",
     "flavor": "Manis",
     "price": 21000,
     "image": "https://i.ibb.co.com/1ty36XMf/snack-Sereal-Coklat.jpg",
@@ -922,7 +922,7 @@
   {
     "id": 93,
     "name": "Simping",
-    "category": "Kue Tradisional",
+    "category": "Snack Tradisional",
     "flavor": "Manis",
     "price": 19000,
     "image": "https://i.ibb.co.com/ym89Y5qL/snack-Simping.jpg",
@@ -932,7 +932,7 @@
   {
     "id": 94,
     "name": "Soes Kering",
-    "category": "Kue Kering",
+    "category": "Snack Modern",
     "flavor": "Keju",
     "price": 24000,
     "image": "https://i.ibb.co.com/Cpzsdg31/snack-Soes-Kering.jpg",
@@ -1022,7 +1022,7 @@
   {
     "id": 103,
     "name": "Sumpin",
-    "category": "Kue Tradisional",
+    "category": "Snack Tradisional",
     "flavor": "Asin",
     "price": 24000,
     "image": "https://i.ibb.co.com/Kp4yS3Cr/snack-Sumpin.jpg",
@@ -1062,7 +1062,7 @@
   {
     "id": 107,
     "name": "Tortilla",
-    "category": "Snack Jagung & Ekstrusi",
+    "category": "Snack Modern",
     "flavor": "Asin",
     "price": 21000,
     "image": "https://i.ibb.co.com/Rkmb5jzG/snack-Tortilla.jpg",
@@ -1072,7 +1072,7 @@
   {
     "id": 108,
     "name": "Wafer Roll",
-    "category": "Kue Kering",
+    "category": "Snack Modern",
     "flavor": "Manis",
     "price": 19000,
     "image": "https://i.ibb.co.com/1tfCqGcZ/snack-Wafer-Roll.jpg",
@@ -1082,7 +1082,7 @@
   {
     "id": 109,
     "name": "Waffer Mini",
-    "category": "Kue Kering",
+    "category": "Snack Modern",
     "flavor": "Manis",
     "price": 21000,
     "image": "https://i.ibb.co.com/twTQfzM0/snack-Waffer-Mini.jpg",
