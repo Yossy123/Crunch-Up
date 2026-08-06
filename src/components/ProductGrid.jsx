@@ -81,7 +81,7 @@ const ProductGrid = ({
 
   const isInitialMount = React.useRef(true);
 
-  // Synchronously set scroll position before browser paint to prevent any bounce effect
+  // Smoothly scroll to top of catalog before browser paint without layout collapse
   React.useLayoutEffect(() => {
     if (isInitialMount.current) {
       isInitialMount.current = false;
@@ -97,7 +97,7 @@ const ProductGrid = ({
 
       window.scrollTo({
         top: targetPosition,
-        behavior: 'auto'
+        behavior: 'smooth'
       });
     }
   }, [currentPage]);
@@ -164,7 +164,7 @@ const ProductGrid = ({
       {/* Grid or Empty State */}
       {currentProducts.length > 0 ? (
         <>
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 sm:gap-6">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 sm:gap-6 min-h-[480px] sm:min-h-[580px]">
             {currentProducts.map(product => (
               <ProductCard 
                 key={product.id} 
