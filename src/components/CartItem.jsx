@@ -21,7 +21,7 @@ const CartItem = ({ item }) => {
       {/* Info */}
       <div className="flex-1 min-w-0">
         <span className="text-[10px] uppercase font-bold tracking-wider text-slate-400 block truncate">
-          {product.category}
+          {product.category} • {product.weight || '250gr'}
         </span>
         <h4 className="text-xs sm:text-sm font-semibold text-slate-800 truncate mb-0.5 sm:mb-1" title={product.name}>
           {product.name}

@@ -86,7 +86,7 @@ const CheckoutModal = () => {
     const merchantPhone = import.meta.env.VITE_WA_PHONE || '628128050439';
     const itemsList = cartItems.map(item => {
       const lineSubtotal = item.product.price * item.quantity;
-      return `- ${item.product.name} (${item.quantity}x) = ${formatRupiah(lineSubtotal)}`;
+      return `- ${item.product.name} (${item.product.weight || '250gr'}) (${item.quantity}x) = ${formatRupiah(lineSubtotal)}`;
     }).join('\n');
 
     const catatanText = formData.catatan.trim() 
@@ -211,7 +211,7 @@ ${itemsList}
                 {cartItems.map(item => (
                   <div key={item.product.id} className="flex justify-between text-slate-700">
                     <span className="truncate pr-2 font-medium">
-                      {item.product.name} <strong className="text-orange-600">x{item.quantity}</strong>
+                      {item.product.name} ({item.product.weight || '250gr'}) <strong className="text-orange-600">x{item.quantity}</strong>
                     </span>
                     <span className="font-semibold shrink-0">
                       {formatRupiah(item.product.price * item.quantity)}

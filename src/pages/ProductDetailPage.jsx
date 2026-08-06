@@ -137,6 +137,9 @@ const ProductDetailPage = () => {
                       {product.flavor}
                     </span>
                   )}
+                  <span className="px-3 py-1 bg-amber-500 text-white text-xs font-extrabold rounded-full shadow-sm border border-white/10">
+                    Netto: {product.weight || '250gr'}
+                  </span>
                   {(product.isAvailable === false || product.price === 0) && (
                     <span className="px-3 py-1 bg-rose-600 text-white text-xs font-black uppercase tracking-wider rounded-full shadow-sm border border-white/10">
                       Not Available
@@ -168,7 +171,7 @@ const ProductDetailPage = () => {
                       <span className={`text-3xl sm:text-4xl font-black ${product.price === 0 || product.isAvailable === false ? 'text-slate-400' : 'text-orange-600'}`}>
                         {formatRupiah(product.price)}
                       </span>
-                      <span className="text-xs text-slate-400 font-medium">/ porsi</span>
+                      <span className="text-xs text-slate-400 font-semibold">/ kemasan {product.weight || '250gr'}</span>
                     </div>
 
                     {(product.isAvailable === false || product.price === 0) && (

@@ -7,7 +7,8 @@
     "price": 26000,
     "image": "https://i.ibb.co.com/hJBbwDNJ/snack-Bakso-Tenggiri.jpg",
     "description": "Cemilan bakso tenggiri renyah, gurih, dan diproduksi secara higienis dengan bahan berkualitas.",
-    "isAvailable": true
+    "isAvailable": true,
+    "weight": "250gr"
   },
   {
     "id": 2,
@@ -17,7 +18,8 @@
     "price": 0,
     "image": "https://i.ibb.co.com/fzyTWsy1/snack-Bakso-Udang.jpg",
     "description": "Cemilan bakso udang renyah, gurih, dan diproduksi secara higienis dengan bahan berkualitas.",
-    "isAvailable": false
+    "isAvailable": false,
+    "weight": "250gr"
   },
   {
     "id": 3,
@@ -27,7 +29,8 @@
     "price": 17000,
     "image": "https://i.ibb.co.com/SDbHL6nW/snack-Basreng-Balado.jpg",
     "description": "Olahan basreng balado dengan sensasi bumbu pedas gurih yang melimpah dan bikin ketagihan.",
-    "isAvailable": true
+    "isAvailable": true,
+    "weight": "250gr"
   },
   {
     "id": 4,
@@ -37,7 +40,8 @@
     "price": 16000,
     "image": "https://i.ibb.co.com/kVmwTy5t/snack-Brondong-Manis.jpg",
     "description": "Cemilan kue brondong manis khas dengan tekstur renyah manis dan cita rasa lezat otentik.",
-    "isAvailable": true
+    "isAvailable": true,
+    "weight": "250gr"
   },
   {
     "id": 5,
@@ -47,7 +51,8 @@
     "price": 26000,
     "image": "https://i.ibb.co.com/zhyqB439/snack-Brownies-Kering-Mini.jpg",
     "description": "Nikmati kelezatan brownies kering mini dengan rasa manis yang pas untuk menemani aktivitas harian Anda.",
-    "isAvailable": true
+    "isAvailable": true,
+    "weight": "250gr"
   },
   {
     "id": 6,
@@ -57,7 +62,8 @@
     "price": 16000,
     "image": "https://i.ibb.co.com/FqfKWP7N/snack-Cha-cha-coklat.jpg",
     "description": "Nikmati kelezatan cha cha coklat dengan rasa manis yang pas untuk menemani aktivitas harian Anda.",
-    "isAvailable": true
+    "isAvailable": true,
+    "weight": "250gr"
   },
   {
     "id": 7,
@@ -67,7 +73,8 @@
     "price": 26000,
     "image": "https://i.ibb.co.com/hFN7BX04/snack-Emping-Thailand.jpg",
     "description": "Cemilan emping thailand renyah, gurih, dan diproduksi secara higienis dengan bahan berkualitas.",
-    "isAvailable": true
+    "isAvailable": true,
+    "weight": "250gr"
   },
   {
     "id": 8,
@@ -77,7 +84,8 @@
     "price": 26000,
     "image": "https://i.ibb.co.com/DDyqV1ss/snack-Gabus-Asin.jpg",
     "description": "Cemilan gabus asin renyah, gurih, dan diproduksi secara higienis dengan bahan berkualitas.",
-    "isAvailable": true
+    "isAvailable": true,
+    "weight": "250gr"
   },
   {
     "id": 9,
@@ -87,7 +95,8 @@
     "price": 19000,
     "image": "https://i.ibb.co.com/ns5LRnMp/snack-Gabus-Indosari.jpg",
     "description": "Cemilan gabus indosari renyah, gurih, dan diproduksi secara higienis dengan bahan berkualitas.",
-    "isAvailable": true
+    "isAvailable": true,
+    "weight": "250gr"
   },
   {
     "id": 10,
@@ -97,7 +106,8 @@
     "price": 18000,
     "image": "https://i.ibb.co.com/xqQfhtw5/snack-Gembros-Mini.jpg",
     "description": "Cemilan gembros mini renyah, gurih, dan diproduksi secara higienis dengan bahan berkualitas.",
-    "isAvailable": true
+    "isAvailable": true,
+    "weight": "250gr"
   },
   {
     "id": 11,
@@ -107,7 +117,8 @@
     "price": 16000,
     "image": "https://i.ibb.co.com/ymFDk5Ft/snack-Gurilem-Pedas.jpg",
     "description": "Olahan gurilem pedas dengan sensasi bumbu pedas gurih yang melimpah dan bikin ketagihan.",
-    "isAvailable": true
+    "isAvailable": true,
+    "weight": "250gr"
   },
   {
     "id": 12,
@@ -117,7 +128,8 @@
     "price": 0,
     "image": "https://i.ibb.co.com/Ngb0PMXb/snack-Kacang-Bali.jpg",
     "description": "Kacang Bali pilihan yang diproses dengan bumbu rempah pilihan, renyah dan gurih di setiap gigitan.",
-    "isAvailable": false
+    "isAvailable": false,
+    "weight": "250gr"
   },
   {
     "id": 13,
@@ -127,7 +139,8 @@
     "price": 18000,
     "image": "https://i.ibb.co.com/1tsCqp11/snack-Kacang-Bandung.jpg",
     "description": "Kacang Bandung pilihan yang diproses dengan bumbu rempah pilihan, renyah dan gurih di setiap gigitan.",
-    "isAvailable": true
+    "isAvailable": true,
+    "weight": "250gr"
   },
   {
     "id": 14,
@@ -137,7 +150,8 @@
     "price": 16000,
     "image": "https://i.ibb.co.com/cXpDMbL2/snack-Kacang-Campur.jpg",
     "description": "Kacang Campur pilihan yang diproses dengan bumbu rempah pilihan, renyah dan gurih di setiap gigitan.",
-    "isAvailable": true
+    "isAvailable": true,
+    "weight": "250gr"
   },
   {
     "id": 15,
@@ -147,7 +161,8 @@
     "price": 16000,
     "image": "https://i.ibb.co.com/2YN5sfgB/snack-Kacang-Gosong.jpg",
     "description": "Kacang Gosong pilihan yang diproses dengan bumbu rempah pilihan, renyah dan gurih di setiap gigitan.",
-    "isAvailable": true
+    "isAvailable": true,
+    "weight": "250gr"
   },
   {
     "id": 16,
@@ -157,7 +172,8 @@
     "price": 18000,
     "image": "https://i.ibb.co.com/xKnNwGRZ/snack-Kacang-Koro-Kulit.jpg",
     "description": "Kacang Koro Kulit pilihan yang diproses dengan bumbu rempah pilihan, renyah dan gurih di setiap gigitan.",
-    "isAvailable": true
+    "isAvailable": true,
+    "weight": "250gr"
   },
   {
     "id": 17,
@@ -167,7 +183,8 @@
     "price": 31000,
     "image": "https://i.ibb.co.com/d4kRcFpR/snack-Kacang-Kulit.jpg",
     "description": "Kacang Kulit Asin pilihan yang diproses dengan bumbu rempah pilihan, renyah dan gurih di setiap gigitan.",
-    "isAvailable": true
+    "isAvailable": true,
+    "weight": "250gr"
   },
   {
     "id": 18,
@@ -177,7 +194,8 @@
     "price": 21000,
     "image": "https://i.ibb.co.com/gLh8sPp2/snack-Kacang-Medan.jpg",
     "description": "Kacang Medan pilihan yang diproses dengan bumbu rempah pilihan, renyah dan gurih di setiap gigitan.",
-    "isAvailable": true
+    "isAvailable": true,
+    "weight": "250gr"
   },
   {
     "id": 19,
@@ -187,7 +205,8 @@
     "price": 16000,
     "image": "https://i.ibb.co.com/GQnB4Yvh/snack-Kacang-Medan-1.jpg",
     "description": "Kacang Medan 1 pilihan yang diproses dengan bumbu rempah pilihan, renyah dan gurih di setiap gigitan.",
-    "isAvailable": true
+    "isAvailable": true,
+    "weight": "250gr"
   },
   {
     "id": 20,
@@ -197,7 +216,8 @@
     "price": 16000,
     "image": "https://i.ibb.co.com/5XGHMYmk/snack-Kacang-Panggang-Tepung.jpg",
     "description": "Kacang Panggang Tepung pilihan yang diproses dengan bumbu rempah pilihan, renyah dan gurih di setiap gigitan.",
-    "isAvailable": true
+    "isAvailable": true,
+    "weight": "250gr"
   },
   {
     "id": 21,
@@ -207,7 +227,8 @@
     "price": 16000,
     "image": "https://i.ibb.co.com/jvymVcqP/snack-Kacang-Polong-Hijau.jpg",
     "description": "Kacang Polong Hijau pilihan yang diproses dengan bumbu rempah pilihan, renyah dan gurih di setiap gigitan.",
-    "isAvailable": true
+    "isAvailable": true,
+    "weight": "250gr"
   },
   {
     "id": 22,
@@ -217,7 +238,8 @@
     "price": 16000,
     "image": "https://i.ibb.co.com/JF2BDM1H/snack-Kacang-Polong-Tepung.jpg",
     "description": "Kacang Polong Tepung pilihan yang diproses dengan bumbu rempah pilihan, renyah dan gurih di setiap gigitan.",
-    "isAvailable": true
+    "isAvailable": true,
+    "weight": "250gr"
   },
   {
     "id": 23,
@@ -227,7 +249,8 @@
     "price": 18000,
     "image": "https://i.ibb.co.com/rjjY61R/snack-Kacang-Sukro-Balado.jpg",
     "description": "Kacang Sukro Balado pilihan yang diproses dengan bumbu rempah pilihan, renyah dan gurih di setiap gigitan.",
-    "isAvailable": true
+    "isAvailable": true,
+    "weight": "250gr"
   },
   {
     "id": 24,
@@ -237,7 +260,8 @@
     "price": 21000,
     "image": "https://i.ibb.co.com/tytSsM1/snack-Keciput-Bulat-Mini.jpg",
     "description": "Cemilan kue keciput bulat mini khas dengan tekstur renyah manis dan cita rasa lezat otentik.",
-    "isAvailable": true
+    "isAvailable": true,
+    "weight": "250gr"
   },
   {
     "id": 25,
@@ -247,7 +271,8 @@
     "price": 0,
     "image": "https://i.ibb.co.com/0jYsm6z0/snack-Kembang-Goyang.jpg",
     "description": "Cemilan kue kembang goyang khas dengan tekstur renyah manis dan cita rasa lezat otentik.",
-    "isAvailable": false
+    "isAvailable": false,
+    "weight": "250gr"
   },
   {
     "id": 26,
@@ -257,7 +282,8 @@
     "price": 16000,
     "image": "https://i.ibb.co.com/7JptzTgf/snack-Keripik-Bantal-Keju.jpg",
     "description": "Cemilan keripik bantal keju renyah, gurih, dan diproduksi secara higienis dengan bahan berkualitas.",
-    "isAvailable": true
+    "isAvailable": true,
+    "weight": "250gr"
   },
   {
     "id": 27,
@@ -267,7 +293,8 @@
     "price": 21000,
     "image": "https://i.ibb.co.com/NdRL2Xq3/snack-Keripik-Bawang.jpg",
     "description": "Keripik bawang olahan tradisional yang gurih, renyah, dan harum bumbu rempah pilihan.",
-    "isAvailable": true
+    "isAvailable": true,
+    "weight": "250gr"
   },
   {
     "id": 28,
@@ -277,7 +304,8 @@
     "price": 36000,
     "image": "https://i.ibb.co.com/qMC0VWF3/snack-Keripik-Belut.jpg",
     "description": "Cemilan keripik belut renyah, gurih, dan diproduksi secara higienis dengan bahan berkualitas.",
-    "isAvailable": true
+    "isAvailable": true,
+    "weight": "250gr"
   },
   {
     "id": 29,
@@ -287,7 +315,8 @@
     "price": 16000,
     "image": "https://i.ibb.co.com/BVDMdCNz/snack-Keripik-Comring.jpg",
     "description": "Cemilan keripik comring renyah, gurih, dan diproduksi secara higienis dengan bahan berkualitas.",
-    "isAvailable": true
+    "isAvailable": true,
+    "weight": "250gr"
   },
   {
     "id": 30,
@@ -297,7 +326,8 @@
     "price": 24000,
     "image": "https://i.ibb.co.com/60Rhccp2/snack-Keripik-Getuk.jpg",
     "description": "Keripik getuk olahan singkong khas yang dipotong garing dengan cita rasa asin gurih nagih.",
-    "isAvailable": true
+    "isAvailable": true,
+    "weight": "250gr"
   },
   {
     "id": 31,
@@ -307,7 +337,8 @@
     "price": 19000,
     "image": "https://i.ibb.co.com/yFf939fk/snack-Keripik-Kaca-Pedas.jpg",
     "description": "Olahan keripik kaca pedas dengan sensasi bumbu pedas gurih yang melimpah dan bikin ketagihan.",
-    "isAvailable": true
+    "isAvailable": true,
+    "weight": "250gr"
   },
   {
     "id": 32,
@@ -317,7 +348,8 @@
     "price": 0,
     "image": "https://i.ibb.co.com/M5C9GDV9/snack-Keripik-Kentang.jpg",
     "description": "Keripik kentang asli irisan tipis renyah dengan taburan garam laut alami.",
-    "isAvailable": false
+    "isAvailable": false,
+    "weight": "250gr"
   },
   {
     "id": 33,
@@ -327,7 +359,8 @@
     "price": 0,
     "image": "https://i.ibb.co.com/XrRNFPFV/snack-Keripik-Kentang-Japut.jpg",
     "description": "Cemilan keripik kentang japut renyah, gurih, dan diproduksi secara higienis dengan bahan berkualitas.",
-    "isAvailable": false
+    "isAvailable": false,
+    "weight": "250gr"
   },
   {
     "id": 34,
@@ -337,7 +370,8 @@
     "price": 16000,
     "image": "https://i.ibb.co.com/d0kMKt0C/snack-Keripik-Lanting-Asin.jpg",
     "description": "Cemilan keripik lanting asin renyah, gurih, dan diproduksi secara higienis dengan bahan berkualitas.",
-    "isAvailable": true
+    "isAvailable": true,
+    "weight": "250gr"
   },
   {
     "id": 35,
@@ -347,7 +381,8 @@
     "price": 18000,
     "image": "https://i.ibb.co.com/4RR1rQnt/snack-Keripik-Pisang-Koin-Cokelat.jpg",
     "description": "Nikmati kelezatan keripik pisang koin cokelat dengan rasa manis yang pas untuk menemani aktivitas harian Anda.",
-    "isAvailable": true
+    "isAvailable": true,
+    "weight": "250gr"
   },
   {
     "id": 36,
@@ -357,7 +392,8 @@
     "price": 17000,
     "image": "https://i.ibb.co.com/RpnDTVFM/snack-Keripik-Rujak.jpg",
     "description": "Olahan keripik rujak dengan sensasi bumbu pedas gurih yang melimpah dan bikin ketagihan.",
-    "isAvailable": true
+    "isAvailable": true,
+    "weight": "250gr"
   },
   {
     "id": 37,
@@ -367,7 +403,8 @@
     "price": 20000,
     "image": "https://i.ibb.co.com/4Rc5zBS8/snack-Keripik-Sale.jpg",
     "description": "Cemilan kue keripik sale khas dengan tekstur renyah manis dan cita rasa lezat otentik.",
-    "isAvailable": true
+    "isAvailable": true,
+    "weight": "250gr"
   },
   {
     "id": 38,
@@ -377,7 +414,8 @@
     "price": 26000,
     "image": "https://i.ibb.co.com/b5ckKQyY/snack-Keripik-Selondok.jpg",
     "description": "Cemilan keripik selondok renyah, gurih, dan diproduksi secara higienis dengan bahan berkualitas.",
-    "isAvailable": true
+    "isAvailable": true,
+    "weight": "250gr"
   },
   {
     "id": 39,
@@ -387,7 +425,8 @@
     "price": 21000,
     "image": "https://i.ibb.co.com/60v98zqc/snack-Keripik-Singkong-Asin.jpg",
     "description": "Cemilan keripik singkong asin renyah, gurih, dan diproduksi secara higienis dengan bahan berkualitas.",
-    "isAvailable": true
+    "isAvailable": true,
+    "weight": "250gr"
   },
   {
     "id": 40,
@@ -397,7 +436,8 @@
     "price": 21000,
     "image": "https://i.ibb.co.com/3YNS6RXD/snack-Keripik-Singkong-Balado.jpg",
     "description": "Olahan keripik singkong balado dengan sensasi bumbu pedas gurih yang melimpah dan bikin ketagihan.",
-    "isAvailable": true
+    "isAvailable": true,
+    "weight": "250gr"
   },
   {
     "id": 41,
@@ -407,7 +447,8 @@
     "price": 21000,
     "image": "https://i.ibb.co.com/G4M5b3zJ/snack-Keripik-Singkong-Keju.jpg",
     "description": "Cemilan keripik singkong keju renyah, gurih, dan diproduksi secara higienis dengan bahan berkualitas.",
-    "isAvailable": true
+    "isAvailable": true,
+    "weight": "250gr"
   },
   {
     "id": 42,
@@ -417,7 +458,8 @@
     "price": 21000,
     "image": "https://i.ibb.co.com/gbVTZFw1/snack-Keripik-Singkong-Original.jpg",
     "description": "Cemilan keripik singkong original renyah, gurih, dan diproduksi secara higienis dengan bahan berkualitas.",
-    "isAvailable": true
+    "isAvailable": true,
+    "weight": "250gr"
   },
   {
     "id": 43,
@@ -427,7 +469,8 @@
     "price": 36000,
     "image": "https://i.ibb.co.com/fzJnBY11/snack-Keripik-Sukun.jpg",
     "description": "Cemilan keripik sukun renyah, gurih, dan diproduksi secara higienis dengan bahan berkualitas.",
-    "isAvailable": true
+    "isAvailable": true,
+    "weight": "250gr"
   },
   {
     "id": 44,
@@ -437,7 +480,8 @@
     "price": 24000,
     "image": "https://i.ibb.co.com/7dMspG60/snack-Keripik-Tahu.jpg",
     "description": "Olahan tahu pilihan dipotong tipis dan digoreng crispy hingga garing gurih.",
-    "isAvailable": true
+    "isAvailable": true,
+    "weight": "250gr"
   },
   {
     "id": 45,
@@ -447,7 +491,8 @@
     "price": 22000,
     "image": "https://i.ibb.co.com/0RhQfLL6/snack-Keripik-Tempe.jpg",
     "description": "Keripik tempe olahan tepung sagu renyah beraroma ketumbar dan gurih alami.",
-    "isAvailable": true
+    "isAvailable": true,
+    "weight": "250gr"
   },
   {
     "id": 46,
@@ -457,7 +502,8 @@
     "price": 20000,
     "image": "https://i.ibb.co.com/8gSDBbKf/snack-Keripik-TES-keju.jpg",
     "description": "Stik keripik renyah bersalut bumbu keju gurih melimpah yang pas untuk cemilan santai.",
-    "isAvailable": true
+    "isAvailable": true,
+    "weight": "250gr"
   },
   {
     "id": 47,
@@ -467,7 +513,8 @@
     "price": 19000,
     "image": "https://i.ibb.co.com/Kxkyfw67/snack-Keripik-Ubi-Ungu.jpg",
     "description": "Cemilan keripik ubi ungu renyah, gurih, dan diproduksi secara higienis dengan bahan berkualitas.",
-    "isAvailable": true
+    "isAvailable": true,
+    "weight": "250gr"
   },
   {
     "id": 48,
@@ -477,7 +524,8 @@
     "price": 0,
     "image": "https://i.ibb.co.com/j9MhSQYD/snack-Keripik-Usus.jpg",
     "description": "Cemilan keripik usus renyah, gurih, dan diproduksi secara higienis dengan bahan berkualitas.",
-    "isAvailable": false
+    "isAvailable": false,
+    "weight": "250gr"
   },
   {
     "id": 49,
@@ -487,7 +535,8 @@
     "price": 0,
     "image": "https://i.ibb.co.com/k2KG5TP5/snack-Kerupuk-Bantal-Ebi.jpg",
     "description": "Kerupuk bantal mekar garing dengan sensasi rasa ebi udang kering yang gurih dan lezat.",
-    "isAvailable": false
+    "isAvailable": false,
+    "weight": "250gr"
   },
   {
     "id": 50,
@@ -497,7 +546,8 @@
     "price": 0,
     "image": "https://i.ibb.co.com/xqDPpXcp/snack-Kerupuk-Bulat-Mini.jpg",
     "description": "Cemilan kerupuk bulat mini renyah, gurih, dan diproduksi secara higienis dengan bahan berkualitas.",
-    "isAvailable": false
+    "isAvailable": false,
+    "weight": "250gr"
   },
   {
     "id": 51,
@@ -507,7 +557,8 @@
     "price": 0,
     "image": "https://i.ibb.co.com/FLpYZmTW/snack-Kerupuk-Cabe-Ijo.jpg",
     "description": "Olahan kerupuk cabe ijo dengan sensasi bumbu pedas gurih yang melimpah dan bikin ketagihan.",
-    "isAvailable": false
+    "isAvailable": false,
+    "weight": "250gr"
   },
   {
     "id": 52,
@@ -517,7 +568,8 @@
     "price": 16000,
     "image": "https://i.ibb.co.com/Pz6xkg7v/snack-Kerupuk-Jengkol.jpg",
     "description": "Cemilan kerupuk jengkol renyah, gurih, dan diproduksi secara higienis dengan bahan berkualitas.",
-    "isAvailable": true
+    "isAvailable": true,
+    "weight": "250gr"
   },
   {
     "id": 53,
@@ -527,7 +579,8 @@
     "price": 16000,
     "image": "https://i.ibb.co.com/84jxL51c/snack-Kerupuk-Kuning-Mini.jpg",
     "description": "Cemilan kerupuk kuning mini renyah, gurih, dan diproduksi secara higienis dengan bahan berkualitas.",
-    "isAvailable": true
+    "isAvailable": true,
+    "weight": "250gr"
   },
   {
     "id": 54,
@@ -537,7 +590,8 @@
     "price": 16000,
     "image": "https://i.ibb.co.com/bg6d6qxt/snack-Kerupuk-Lanting-Besar.jpg",
     "description": "Cemilan kerupuk lanting besar renyah, gurih, dan diproduksi secara higienis dengan bahan berkualitas.",
-    "isAvailable": true
+    "isAvailable": true,
+    "weight": "250gr"
   },
   {
     "id": 55,
@@ -547,7 +601,8 @@
     "price": 16000,
     "image": "https://i.ibb.co.com/21Gt9VXX/snack-Kerupuk-Makaroni.jpg",
     "description": "Cemilan kerupuk makaroni renyah, gurih, dan diproduksi secara higienis dengan bahan berkualitas.",
-    "isAvailable": true
+    "isAvailable": true,
+    "weight": "250gr"
   },
   {
     "id": 56,
@@ -557,7 +612,8 @@
     "price": 24000,
     "image": "https://i.ibb.co.com/dJ5QbTGk/snack-Kerupuk-Opak.jpg",
     "description": "Opak singkong tradisional berbentuk lingkar garing renyah dipadukan bumbu gurih nikmat.",
-    "isAvailable": true
+    "isAvailable": true,
+    "weight": "250gr"
   },
   {
     "id": 57,
@@ -567,7 +623,8 @@
     "price": 21000,
     "image": "https://i.ibb.co.com/9HTysbJg/snack-Kerupuk-Pasir.jpg",
     "description": "Cemilan kerupuk pasir renyah, gurih, dan diproduksi secara higienis dengan bahan berkualitas.",
-    "isAvailable": true
+    "isAvailable": true,
+    "weight": "250gr"
   },
   {
     "id": 58,
@@ -577,7 +634,8 @@
     "price": 16000,
     "image": "https://i.ibb.co.com/21g37s4C/snack-Kerupuk-Pelangi.jpg",
     "description": "Cemilan kerupuk pelangi renyah, gurih, dan diproduksi secara higienis dengan bahan berkualitas.",
-    "isAvailable": true
+    "isAvailable": true,
+    "weight": "250gr"
   },
   {
     "id": 59,
@@ -587,7 +645,8 @@
     "price": 21000,
     "image": "https://i.ibb.co.com/qLQ3jsTQ/snack-Kerupuk-Putih-Mini.jpg",
     "description": "Cemilan kerupuk putih mini renyah, gurih, dan diproduksi secara higienis dengan bahan berkualitas.",
-    "isAvailable": true
+    "isAvailable": true,
+    "weight": "250gr"
   },
   {
     "id": 60,
@@ -597,7 +656,8 @@
     "price": 0,
     "image": "https://i.ibb.co.com/MxGWNXRw/snack-Kerupuk-Seblak.jpg",
     "description": "Kerupuk seblak bantat bumbu cabai kencur super pedas dengan aroma daun jeruk segar.",
-    "isAvailable": false
+    "isAvailable": false,
+    "weight": "250gr"
   },
   {
     "id": 61,
@@ -607,7 +667,8 @@
     "price": 16000,
     "image": "https://i.ibb.co.com/RmfJdZz/snack-Kerupuk-Seblak.jpg",
     "description": "Olahan kerupuk seblak dengan sensasi bumbu pedas gurih yang melimpah dan bikin ketagihan.",
-    "isAvailable": true
+    "isAvailable": true,
+    "weight": "250gr"
   },
   {
     "id": 62,
@@ -617,7 +678,8 @@
     "price": 19000,
     "image": "https://i.ibb.co.com/3yFNPt8V/snack-Kerupuk-Seblak-Kribo.jpg",
     "description": "Olahan kerupuk seblak kribo dengan sensasi bumbu pedas gurih yang melimpah dan bikin ketagihan.",
-    "isAvailable": true
+    "isAvailable": true,
+    "weight": "250gr"
   },
   {
     "id": 63,
@@ -627,7 +689,8 @@
     "price": 16000,
     "image": "https://i.ibb.co.com/0N2Kg1F/snack-Kerupuk-Stick-Asin.jpg",
     "description": "Cemilan kerupuk stick asin renyah, gurih, dan diproduksi secara higienis dengan bahan berkualitas.",
-    "isAvailable": true
+    "isAvailable": true,
+    "weight": "250gr"
   },
   {
     "id": 64,
@@ -637,7 +700,8 @@
     "price": 0,
     "image": "https://i.ibb.co.com/wZ3GCCXS/snack-Kerupuk-Stick-Balado.jpg",
     "description": "Olahan kerupuk stick balado dengan sensasi bumbu pedas gurih yang melimpah dan bikin ketagihan.",
-    "isAvailable": false
+    "isAvailable": false,
+    "weight": "250gr"
   },
   {
     "id": 65,
@@ -647,7 +711,8 @@
     "price": 16000,
     "image": "https://i.ibb.co.com/MxxFS3Kv/snack-Kerupuk-Stick-Original.jpg",
     "description": "Cemilan kerupuk stick original renyah, gurih, dan diproduksi secara higienis dengan bahan berkualitas.",
-    "isAvailable": true
+    "isAvailable": true,
+    "weight": "250gr"
   },
   {
     "id": 66,
@@ -657,7 +722,8 @@
     "price": 0,
     "image": "https://i.ibb.co.com/xKMXbSDg/snack-Kerupuk-Udang-Pelangi.jpg",
     "description": "Cemilan kerupuk udang pelangi renyah, gurih, dan diproduksi secara higienis dengan bahan berkualitas.",
-    "isAvailable": false
+    "isAvailable": false,
+    "weight": "250gr"
   },
   {
     "id": 67,
@@ -667,7 +733,8 @@
     "price": 22000,
     "image": "https://i.ibb.co.com/Q1wQwqv/snack-Kue-Kering.jpg",
     "description": "Cookies mentega manis wangi dengan tekstur renyah lembut di mulut cocok untuk teman teh/kopi.",
-    "isAvailable": true
+    "isAvailable": true,
+    "weight": "250gr"
   },
   {
     "id": 68,
@@ -677,7 +744,8 @@
     "price": 0,
     "image": "https://i.ibb.co.com/hxPYZ7HZ/snack-Kue-Pang-Pang.jpg",
     "description": "Cemilan kue kue pang pang khas dengan tekstur renyah manis dan cita rasa lezat otentik.",
-    "isAvailable": false
+    "isAvailable": false,
+    "weight": "250gr"
   },
   {
     "id": 69,
@@ -687,7 +755,8 @@
     "price": 26000,
     "image": "https://i.ibb.co.com/fYPzStHB/snack-Kue-Semprong.jpg",
     "description": "Cemilan kue kue semprong khas dengan tekstur renyah manis dan cita rasa lezat otentik.",
-    "isAvailable": true
+    "isAvailable": true,
+    "weight": "250gr"
   },
   {
     "id": 70,
@@ -697,7 +766,8 @@
     "price": 16000,
     "image": "https://i.ibb.co.com/hJpV7xKh/snack-Kue-Tambang.jpg",
     "description": "Cemilan kue kue tambang khas dengan tekstur renyah manis dan cita rasa lezat otentik.",
-    "isAvailable": true
+    "isAvailable": true,
+    "weight": "250gr"
   },
   {
     "id": 71,
@@ -707,7 +777,8 @@
     "price": 26000,
     "image": "https://i.ibb.co.com/QFtX3BvL/snack-Kuping-Gajah.jpg",
     "description": "Cemilan kue kuping gajah khas dengan tekstur renyah manis dan cita rasa lezat otentik.",
-    "isAvailable": true
+    "isAvailable": true,
+    "weight": "250gr"
   },
   {
     "id": 72,
@@ -717,7 +788,8 @@
     "price": 16000,
     "image": "https://i.ibb.co.com/XrVbbCHS/snack-Lanting-Seblak.jpg",
     "description": "Olahan lanting seblak dengan sensasi bumbu pedas gurih yang melimpah dan bikin ketagihan.",
-    "isAvailable": true
+    "isAvailable": true,
+    "weight": "250gr"
   },
   {
     "id": 73,
@@ -727,7 +799,8 @@
     "price": 19000,
     "image": "https://i.ibb.co.com/mCw9dMSV/snack-Lanting-Udang.jpg",
     "description": "Cemilan lanting udang renyah, gurih, dan diproduksi secara higienis dengan bahan berkualitas.",
-    "isAvailable": true
+    "isAvailable": true,
+    "weight": "250gr"
   },
   {
     "id": 74,
@@ -737,7 +810,8 @@
     "price": 0,
     "image": "https://i.ibb.co.com/Fkrkv0q4/snack-Makaroni-Balado.jpg",
     "description": "Olahan makaroni balado dengan sensasi bumbu pedas gurih yang melimpah dan bikin ketagihan.",
-    "isAvailable": false
+    "isAvailable": false,
+    "weight": "250gr"
   },
   {
     "id": 75,
@@ -747,7 +821,8 @@
     "price": 0,
     "image": "https://i.ibb.co.com/gkFBsKR/snack-Makaroni-Mini-Asin.jpg",
     "description": "Cemilan makaroni mini asin renyah, gurih, dan diproduksi secara higienis dengan bahan berkualitas.",
-    "isAvailable": false
+    "isAvailable": false,
+    "weight": "250gr"
   },
   {
     "id": 76,
@@ -757,7 +832,8 @@
     "price": 0,
     "image": "https://i.ibb.co.com/bRMvR82M/snack-Makaroni-Mini-Pedas.jpg",
     "description": "Olahan makaroni mini pedas dengan sensasi bumbu pedas gurih yang melimpah dan bikin ketagihan.",
-    "isAvailable": false
+    "isAvailable": false,
+    "weight": "250gr"
   },
   {
     "id": 77,
@@ -767,7 +843,8 @@
     "price": 0,
     "image": "https://i.ibb.co.com/qLv6Vsrd/snack-Makaroni-Rujak.jpg",
     "description": "Olahan makaroni rujak dengan sensasi bumbu pedas gurih yang melimpah dan bikin ketagihan.",
-    "isAvailable": false
+    "isAvailable": false,
+    "weight": "250gr"
   },
   {
     "id": 78,
@@ -777,7 +854,8 @@
     "price": 16000,
     "image": "https://i.ibb.co.com/KpztLG7N/snack-Makaroni-Ulir-Asin.jpg",
     "description": "Cemilan makaroni ulir asin renyah, gurih, dan diproduksi secara higienis dengan bahan berkualitas.",
-    "isAvailable": true
+    "isAvailable": true,
+    "weight": "250gr"
   },
   {
     "id": 79,
@@ -787,7 +865,8 @@
     "price": 21000,
     "image": "https://i.ibb.co.com/YrvNWrZ/snack-Marie-Wijen.jpg",
     "description": "Cemilan kue marie wijen khas dengan tekstur renyah manis dan cita rasa lezat otentik.",
-    "isAvailable": true
+    "isAvailable": true,
+    "weight": "250gr"
   },
   {
     "id": 80,
@@ -797,7 +876,8 @@
     "price": 24000,
     "image": "https://i.ibb.co.com/Y75wktyz/snack-Peyek-Kacang.jpg",
     "description": "Peyek Kacang pilihan yang diproses dengan bumbu rempah pilihan, renyah dan gurih di setiap gigitan.",
-    "isAvailable": true
+    "isAvailable": true,
+    "weight": "250gr"
   },
   {
     "id": 81,
@@ -807,7 +887,8 @@
     "price": 16000,
     "image": "https://i.ibb.co.com/bxLmVNv/snack-Pilus-Cikur.jpg",
     "description": "Cemilan pilus cikur renyah, gurih, dan diproduksi secara higienis dengan bahan berkualitas.",
-    "isAvailable": true
+    "isAvailable": true,
+    "weight": "250gr"
   },
   {
     "id": 82,
@@ -817,7 +898,8 @@
     "price": 21000,
     "image": "https://i.ibb.co.com/twYSQ7G2/snack-Pilus-Kecil.jpg",
     "description": "Cemilan pilus kecil renyah, gurih, dan diproduksi secara higienis dengan bahan berkualitas.",
-    "isAvailable": true
+    "isAvailable": true,
+    "weight": "250gr"
   },
   {
     "id": 83,
@@ -827,7 +909,8 @@
     "price": 21000,
     "image": "https://i.ibb.co.com/qY3rYNjn/snack-Pisang-Aroma.jpg",
     "description": "Cemilan kue pisang aroma khas dengan tekstur renyah manis dan cita rasa lezat otentik.",
-    "isAvailable": true
+    "isAvailable": true,
+    "weight": "250gr"
   },
   {
     "id": 84,
@@ -837,7 +920,8 @@
     "price": 25000,
     "image": "https://i.ibb.co.com/SDwvPzHS/snack-Pisang-Asin.jpg",
     "description": "Keripik pisang kepok iris tipis dipadukan rasa asin gurih alami tanpa pengawet.",
-    "isAvailable": true
+    "isAvailable": true,
+    "weight": "250gr"
   },
   {
     "id": 85,
@@ -847,7 +931,8 @@
     "price": 19000,
     "image": "https://i.ibb.co.com/q4mY4FK/snack-Pisang-Manis.jpg",
     "description": "Keripik pisang manis bersalut gula karamel renyah manis legit.",
-    "isAvailable": true
+    "isAvailable": true,
+    "weight": "250gr"
   },
   {
     "id": 86,
@@ -857,7 +942,8 @@
     "price": 16000,
     "image": "https://i.ibb.co.com/Y4nrtzpm/snack-Ring-Keju.jpg",
     "description": "Cemilan ring keju renyah, gurih, dan diproduksi secara higienis dengan bahan berkualitas.",
-    "isAvailable": true
+    "isAvailable": true,
+    "weight": "250gr"
   },
   {
     "id": 87,
@@ -867,7 +953,8 @@
     "price": 26000,
     "image": "https://i.ibb.co.com/8nSRFfmY/snack-Roti-Bagelen.jpg",
     "description": "Roti panggang kering dengan olesan mentega dan taburan gula manis renyah pulen.",
-    "isAvailable": true
+    "isAvailable": true,
+    "weight": "250gr"
   },
   {
     "id": 88,
@@ -877,7 +964,8 @@
     "price": 32000,
     "image": "https://i.ibb.co.com/xtMtKcFY/snack-Sale-Jari.jpg",
     "description": "Cemilan kue sale jari khas dengan tekstur renyah manis dan cita rasa lezat otentik.",
-    "isAvailable": true
+    "isAvailable": true,
+    "weight": "250gr"
   },
   {
     "id": 89,
@@ -887,7 +975,8 @@
     "price": 28000,
     "image": "https://i.ibb.co.com/kg330x7m/snack-Samosa.jpg",
     "description": "Cemilan samosa mini segitiga kulit renyah isi abon gurih kaya rempah.",
-    "isAvailable": true
+    "isAvailable": true,
+    "weight": "250gr"
   },
   {
     "id": 90,
@@ -897,7 +986,8 @@
     "price": 19000,
     "image": "https://i.ibb.co.com/7dhPRDcV/snack-Seblak-Kering-Campur.jpg",
     "description": "Olahan seblak kering campur dengan sensasi bumbu pedas gurih yang melimpah dan bikin ketagihan.",
-    "isAvailable": true
+    "isAvailable": true,
+    "weight": "250gr"
   },
   {
     "id": 91,
@@ -907,7 +997,8 @@
     "price": 0,
     "image": "https://i.ibb.co.com/Zzj1K32Q/snack-Semprong-Wisen.jpg",
     "description": "Cemilan kue semprong wisen khas dengan tekstur renyah manis dan cita rasa lezat otentik.",
-    "isAvailable": false
+    "isAvailable": false,
+    "weight": "250gr"
   },
   {
     "id": 92,
@@ -917,7 +1008,8 @@
     "price": 21000,
     "image": "https://i.ibb.co.com/1ty36XMf/snack-Sereal-Coklat.jpg",
     "description": "Nikmati kelezatan sereal coklat dengan rasa manis yang pas untuk menemani aktivitas harian Anda.",
-    "isAvailable": true
+    "isAvailable": true,
+    "weight": "250gr"
   },
   {
     "id": 93,
@@ -927,7 +1019,8 @@
     "price": 19000,
     "image": "https://i.ibb.co.com/ym89Y5qL/snack-Simping.jpg",
     "description": "Cemilan kue simping khas dengan tekstur renyah manis dan cita rasa lezat otentik.",
-    "isAvailable": true
+    "isAvailable": true,
+    "weight": "250gr"
   },
   {
     "id": 94,
@@ -937,7 +1030,8 @@
     "price": 24000,
     "image": "https://i.ibb.co.com/Cpzsdg31/snack-Soes-Kering.jpg",
     "description": "Kue sus mini renyah berisikan lumeran pasta cokelat manis melimpah di dalamnya.",
-    "isAvailable": true
+    "isAvailable": true,
+    "weight": "250gr"
   },
   {
     "id": 95,
@@ -947,7 +1041,8 @@
     "price": 20000,
     "image": "https://i.ibb.co.com/jP6tZvNb/snack-Stick-Balado.jpg",
     "description": "Stik renyah disiram bumbu tabur balado pedas manis gurih membakar lidah.",
-    "isAvailable": true
+    "isAvailable": true,
+    "weight": "250gr"
   },
   {
     "id": 96,
@@ -957,7 +1052,8 @@
     "price": 17000,
     "image": "https://i.ibb.co.com/4RvQRFLz/snack-Stick-Bawang.jpg",
     "description": "Cemilan stick bawang renyah, gurih, dan diproduksi secara higienis dengan bahan berkualitas.",
-    "isAvailable": true
+    "isAvailable": true,
+    "weight": "250gr"
   },
   {
     "id": 97,
@@ -967,7 +1063,8 @@
     "price": 16000,
     "image": "https://i.ibb.co.com/4wb7rvB9/snack-Stick-Kentang-Asin.jpg",
     "description": "Cemilan stick kentang asin renyah, gurih, dan diproduksi secara higienis dengan bahan berkualitas.",
-    "isAvailable": true
+    "isAvailable": true,
+    "weight": "250gr"
   },
   {
     "id": 98,
@@ -977,7 +1074,8 @@
     "price": 19000,
     "image": "https://i.ibb.co.com/C3zp8Xnn/snack-Stick-Singkong-Asin.jpg",
     "description": "Cemilan stick singkong asin renyah, gurih, dan diproduksi secara higienis dengan bahan berkualitas.",
-    "isAvailable": true
+    "isAvailable": true,
+    "weight": "250gr"
   },
   {
     "id": 99,
@@ -987,7 +1085,8 @@
     "price": 26000,
     "image": "https://i.ibb.co.com/gMnp0JtZ/snack-Stick-Sukun.jpg",
     "description": "Cemilan stick sukun renyah, gurih, dan diproduksi secara higienis dengan bahan berkualitas.",
-    "isAvailable": true
+    "isAvailable": true,
+    "weight": "250gr"
   },
   {
     "id": 100,
@@ -997,7 +1096,8 @@
     "price": 22000,
     "image": "https://i.ibb.co.com/RGhzP5kL/snack-Stick-Tales-Mini.jpg",
     "description": "Cemilan stick tales mini renyah, gurih, dan diproduksi secara higienis dengan bahan berkualitas.",
-    "isAvailable": true
+    "isAvailable": true,
+    "weight": "250gr"
   },
   {
     "id": 101,
@@ -1007,7 +1107,8 @@
     "price": 18000,
     "image": "https://i.ibb.co.com/tMRkp7sj/snack-Sukro-Cabe-Ijo.jpg",
     "description": "Sukro Cabe Ijo pilihan yang diproses dengan bumbu rempah pilihan, renyah dan gurih di setiap gigitan.",
-    "isAvailable": true
+    "isAvailable": true,
+    "weight": "250gr"
   },
   {
     "id": 102,
@@ -1017,7 +1118,8 @@
     "price": 0,
     "image": "https://i.ibb.co.com/vv6Td9c2/snack-Sukro-Original.jpg",
     "description": "Sukro Original pilihan yang diproses dengan bumbu rempah pilihan, renyah dan gurih di setiap gigitan.",
-    "isAvailable": false
+    "isAvailable": false,
+    "weight": "250gr"
   },
   {
     "id": 103,
@@ -1027,7 +1129,8 @@
     "price": 24000,
     "image": "https://i.ibb.co.com/Kp4yS3Cr/snack-Sumpin.jpg",
     "description": "Sumpia mini gulung garing isi isian abon udang rebon gurih manis khas Nusantara.",
-    "isAvailable": true
+    "isAvailable": true,
+    "weight": "250gr"
   },
   {
     "id": 104,
@@ -1037,7 +1140,8 @@
     "price": 16000,
     "image": "https://i.ibb.co.com/BV8xpkH8/snack-Taro-Asin.jpg",
     "description": "Cemilan taro asin renyah, gurih, dan diproduksi secara higienis dengan bahan berkualitas.",
-    "isAvailable": true
+    "isAvailable": true,
+    "weight": "250gr"
   },
   {
     "id": 105,
@@ -1047,7 +1151,8 @@
     "price": 20000,
     "image": "https://i.ibb.co.com/BH1YsS8L/snack-Tempe-Tepung.jpg",
     "description": "Tempe tepung goreng garing bumbu gurih ketumbar khas cemilan keluarga.",
-    "isAvailable": true
+    "isAvailable": true,
+    "weight": "250gr"
   },
   {
     "id": 106,
@@ -1057,7 +1162,8 @@
     "price": 16000,
     "image": "https://i.ibb.co.com/ksMJzH0b/snack-Teng-Teng.jpg",
     "description": "Teng Teng pilihan yang diproses dengan bumbu rempah pilihan, renyah dan gurih di setiap gigitan.",
-    "isAvailable": true
+    "isAvailable": true,
+    "weight": "250gr"
   },
   {
     "id": 107,
@@ -1067,7 +1173,8 @@
     "price": 21000,
     "image": "https://i.ibb.co.com/Rkmb5jzG/snack-Tortilla.jpg",
     "description": "Keripik jagung tortilla bentuk segitiga renyah berbalut bumbu panggang sapi BBQ.",
-    "isAvailable": true
+    "isAvailable": true,
+    "weight": "250gr"
   },
   {
     "id": 108,
@@ -1077,7 +1184,8 @@
     "price": 19000,
     "image": "https://i.ibb.co.com/1tfCqGcZ/snack-Wafer-Roll.jpg",
     "description": "Wafer roll garing berlapis-lapis isi kelezatan krim cokelat tebal nikmat.",
-    "isAvailable": true
+    "isAvailable": true,
+    "weight": "250gr"
   },
   {
     "id": 109,
@@ -1087,6 +1195,7 @@
     "price": 21000,
     "image": "https://i.ibb.co.com/twTQfzM0/snack-Waffer-Mini.jpg",
     "description": "Nikmati kelezatan waffer mini dengan rasa manis yang pas untuk menemani aktivitas harian Anda.",
-    "isAvailable": true
+    "isAvailable": true,
+    "weight": "250gr"
   }
 ]

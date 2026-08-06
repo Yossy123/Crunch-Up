@@ -77,10 +77,13 @@ const ProductCard = ({ product, onQuickView }) => {
           {/* Title */}
           <h3 
             onClick={handleProductClick}
-            className="text-xs sm:text-sm font-semibold text-slate-800 group-hover:text-orange-600 line-clamp-2 transition-colors cursor-pointer mb-2 leading-snug"
+            className="text-xs sm:text-sm font-semibold text-slate-800 group-hover:text-orange-600 line-clamp-2 transition-colors cursor-pointer mb-1 leading-snug"
           >
             {product.name}
           </h3>
+          <span className="inline-block px-1.5 py-0.5 bg-amber-50 text-amber-700 border border-amber-200/80 text-[10px] font-extrabold rounded-md mb-2">
+            Netto: {product.weight || '250gr'}
+          </span>
         </div>
 
         {/* Price & Action Button */}
