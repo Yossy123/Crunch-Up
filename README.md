@@ -1,9 +1,9 @@
 <div align="center">
 
-# 🍿 Snack Ringan — CatalogApp & WhatsApp Direct Order
+# 🍿 Bekal Snacks — Katalog Snack & WhatsApp Direct Order
 
 <p align="center">
-  <b>Aplikasi Web Katalog E-Commerce Snack Ringan Modern, Fast & Ultra-Responsive dengan Checkout WhatsApp Direct</b>
+  <b>Aplikasi Web Katalog E-Commerce Bekal Snacks Modern, Fast & Ultra-Responsive dengan Checkout WhatsApp Direct</b>
 </p>
 
 [![React 19](https://img.shields.io/badge/React-19.2-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://react.dev/)
@@ -18,7 +18,7 @@
 
 ## 📌 Tentang Proyek
 
-**Snack Ringan CatalogApp** adalah platform e-commerce katalog makanan ringan & cemilan khas Nusantara yang dirancang dengan performa tinggi, tampilan UI/UX yang modern, serta pengalaman berbelanja yang intuitif.
+**Bekal Snacks** adalah platform e-commerce katalog makanan ringan & cemilan khas Nusantara yang dirancang dengan performa tinggi, tampilan UI/UX yang modern, serta pengalaman berbelanja yang intuitif.
 
 Aplikasi ini memudahkan pelanggan untuk menemukan snack favorit mereka berdasarkan kategori dan varian rasa, melihat ketersediaan status secara *real-time*, serta langsung memesan melalui **WhatsApp Direct Checkout** tanpa kerumitan registrasi akun.
 
@@ -37,11 +37,10 @@ Aplikasi ini memudahkan pelanggan untuk menemukan snack favorit mereka berdasark
   - Penanganan otomatis produk *Price Rp 0* dengan indikator status **`NOT AVAILABLE`** dan proteksi keranjang.
 
 - 🔍 **Filter & Pencarian Cerdas**:
-  - **Dropdown Kategori Rapi**: *Semua Kategori*, *Seafood & Bakso*, *Basreng & Seblak*, *Snack Jagung & Ekstrusi*, *Kue Kering*, *Emping & Melinjo*, *Kerupuk*, *Stik & Makaroni*, *Kacang*, *Kue Tradisional*, *Keripik*.
+  - **Dropdown Kategori Rapi**: *Semua Kategori*, *Seafood & Bakso*, *Basreng & Seblak*, *Snack Modern*, *Kacang*, *Kerupuk*, *Stik & Makaroni*, *Snack Tradisional*, *Keripik*.
   - **Dropdown Varian Rasa**: *Semua Rasa*, *Asin*, *Pedas*, *Manis*, *Keju*.
-  - **Dropdown Status Ketersediaan**: *Semua Status*, *Tersedia (Bisa Dibeli)*, *Tidak Tersedia (Not Available)*.
   - **Dropdown Pengurutan (Sorting)**: *Harga: Terendah* & *Harga: Tertinggi* (Opsi *Paling Populer* & *Rating* di-nonaktifkan sementara).
-  - **Layout Grid Responsif**: Tampilan grid 2-kolom ringkas di mobile (HP) dan 4-kolom sejajar di desktop tanpa horizontal scrolling yang mengganggu.
+  - **Layout Grid Responsif**: Tampilan grid 2-kolom di mobile, 3-kolom di tablet kecil (sm), 4-kolom di tablet (md), dan 5-kolom di desktop tanpa horizontal scrolling yang mengganggu.
   - **Pencarian Real-Time**: Pencarian kata kunci cepat berdasar nama, deskripsi, atau rasa produk.
   - **Pagination Interaktif**: Navigasi halaman yang cepat dan nyaman.
 
@@ -93,8 +92,8 @@ VITE_WA_PHONE=6281234567890
 
 1. **Clone Repository**:
    ```bash
-   git clone https://github.com/Username/Catalog-app.git
-   cd Catalog-app
+   git clone https://github.com/Yossy123/Snack-ringan.git
+   cd Snack-ringan
    ```
 
 2. **Install Dependensi**:
@@ -123,11 +122,14 @@ VITE_WA_PHONE=6281234567890
 ## 📂 Struktur Direktori Proyek
 
 ```text
-Catalog-app/
+Bekal-Snacks/
 ├── public/
 │   ├── favicon.svg          # Favicon resmi aplikasi
-│   └── icons.svg            # Iconset SVG pendukung
+│   ├── icons.svg            # Iconset SVG pendukung
+│   └── logo.png             # Logo Brand Bekal Snacks
 ├── src/
+│   ├── assets/
+│   │   └── logo.png         # Logo Brand Bekal Snacks
 │   ├── components/          # Komponen UI Reusable
 │   │   ├── Banner.jsx       # Promo Banner Carousel
 │   │   ├── CartItem.jsx     # Item Keranjang Belanja
@@ -138,11 +140,26 @@ Catalog-app/
 │   │   ├── Navbar.jsx       # Top Bar & Pencarian
 │   │   ├── ProductCard.jsx  # Card Produk & Badge Status
 │   │   ├── ProductGrid.jsx  # Grid Katalog & Pagination
-│   │   └── Toast.jsx        # Notifikasi Toast Pop-up
+│   │   ├── Toast.jsx        # Notifikasi Toast Pop-up
+│   │   └── ui/              # Komponen UI Primitif (shadcn-style)
+│   │       ├── accordion.jsx
+│   │       ├── badge.jsx
+│   │       ├── button.jsx
+│   │       ├── card.jsx
+│   │       ├── dialog.jsx
+│   │       ├── input.jsx
+│   │       ├── label.jsx
+│   │       ├── select.jsx
+│   │       ├── sheet.jsx
+│   │       ├── skeleton.jsx
+│   │       └── textarea.jsx
 │   ├── context/
-│   │   └── CartContext.jsx  # State Management Keranjang & Toast
+│   │   ├── CartContext.jsx  # State Management Keranjang & Toast
+│   │   └── useCart.js       # Hook & Context API Keranjang
 │   ├── data/
 │   │   └── products.json    # Dataset Produk Snack & Image Links
+│   ├── lib/
+│   │   └── utils.js         # Utility `cn()` (clsx + tailwind-merge)
 │   ├── pages/
 │   │   ├── Home.jsx         # Halaman Utama Katalog
 │   │   └── ProductDetailPage.jsx # Halaman Detail Produk (Lazy Loaded)
@@ -160,5 +177,5 @@ Catalog-app/
 ---
 
 <div align="center">
-  <sub>Dibuat dengan ❤️ untuk Toko Snack Indonesia • CatalogApp</sub>
+  <sub>Dibuat dengan ❤️ untuk Toko Snack Indonesia • Bekal Snacks</sub>
 </div>
