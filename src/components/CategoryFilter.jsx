@@ -4,8 +4,7 @@ import {
   FiGrid, 
   FiSmile, 
   FiSliders, 
-  FiRotateCcw,
-  FiCheckCircle
+  FiRotateCcw
 } from 'react-icons/fi';
 import productsData from '../data/products.json';
 import {
@@ -27,11 +26,7 @@ const flavorOptions = [
   ...Array.from(new Set(productsData.map(p => p.flavor).filter(Boolean)))
 ];
 
-const statusOptions = [
-  { id: 'Semua Status', label: 'Semua Status' },
-  { id: 'Tersedia', label: 'Tersedia (Bisa Dibeli)' },
-  { id: 'Tidak Tersedia', label: 'Tidak Tersedia (Not Available)' }
-];
+
 
 const sortOptions = [
   { id: 'price-asc', label: 'Harga: Terendah', disabled: false },
@@ -45,8 +40,6 @@ const CategoryFilter = ({
   setSelectedCategory,
   selectedFlavor,
   setSelectedFlavor,
-  selectedStatus,
-  setSelectedStatus,
   sortBy,
   setSortBy,
   resetFilters
@@ -54,7 +47,6 @@ const CategoryFilter = ({
   const isFiltered = 
     (selectedCategory && selectedCategory !== 'Semua Kategori' && selectedCategory !== 'Semua') ||
     (selectedFlavor && selectedFlavor !== 'Semua Rasa' && selectedFlavor !== 'Semua') ||
-    (selectedStatus && selectedStatus !== 'Semua Status' && selectedStatus !== 'Semua') ||
     (sortBy && sortBy !== 'price-asc');
 
   return (
@@ -87,8 +79,8 @@ const CategoryFilter = ({
           )}
         </div>
 
-        {/* Dropdown Filters Grid: 2 columns on Mobile, 4 columns on Desktop */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-2.5 sm:gap-4">
+        {/* Dropdown Filters Grid: 2 columns on Mobile, 3 columns on Desktop */}
+        <div className="grid grid-cols-2 lg:grid-cols-3 gap-2.5 sm:gap-4">
           
           {/* Dropdown 1: Kategori Snack */}
           <div className="w-full min-w-0 space-y-1">
@@ -128,26 +120,7 @@ const CategoryFilter = ({
             </Select>
           </div>
 
-          {/* Dropdown 3: Status Stok */}
-          <div className="w-full min-w-0 space-y-1">
-            <label className="flex items-center gap-1 text-[10px] sm:text-[11px] font-bold text-slate-500 uppercase tracking-wider truncate">
-              <FiCheckCircle className="text-orange-500 shrink-0" /> Status
-            </label>
-            <Select value={selectedStatus} onValueChange={setSelectedStatus}>
-              <SelectTrigger className="w-full bg-slate-50 border-slate-200 text-xs sm:text-sm font-semibold rounded-xl sm:rounded-2xl">
-                <SelectValue placeholder="Pilih Status" />
-              </SelectTrigger>
-              <SelectContent>
-                {statusOptions.map((status) => (
-                  <SelectItem key={status.id} value={status.id}>
-                    {status.label}
-                  </SelectItem>
-                ))}
-              </SelectContent>
-            </Select>
-          </div>
-
-          {/* Dropdown 4: Urutkan (Sort By) */}
+          {/* Dropdown 3: Urutkan (Sort By) */}
           <div className="w-full min-w-0 space-y-1">
             <label className="flex items-center gap-1 text-[10px] sm:text-[11px] font-bold text-slate-500 uppercase tracking-wider truncate">
               <FiSliders className="text-orange-500 shrink-0" /> Urutkan
