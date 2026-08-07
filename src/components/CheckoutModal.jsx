@@ -239,7 +239,7 @@ ${itemsList}
                 name="alamat"
                 required
                 rows={2}
-                placeholder="Contoh: Jl. Merdeka No. 45, Kecamatan Gambir, Jakarta Pusat"
+                placeholder="Contoh : Nama detail kantor, atau alamat lainnya"
                 value={formData.alamat}
                 onChange={handleInputChange}
                 className="min-h-[52px] sm:min-h-[64px] text-xs sm:text-sm bg-slate-50 border-slate-200 focus-visible:ring-emerald-500 resize-none rounded-lg sm:rounded-xl px-3 py-2"
@@ -255,7 +255,6 @@ ${itemsList}
               <Textarea
                 name="catatan"
                 rows={1}
-                placeholder="Contoh: Tolong bungkus extra bubble wrap / rasa ekstra pedas"
                 value={formData.catatan}
                 onChange={handleInputChange}
                 className="min-h-[42px] sm:min-h-[52px] text-xs sm:text-sm bg-slate-50 border-slate-200 focus-visible:ring-emerald-500 resize-none rounded-lg sm:rounded-xl px-3 py-2"
