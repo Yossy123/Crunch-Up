@@ -62,14 +62,14 @@ const CheckoutModal = () => {
     const merchantPhone = import.meta.env.VITE_WA_PHONE || '628128050439';
     const itemsList = cartItems.map(item => {
       const lineSubtotal = item.product.price * item.quantity;
-      return `- ${item.product.name} (${item.product.weight || '250gr'}) (${item.quantity}x) = ${formatRupiah(lineSubtotal)}`;
+      return `• ${item.product.name} (${item.product.weight || '250gr'}) (${item.quantity}x) = ${formatRupiah(lineSubtotal)}`;
     }).join('\n');
 
     const catatanText = formData.catatan.trim() 
       ? `\n📝 *Catatan:* ${formData.catatan.trim()}`
       : '';
 
-    const message = `*🛒 ORDER BARU SNACK STORE*
+    const message = `*📦 ORDER BARU BEKAL SNACKS*
 👤 *Nama:* ${formData.nama}
 📍 *Alamat:* ${formData.alamat}
 📞 *No HP:* ${formData.noHp}${catatanText}
