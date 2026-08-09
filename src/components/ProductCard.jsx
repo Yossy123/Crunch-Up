@@ -5,7 +5,7 @@ import { formatRupiah } from '../utils/format';
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { FiShoppingBag, FiEye } from 'react-icons/fi';
+import { FiShoppingBag, FiEye, FiImage } from 'react-icons/fi';
 
 const ProductCard = ({ product, onQuickView }) => {
   const { addItem } = useCart();
@@ -24,13 +24,20 @@ const ProductCard = ({ product, onQuickView }) => {
       
       {/* Image & Badges */}
       <div className="relative aspect-square overflow-hidden bg-slate-100 cursor-pointer" onClick={handleProductClick}>
-        <img
-          src={product.image}
-          alt={product.name}
-          loading="lazy"
-          decoding="async"
-          className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-        />
+        {product.image ? (
+          <img
+            src={product.image}
+            alt={product.name}
+            loading="lazy"
+            decoding="async"
+            className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+          />
+        ) : (
+          <div className="w-full h-full flex flex-col items-center justify-center bg-slate-100 text-slate-400 p-4 text-center">
+            <FiImage className="w-8 h-8 mb-1 text-slate-300" />
+            <span className="text-[11px] font-medium text-slate-400">Belum Ada Foto</span>
+          </div>
+        )}
         
         {/* Dark Gradient Overlays for High Badge Legibility */}
         <div className="absolute inset-x-0 top-0 h-12 bg-linear-to-b from-slate-950/50 to-transparent pointer-events-none z-10" />

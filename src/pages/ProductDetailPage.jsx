@@ -22,7 +22,8 @@ import {
   FiMinus, 
   FiCheck,
   FiShare2,
-  FiPackage
+  FiPackage,
+  FiImage
 } from 'react-icons/fi';
 import { ShieldCheck, Info, Truck } from 'lucide-react';
 
@@ -128,13 +129,20 @@ const ProductDetailPage = () => {
               
               {/* Product Image Container */}
               <div className="relative aspect-square rounded-2xl overflow-hidden bg-slate-100 border border-slate-100 group">
-                <img
-                  src={product.image}
-                  alt={product.name}
-                  loading="eager"
-                  decoding="async"
-                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                />
+                {product.image ? (
+                  <img
+                    src={product.image}
+                    alt={product.name}
+                    loading="eager"
+                    decoding="async"
+                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                  />
+                ) : (
+                  <div className="w-full h-full flex flex-col items-center justify-center bg-slate-100 text-slate-400 p-8 text-center">
+                    <FiImage className="w-12 h-12 mb-2 text-slate-300" />
+                    <span className="text-sm font-medium text-slate-400">Foto Produk Belum Tersedia</span>
+                  </div>
+                )}
 
                 {/* Badges Overlay */}
                 <div className="absolute top-4 left-4 z-10 flex flex-wrap gap-2">
