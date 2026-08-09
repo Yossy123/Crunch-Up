@@ -2,7 +2,7 @@ import React, { useState, useMemo, useEffect } from 'react';
 import ProductCard from './ProductCard';
 import { FiInbox, FiRefreshCw, FiChevronLeft, FiChevronRight, FiChevronsLeft, FiChevronsRight } from 'react-icons/fi';
 
-const ITEMS_PER_PAGE = 10;
+const ITEMS_PER_PAGE = 15;
 
 const ProductGrid = ({ 
   products, 

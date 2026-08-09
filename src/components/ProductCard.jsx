@@ -20,7 +20,7 @@ const ProductCard = ({ product, onQuickView }) => {
   };
 
   return (
-    <Card className="group border-slate-200/80 hover:border-orange-300 hover:shadow-xl transition-all duration-300 flex flex-col overflow-hidden relative">
+    <Card className="group border-slate-200/80 hover:border-orange-400/80 hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col overflow-hidden relative rounded-2xl sm:rounded-3xl bg-white">
       
       {/* Image & Badges */}
       <div className="relative aspect-square overflow-hidden bg-slate-100 cursor-pointer" onClick={handleProductClick}>

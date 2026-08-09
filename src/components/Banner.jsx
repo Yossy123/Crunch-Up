@@ -72,7 +72,7 @@ const Banner = () => {
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      <div className="relative overflow-hidden rounded-3xl shadow-xl min-h-105 sm:min-h-90 md:min-h-90 flex items-center">
+      <div className="relative overflow-hidden rounded-3xl shadow-xl min-h-105 sm:min-h-96 lg:min-h-100 flex items-center">
         {banners.map((slide, index) => {
           const BadgeIcon = slide.badgeIcon;
           return (
@@ -84,25 +84,26 @@ const Banner = () => {
             >
               {/* Background Glow */}
               <div className="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full blur-3xl pointer-events-none" />
+              <div className="absolute bottom-0 left-0 w-96 h-96 bg-orange-500/10 rounded-full blur-3xl pointer-events-none" />
               
-              <div className="relative h-full max-w-7xl mx-auto px-4 sm:px-12 pt-5 sm:pt-8 pb-12 sm:pb-12 flex flex-col md:flex-row items-center justify-between gap-3 md:gap-6">
+              <div className="relative h-full max-w-7xl mx-auto px-6 sm:px-12 pt-6 sm:pt-8 pb-12 sm:pb-12 flex flex-col md:flex-row items-center justify-between gap-4 md:gap-8">
                 
                 {/* Text Content */}
                 <div className="flex-1 text-white z-10 max-w-xl text-center md:text-left flex flex-col items-center md:items-start justify-center">
-                  <div className="inline-flex items-center space-x-1.5 px-3 py-1 rounded-full bg-white/15 border border-white/20 text-xs sm:text-sm font-semibold tracking-wide text-amber-300 mb-2 sm:mb-3">
+                  <div className="inline-flex items-center space-x-2 px-3.5 py-1 rounded-full bg-white/15 backdrop-blur-md border border-white/20 text-xs sm:text-sm font-bold tracking-wide text-amber-300 mb-3">
                     <BadgeIcon className="text-sm shrink-0" />
                     <span>{slide.badge}</span>
                   </div>
-                  <h2 className="text-xl sm:text-3xl lg:text-4xl font-black tracking-tight leading-snug sm:leading-tight mb-1.5 sm:mb-3">
+                  <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-black tracking-tight leading-snug sm:leading-tight mb-2 sm:mb-4">
                     {slide.title}
                   </h2>
-                  <p className="text-slate-300 text-xs sm:text-sm leading-relaxed mb-2.5 sm:mb-4 line-clamp-2 max-w-md">
+                  <p className="text-slate-300 text-xs sm:text-sm lg:text-base leading-relaxed mb-4 sm:mb-6 line-clamp-2 max-w-lg">
                     {slide.subtitle}
                   </p>
-                  <div className="mb-3 sm:mb-1">
+                  <div>
                     <button 
                       onClick={handleCtaClick}
-                      className={`inline-flex items-center px-5 py-2 sm:px-6 sm:py-3 rounded-xl font-bold text-xs sm:text-sm text-slate-950 bg-linear-to-r ${slide.accentColor} hover:brightness-110 shadow-lg transition-transform transform active:scale-95 cursor-pointer`}
+                      className={`inline-flex items-center px-6 py-2.5 sm:px-7 sm:py-3.5 rounded-2xl font-extrabold text-xs sm:text-sm text-slate-950 bg-linear-to-r ${slide.accentColor} hover:brightness-110 shadow-xl shadow-orange-500/20 transition-all transform active:scale-95 hover:scale-102 cursor-pointer`}
                     >
                       {slide.cta}
                     </button>
@@ -110,15 +111,15 @@ const Banner = () => {
                 </div>
 
                 {/* Banner Image Visual (Visible on Mobile & Desktop) */}
-                <div className="relative z-10 w-full max-w-60 sm:max-w-xs md:w-72 lg:w-96 h-28 sm:h-36 md:h-48 lg:h-60 rounded-2xl overflow-hidden shadow-2xl border border-white/10 group shrink-0">
+                <div className="relative z-10 w-full max-w-64 sm:max-w-xs md:w-80 lg:w-105 h-32 sm:h-40 md:h-52 lg:h-64 rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl border border-white/20 group shrink-0 transform hover:scale-102 transition-transform duration-500">
                   <img
                     src={slide.image}
                     alt={slide.title}
                     loading={index === 0 ? "eager" : "lazy"}
                     decoding="async"
-                    className="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-105"
+                    className="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-110"
                   />
-                  <div className="absolute inset-0 bg-linear-to-t from-slate-950/60 to-transparent" />
+                  <div className="absolute inset-0 bg-linear-to-t from-slate-950/70 via-transparent to-transparent" />
                 </div>
 
               </div>

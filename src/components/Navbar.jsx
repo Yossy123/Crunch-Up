@@ -27,13 +27,49 @@ const Navbar = ({ searchQuery, setSearchQuery, onResetFilters, onSearchSubmit })
             <img 
               src="/logo.png" 
               alt="Crunch Up" 
-              className="h-12 sm:h-16 md:h-18 w-auto object-contain transform transition-transform group-hover:scale-105"
+              className="h-12 sm:h-14 lg:h-16 w-auto object-contain transform transition-transform group-hover:scale-105 drop-shadow-xs"
             />
           </Link>
 
+          {/* Desktop Navigation Links */}
+          <nav className="hidden lg:flex items-center space-x-6 text-sm font-bold text-slate-700">
+            <button 
+              onClick={() => { onResetFilters(); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
+              className="hover:text-orange-500 transition-colors cursor-pointer"
+            >
+              Beranda
+            </button>
+            <button 
+              onClick={() => {
+                const el = document.getElementById('katalog');
+                if (el) el.scrollIntoView({ behavior: 'smooth' });
+              }}
+              className="hover:text-orange-500 transition-colors cursor-pointer"
+            >
+              Katalog
+            </button>
+            <button 
+              onClick={() => {
+                const el = document.getElementById('katalog');
+                if (el) el.scrollIntoView({ behavior: 'smooth' });
+              }}
+              className="hover:text-orange-500 transition-colors cursor-pointer"
+            >
+              Cemilan Popular
+            </button>
+            <a 
+              href={`https://wa.me/${import.meta.env.VITE_WA_PHONE || '6287888525426'}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-orange-500 transition-colors"
+            >
+              Kontak WA
+            </a>
+          </nav>
+
           {/* Search Input Bar */}
           <form
-            className="flex-1 max-w-lg mx-1 sm:mx-6"
+            className="flex-1 max-w-xs sm:max-w-md lg:max-w-md mx-1 sm:mx-4"
             role="search"
             onSubmit={(e) => {
               e.preventDefault();
@@ -42,14 +78,14 @@ const Navbar = ({ searchQuery, setSearchQuery, onResetFilters, onSearchSubmit })
           >
             <div className="relative group">
               <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400 group-focus-within:text-orange-500 transition-colors">
-                <FiSearch className="text-lg" />
+                <FiSearch className="text-base sm:text-lg" />
               </div>
               <input
                 type="search"
                 placeholder="Cari snack favoritmu..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full pl-10 pr-10 py-2.5 sm:py-3 text-xs sm:text-sm bg-slate-100 hover:bg-slate-100/90 focus:bg-white text-slate-900 rounded-2xl border border-slate-200/60 focus:border-orange-500 focus:ring-4 focus:ring-orange-500/10 outline-none transition-all placeholder:text-slate-400"
+                className="w-full pl-9 sm:pl-10 pr-9 sm:pr-10 py-2 sm:py-2.5 text-xs sm:text-sm bg-slate-100/80 hover:bg-slate-100 focus:bg-white text-slate-900 rounded-full border border-slate-200/80 focus:border-orange-500 focus:ring-4 focus:ring-orange-500/15 outline-none transition-all placeholder:text-slate-400"
               />
               {searchQuery && (
                 <button
@@ -58,7 +94,7 @@ const Navbar = ({ searchQuery, setSearchQuery, onResetFilters, onSearchSubmit })
                   aria-label="Hapus Pencarian"
                   className="absolute inset-y-0 right-0 pr-3 flex items-center text-slate-400 hover:text-slate-600 transition-colors cursor-pointer"
                 >
-                  <FiX className="text-lg" />
+                  <FiX className="text-base sm:text-lg" />
                 </button>
               )}
             </div>
@@ -68,7 +104,7 @@ const Navbar = ({ searchQuery, setSearchQuery, onResetFilters, onSearchSubmit })
           <div className="flex items-center shrink-0">
             <button
               onClick={() => setIsCartOpen(true)}
-              className="relative inline-flex items-center space-x-1.5 sm:space-x-2 px-3 py-2 sm:px-4 sm:py-2.5 bg-linear-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white font-extrabold text-xs sm:text-sm rounded-2xl transition-all duration-200 shadow-md shadow-orange-500/25 active:scale-95 cursor-pointer group"
+              className="relative inline-flex items-center space-x-2 px-3.5 py-2 sm:px-4 sm:py-2.5 bg-linear-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white font-extrabold text-xs sm:text-sm rounded-full transition-all duration-200 shadow-md shadow-orange-500/25 active:scale-95 cursor-pointer group"
               aria-label="Keranjang Belanja"
             >
               <FiShoppingBag className="text-lg sm:text-xl transition-transform group-hover:scale-110 shrink-0" />
