@@ -9,8 +9,8 @@ const banners = [
     title: 'Koleksi Cemilan Pilihan Terfavorit',
     subtitle: 'Nikmati aneka keripik dan cemilan lezat berkualitas tinggi untuk menemani harimu!',
     cta: 'Belanja Sekarang',
-    bgColor: 'from-orange-950 via-amber-950 to-slate-900',
-    accentColor: 'from-amber-400 to-orange-500',
+    bgColor: 'from-[#2a1309] via-[#3d1b0c] to-[#131b28]',
+    accentColor: 'bg-orange-500 hover:bg-orange-600 text-white',
     image: 'https://i.ibb.co.com/MxGWNXRw/snack-Kerupuk-Seblak.jpg'
   },
   {
@@ -20,8 +20,8 @@ const banners = [
     title: 'Koleksi Gurih & Keripik Renyah',
     subtitle: 'Cemilan gurih pedas renyah beraroma khas paling favorit tahun ini.',
     cta: 'Lihat Katalog',
-    bgColor: 'from-slate-950 via-slate-900 to-orange-950',
-    accentColor: 'from-orange-400 to-amber-500',
+    bgColor: 'from-[#1a1b28] via-[#2d1b0c] to-[#3d1b0c]',
+    accentColor: 'bg-orange-500 hover:bg-orange-600 text-white',
     image: 'https://i.ibb.co.com/0RhQfLL6/snack-Keripik-Tempe.jpg'
   },
   {
@@ -31,8 +31,8 @@ const banners = [
     title: 'Pesan Kapan Saja Langsung via WhatsApp',
     subtitle: 'Proses transaksi cepat, praktis & tanpa ribet. Langsung terhubung dengan admin kami.',
     cta: 'Pesan Sekarang',
-    bgColor: 'from-slate-900 via-emerald-950 to-slate-900',
-    accentColor: 'from-emerald-400 to-teal-500',
+    bgColor: 'from-[#13221d] via-[#1b2b24] to-[#121b28]',
+    accentColor: 'bg-emerald-500 hover:bg-emerald-600 text-white',
     image: 'https://i.ibb.co.com/Cpzsdg31/snack-Soes-Kering.jpg'
   }
 ];
@@ -103,7 +103,7 @@ const Banner = () => {
                   <div>
                     <button 
                       onClick={handleCtaClick}
-                      className={`inline-flex items-center px-6 py-2.5 sm:px-7 sm:py-3.5 rounded-2xl font-extrabold text-xs sm:text-sm text-slate-950 bg-linear-to-r ${slide.accentColor} hover:brightness-110 shadow-xl shadow-orange-500/20 transition-all transform active:scale-95 hover:scale-102 cursor-pointer`}
+                      className={`inline-flex items-center px-6 py-2.5 sm:px-7 sm:py-3 rounded-xl font-extrabold text-xs sm:text-sm shadow-lg transition-transform active:scale-95 hover:scale-102 cursor-pointer ${slide.accentColor}`}
                     >
                       {slide.cta}
                     </button>

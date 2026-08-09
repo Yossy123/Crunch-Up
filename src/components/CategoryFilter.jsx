@@ -79,29 +79,8 @@ const CategoryFilter = ({
           )}
         </div>
 
-        {/* Quick Category Pills Bar */}
-        <div className="flex items-center gap-2 overflow-x-auto pb-1.5 pt-1 scrollbar-none no-scrollbar">
-          {categoryOptions.map((cat) => {
-            const isActive = selectedCategory === cat || (!selectedCategory && cat === 'Semua Kategori');
-            return (
-              <button
-                key={cat}
-                type="button"
-                onClick={() => setSelectedCategory(cat)}
-                className={`px-3.5 py-1.5 rounded-full text-xs font-bold whitespace-nowrap transition-all duration-200 cursor-pointer shrink-0 ${
-                  isActive
-                    ? 'bg-orange-500 text-white shadow-md shadow-orange-500/25 scale-102'
-                    : 'bg-slate-100/80 hover:bg-orange-50 text-slate-700 hover:text-orange-600 border border-slate-200/60'
-                }`}
-              >
-                {cat}
-              </button>
-            );
-          })}
-        </div>
-
-        {/* Dropdown Filters Grid: 2 columns on Mobile, 3 columns on Desktop */}
-        <div className="grid grid-cols-2 lg:grid-cols-3 gap-2.5 sm:gap-4 pt-1">
+        {/* Dropdown Filters Grid: 3 columns */}
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 pt-1">
           
           {/* Dropdown 1: Kategori Snack */}
           <div className="w-full min-w-0 space-y-1">
