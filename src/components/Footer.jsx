@@ -123,12 +123,12 @@ const Footer = ({ onSelectCategory }) => {
               <li className="flex items-center space-x-3">
                 <FiPhone className="text-orange-400 text-base shrink-0" />
                 <a 
-                  href={`https://wa.me/${import.meta.env.VITE_WA_PHONE || '628128050439'}`}
+                  href={`https://wa.me/${import.meta.env.VITE_WA_PHONE || '6287888525426'}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-slate-400 hover:text-orange-400 transition-colors"
                 >
-                  +{import.meta.env.VITE_WA_PHONE || '628128050439'}
+                  +{import.meta.env.VITE_WA_PHONE || '6287888525426'}
                 </a>
               </li>
             </ul>

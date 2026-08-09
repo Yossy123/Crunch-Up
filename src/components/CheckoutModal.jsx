@@ -59,7 +59,7 @@ const CheckoutModal = () => {
   };
 
   const proceedToWhatsApp = () => {
-    const merchantPhone = import.meta.env.VITE_WA_PHONE || '628128050439';
+    const merchantPhone = import.meta.env.VITE_WA_PHONE || '6287888525426';
     const itemsList = cartItems.map(item => {
       const lineSubtotal = item.product.price * item.quantity;
       return `• ${item.product.name} (${item.product.weight || '250gr'}) (${item.quantity}x) = ${formatRupiah(lineSubtotal)}`;
