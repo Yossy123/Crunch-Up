@@ -254,7 +254,7 @@ const ProductDetailPage = () => {
                         </AccordionTrigger>
                         <AccordionContent className="text-xs sm:text-sm text-slate-600 leading-relaxed">
                           <ul className="list-disc list-inside space-y-1">
-                            <li><strong>Komposisi utama:</strong> Tepung Pilihan, Rempah Alami, Minyak Nabati, Bumbu Spesial {product.flavor || 'Bekal Snacks'}.</li>
+                            <li><strong>Komposisi utama:</strong> Tepung Pilihan, Rempah Alami, Minyak Nabati, Bumbu Spesial {product.flavor || 'Crunch Up'}.</li>
                             <li><strong>Berat Bersih:</strong> {product.weight || '250gr'}</li>
                             <li><strong>Masa Simpan:</strong> Hingga 6 Bulan (Simpan di tempat sejuk & tertutup rapat).</li>
                             <li><strong>Sertifikasi:</strong> 100% Halal & Bebas Bahan Pengawet Buatan.</li>

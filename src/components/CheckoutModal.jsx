@@ -69,7 +69,7 @@ const CheckoutModal = () => {
       ? `\n📝 *Catatan:* ${formData.catatan.trim()}`
       : '';
 
-    const message = `*📦 ORDER BARU BEKAL SNACKS*
+    const message = `*📦 ORDER BARU CRUNCH UP*
 👤 *Nama:* ${formData.nama}
 📍 *Alamat:* ${formData.alamat}
 📞 *No HP:* ${formData.noHp}${catatanText}

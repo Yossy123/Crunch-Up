@@ -78,7 +78,7 @@ const Footer = ({ onSelectCategory }) => {
             <div className="flex items-center space-x-3">
               <img 
                 src="/logo.png" 
-                alt="Bekal Snacks" 
+                alt="Crunch Up" 
                 className="h-16 sm:h-20 w-auto object-contain bg-white/95 p-2 rounded-2xl shadow-md"
               />
             </div>
@@ -141,7 +141,7 @@ const Footer = ({ onSelectCategory }) => {
         {/* Bottom Bar */}
         <div className="mt-12 pt-8 border-t border-slate-800/60 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs">
           <div className="text-slate-500 text-center sm:text-left">
-            © {new Date().getFullYear()} <span className="text-slate-300 font-semibold">Bekal Snacks</span>. All rights reserved.
+            © {new Date().getFullYear()} <span className="text-slate-300 font-semibold">Crunch Up</span>. All rights reserved.
           </div>
 
           <div className="flex items-center space-x-1 text-slate-500">

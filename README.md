@@ -1,9 +1,9 @@
 <div align="center">
 
-# 🍿 Bekal Snacks — Katalog Snack & WhatsApp Direct Order
+# 🍿 Crunch Up — Katalog Snack & WhatsApp Direct Order
 
 <p align="center">
-  <b>Aplikasi Web Katalog E-Commerce Bekal Snacks Modern, Fast & Ultra-Responsive dengan Checkout WhatsApp Direct</b>
+  <b>Aplikasi Web Katalog E-Commerce Crunch Up Modern, Fast & Ultra-Responsive dengan Checkout WhatsApp Direct</b>
 </p>
 
 [![React 19](https://img.shields.io/badge/React-19.2-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://react.dev/)
@@ -18,7 +18,7 @@
 
 ## 📌 Tentang Proyek
 
-**Bekal Snacks** adalah platform e-commerce katalog makanan ringan & cemilan khas Nusantara yang dirancang dengan performa tinggi, tampilan UI/UX yang modern, serta pengalaman berbelanja yang intuitif.
+**Crunch Up** adalah platform e-commerce katalog makanan ringan & cemilan khas Nusantara yang dirancang dengan performa tinggi, tampilan UI/UX yang modern, serta pengalaman berbelanja yang intuitif.
 
 Aplikasi ini memudahkan pelanggan untuk menemukan snack favorit mereka berdasarkan kategori dan varian rasa, melihat ketersediaan status secara *real-time*, serta langsung memesan melalui **WhatsApp Direct Checkout** tanpa kerumitan registrasi akun.
 
@@ -92,8 +92,8 @@ VITE_WA_PHONE=6281234567890
 
 1. **Clone Repository**:
    ```bash
-   git clone https://github.com/Yossy123/Snack-ringan.git
-   cd Snack-ringan
+   git clone https://github.com/Yossy123/Crunch-Up.git
+   cd Crunch-Up
    ```
 
 2. **Install Dependensi**:
@@ -122,14 +122,14 @@ VITE_WA_PHONE=6281234567890
 ## 📂 Struktur Direktori Proyek
 
 ```text
-Bekal-Snacks/
+Crunch-Up/
 ├── public/
 │   ├── favicon.svg          # Favicon resmi aplikasi
 │   ├── icons.svg            # Iconset SVG pendukung
-│   └── logo.png             # Logo Brand Bekal Snacks
+│   └── logo.png             # Logo Brand Crunch Up
 ├── src/
 │   ├── assets/
-│   │   └── logo.png         # Logo Brand Bekal Snacks
+│   │   └── logo.png         # Logo Brand Crunch Up
 │   ├── components/          # Komponen UI Reusable
 │   │   ├── Banner.jsx       # Promo Banner Carousel
 │   │   ├── CartItem.jsx     # Item Keranjang Belanja
@@ -177,5 +177,5 @@ Bekal-Snacks/
 ---
 
 <div align="center">
-  <sub>Dibuat dengan ❤️ untuk Toko Snack Indonesia • Bekal Snacks</sub>
+  <sub>Dibuat dengan ❤️ untuk Toko Snack Indonesia • Crunch Up</sub>
 </div>

@@ -22,11 +22,11 @@ const Navbar = ({ searchQuery, setSearchQuery, onResetFilters, onSearchSubmit })
             to="/" 
             onClick={handleLogoClick}
             className="flex items-center shrink-0 group cursor-pointer"
-            title="Kembali ke Beranda Bekal Snacks"
+            title="Kembali ke Beranda Crunch Up"
           >
             <img 
               src="/logo.png" 
-              alt="Bekal Snacks" 
+              alt="Crunch Up" 
               className="h-12 sm:h-16 md:h-18 w-auto object-contain transform transition-transform group-hover:scale-105"
             />
           </Link>
