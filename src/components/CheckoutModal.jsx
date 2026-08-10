@@ -59,7 +59,12 @@ const CheckoutModal = () => {
   };
 
   const proceedToWhatsApp = () => {
-    const merchantPhone = import.meta.env.VITE_WA_PHONE || '6287888525426';
+    const rawPhone = import.meta.env.VITE_WA_PHONE || '6287888525426';
+    let merchantPhone = String(rawPhone).trim().replace(/[^0-9]/g, '');
+    if (merchantPhone.startsWith('0')) {
+      merchantPhone = '62' + merchantPhone.slice(1);
+    }
+
     const itemsList = cartItems.map(item => {
       const lineSubtotal = item.product.price * item.quantity;
       return `• ${item.product.name} (${item.product.weight || '250gr'}) (${item.quantity}x) = ${formatRupiah(lineSubtotal)}`;
@@ -79,8 +84,21 @@ ${itemsList}
 
 💰 *Total: ${formatRupiah(totalHarga)}*`;
 
-    const waUrl = `https://wa.me/${merchantPhone}?text=${encodeURIComponent(message)}`;
-    window.open(waUrl, '_blank');
+    const encodedMessage = encodeURIComponent(message);
+    const waUrl = `https://api.whatsapp.com/send?phone=${merchantPhone}&text=${encodedMessage}`;
+
+    // Opening WhatsApp link bypassing browser popup blockers
+    try {
+      const link = document.createElement('a');
+      link.href = waUrl;
+      link.target = '_blank';
+      link.rel = 'noopener noreferrer';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    } catch {
+      window.location.href = waUrl;
+    }
 
     showToastNotification('Mengalihkan ke WhatsApp untuk konfirmasi pesanan!', 'success');
     clearCart();

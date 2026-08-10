@@ -122,14 +122,21 @@ const Footer = ({ onSelectCategory }) => {
             <ul className="space-y-3 text-xs sm:text-sm">
               <li className="flex items-center space-x-3">
                 <FiPhone className="text-orange-400 text-base shrink-0" />
-                <a 
-                  href={`https://wa.me/${import.meta.env.VITE_WA_PHONE || '6287888525426'}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-slate-400 hover:text-orange-400 transition-colors"
-                >
-                  +{import.meta.env.VITE_WA_PHONE || '6287888525426'}
-                </a>
+                {(() => {
+                  const rawPhone = import.meta.env.VITE_WA_PHONE || '6287888525426';
+                  let cleanPhone = String(rawPhone).trim().replace(/[^0-9]/g, '');
+                  if (cleanPhone.startsWith('0')) cleanPhone = '62' + cleanPhone.slice(1);
+                  return (
+                    <a 
+                      href={`https://api.whatsapp.com/send?phone=${cleanPhone}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-slate-400 hover:text-orange-400 transition-colors"
+                    >
+                      +{cleanPhone}
+                    </a>
+                  );
+                })()}
               </li>
             </ul>
           </div>
