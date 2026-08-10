@@ -1,5 +1,6 @@
 import React, { lazy, Suspense } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Analytics } from '@vercel/analytics/react';
 import { CartProvider } from './context/CartContext';
 import Home from './pages/Home';
 import CartSidebar from './components/CartSidebar';
@@ -28,6 +29,9 @@ function App() {
         <CartSidebar />
         <CheckoutModal />
         <Toast />
+
+        {/* Vercel Analytics */}
+        <Analytics />
       </CartProvider>
     </Router>
   );
