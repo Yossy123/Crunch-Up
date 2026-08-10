@@ -8,12 +8,6 @@ import { useCart } from '../context/useCart';
 import { formatRupiah } from '../utils/format';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from '@/components/ui/accordion';
 import { 
   FiArrowLeft, 
   FiShoppingBag, 
@@ -25,7 +19,7 @@ import {
   FiPackage,
   FiImage
 } from 'react-icons/fi';
-import { ShieldCheck, Info, Truck } from 'lucide-react';
+
 
 
 const ProductDetailPage = () => {
@@ -232,48 +226,7 @@ const ProductDetailPage = () => {
                     </div>
                   </div>
 
-                  {/* Shadcn Accordion for Product Specifications & Info */}
-                  <div className="mt-6 pt-4 border-t border-slate-100">
-                    <Accordion type="single" collapsible defaultValue="description" className="w-full">
-                      <AccordionItem value="description">
-                        <AccordionTrigger className="text-sm font-extrabold text-slate-800">
-                          <span className="flex items-center gap-2">
-                            <Info className="h-4 w-4 text-orange-500" /> Deskripsi Snack
-                          </span>
-                        </AccordionTrigger>
-                        <AccordionContent className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-                          {product.description || `Cemilan lezat ${product.name} diolah secara higienis menggunakan bahan alami berkualitas tinggi. Memiliki tekstur renyah dan cita rasa khas ${product.flavor || product.category} yang cocok dinikmati kapan saja bersama keluarga maupun sahabat.`}
-                        </AccordionContent>
-                      </AccordionItem>
 
-                      <AccordionItem value="composition">
-                        <AccordionTrigger className="text-sm font-extrabold text-slate-800">
-                          <span className="flex items-center gap-2">
-                            <ShieldCheck className="h-4 w-4 text-emerald-500" /> Komposisi & Daya Tahan
-                          </span>
-                        </AccordionTrigger>
-                        <AccordionContent className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-                          <ul className="list-disc list-inside space-y-1">
-                            <li><strong>Komposisi utama:</strong> Tepung Pilihan, Rempah Alami, Minyak Nabati, Bumbu Spesial {product.flavor || 'Crunch Up'}.</li>
-                            <li><strong>Berat Bersih:</strong> {product.weight || '250gr'}</li>
-                            <li><strong>Masa Simpan:</strong> Hingga 6 Bulan (Simpan di tempat sejuk & tertutup rapat).</li>
-                            <li><strong>Sertifikasi:</strong> 100% Halal & Bebas Bahan Pengawet Buatan.</li>
-                          </ul>
-                        </AccordionContent>
-                      </AccordionItem>
-
-                      <AccordionItem value="shipping">
-                        <AccordionTrigger className="text-sm font-extrabold text-slate-800">
-                          <span className="flex items-center gap-2">
-                            <Truck className="h-4 w-4 text-amber-500" /> Pengiriman & Packing Safetylock
-                          </span>
-                        </AccordionTrigger>
-                        <AccordionContent className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-                          Setiap pesanan dipacking menggunakan kardus tebal dan *bubble wrap* berlapis tanpa biaya tambahan untuk menjamin snack sampai dalam kondisi utuh dan renyah.
-                        </AccordionContent>
-                      </AccordionItem>
-                    </Accordion>
-                  </div>
                 </div>
 
                 {/* Action Buttons */}
