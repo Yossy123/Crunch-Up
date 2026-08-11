@@ -75,7 +75,7 @@ Untuk mengonfigurasi nomor WhatsApp admin penerima pesanan, buat file `.env` di 
 
 ```env
 VITE_WA_PHONE=6281234567890
-VITE_SHEETS_WEBAPP_URL=https://script.google.com/macros/s/AKfycbwVgWHqQk9lBUCEWC1H3Zm22rBkZEJJb3MSnjKY54mhhKqRDXtgDgOYGZVl0bKIWv7H/exec
+VITE_SHEETS_WEBAPP_URL=https://script.google.com/macros/s/YOUR_APPS_SCRIPT_DEPLOYMENT_ID/exec
 ```
 
 > [!NOTE]
