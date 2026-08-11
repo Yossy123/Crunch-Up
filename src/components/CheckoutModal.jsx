@@ -7,6 +7,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
 import { Button } from '@/components/ui/button';
 import { FiUser, FiMapPin, FiPhone, FiMessageSquare, FiAlertCircle, FiHelpCircle } from 'react-icons/fi';
+import { submitOrderToSheet } from '../lib/sheets';
 import { FaWhatsapp } from 'react-icons/fa6';
 
 const CheckoutModal = () => {
@@ -99,6 +100,98 @@ ${itemsList}
     } catch {
       window.location.href = waUrl;
     }
+
+    const generatedOrderId = `CR-${Date.now()}`;
+    const mappedItems = cartItems.map(it => {
+      const lineSubtotal = it.product.price * it.quantity;
+      const productNameWithWeight = `${it.product.name}${it.product.weight ? ` (${it.product.weight})` : ''}`;
+      return {
+        // Product Name Aliases (Matching Sheet 2 "Produk")
+        Produk: productNameWithWeight,
+        produk: productNameWithWeight,
+        'Nama Produk': productNameWithWeight,
+        namaProduk: productNameWithWeight,
+        nama_produk: productNameWithWeight,
+        name: productNameWithWeight,
+        product: productNameWithWeight,
+        productName: productNameWithWeight,
+        product_name: productNameWithWeight,
+
+        // Weight
+        weight: it.product.weight || '250gr',
+        berat: it.product.weight || '250gr',
+
+        // Quantity / Qty Aliases (Matching Sheet 2 "Qty")
+        Qty: it.quantity,
+        qty: it.quantity,
+        QTY: it.quantity,
+        quantity: it.quantity,
+        jumlah: it.quantity,
+        count: it.quantity,
+
+        // Harga Satuan / Price Aliases (Matching Sheet 2 "Harga Satuan")
+        'Harga Satuan': it.product.price,
+        hargaSatuan: it.product.price,
+        harga_satuan: it.product.price,
+        HargaSatuan: it.product.price,
+        harga: it.product.price,
+        Harga: it.product.price,
+        price: it.product.price,
+        unitPrice: it.product.price,
+
+        // Subtotal Aliases (Matching Sheet 2 "Subtotal")
+        Subtotal: lineSubtotal,
+        subtotal: lineSubtotal,
+        SUBTOTAL: lineSubtotal,
+        total: lineSubtotal,
+        totalPrice: lineSubtotal
+      };
+    });
+
+    const orderPayload = {
+      // Order ID
+      'Order ID': generatedOrderId,
+      orderId: generatedOrderId,
+      order_id: generatedOrderId,
+      noOrder: generatedOrderId,
+      no_order: generatedOrderId,
+
+      // Customer Info (Sheet 1)
+      Nama: formData.nama,
+      nama: formData.nama,
+      namaPemesan: formData.nama,
+      name: formData.nama,
+
+      'No HP': formData.noHp,
+      noHp: formData.noHp,
+      no_hp: formData.noHp,
+      phone: formData.noHp,
+      telepon: formData.noHp,
+
+      Alamat: formData.alamat,
+      alamat: formData.alamat,
+      address: formData.alamat,
+
+      Catatan: formData.catatan.trim(),
+      catatan: formData.catatan.trim(),
+      notes: formData.catatan.trim(),
+
+      // Total (Sheet 1 "Total")
+      Total: totalHarga,
+      total: totalHarga,
+      totalHarga: totalHarga,
+      total_harga: totalHarga,
+      grandTotal: totalHarga,
+      grand_total: totalHarga,
+
+      // Items Array (Sheet 2 "Order Items")
+      items: mappedItems,
+      orderItems: mappedItems,
+      order_items: mappedItems,
+      cart: mappedItems,
+      pesanan: mappedItems
+    };
+    submitOrderToSheet(orderPayload);
 
     showToastNotification('Mengalihkan ke WhatsApp untuk konfirmasi pesanan!', 'success');
     clearCart();
