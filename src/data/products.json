@@ -210,12 +210,12 @@
   },
   {
     "id": 20,
-    "name": "Kacang Panggang Tepung",
+    "name": "Kacang Bandung",
     "category": "Kacang",
     "flavor": "Asin",
     "price": 19000,
     "image": "https://i.ibb.co.com/5XGHMYmk/snack-Kacang-Panggang-Tepung.jpg",
-    "description": "Kacang Panggang Tepung pilihan yang diproses dengan bumbu rempah pilihan, renyah dan gurih di setiap gigitan.",
+    "description": "Kacang Bandung pilihan yang diproses dengan bumbu rempah pilihan, renyah dan gurih di setiap gigitan.",
     "isAvailable": true,
     "weight": "250gr"
   },
